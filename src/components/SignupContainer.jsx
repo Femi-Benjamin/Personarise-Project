@@ -38,10 +38,16 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
       setPasswordState("text");
     }
   };
+  const url = process.env.BASE_URL;
+
+  console.log(url);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(data);
+    // e.preventDefault();
+    axios
+      .post()
+      .then()
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -67,17 +73,17 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
-              {({ errors, touched, resetForm }) => (
+              {({ errors, touched, resetForm, handleSubmit }) => (
                 <Form>
                   <div>
-                    <div className=" md:flex gap-5 ">
+                    <div className="mb-4 md:flex gap-5 ">
                       <div className=" md:w-[50%]">
                         <Field
                           name="firstname"
                           type="text "
                           placeholder="First Name"
                           className={
-                            " mb-4 w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none text-xs " +
+                            "  w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none " +
                             (errors.firstname && touched.firstname
                               ? "border-[#f52d2d] "
                               : "")
@@ -95,7 +101,7 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
                           type="text"
                           placeholder="Last Name"
                           className={
-                            "mb-4 w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none " +
+                            " w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none " +
                             (errors.lastname && touched.lastname
                               ? "border-[#f52d2d]  "
                               : "")
@@ -178,7 +184,11 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
                   </div>
                   <div className=" m-auto">
                     <div className="w-[60%] m-auto">
-                      <Button text="Create Account" />
+                      <Button
+                        onClick={handleSubmit}
+                        type="submit"
+                        text="Create Account"
+                      />
                     </div>
                     <p className="text-center my-3 md:block hidden">
                       Already have an account?
