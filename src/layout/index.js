@@ -5,3 +5,5 @@ export { default as ResetPasswordLayout } from "./ResetPasswordLayout";
 export { default as HomeLayout } from "./HomeLayout";
 export { default as InternSignupLayout } from "./InternSignupLayout";
 export { default as EmployerSignupLayout } from "./EmployerSignupLayout";
+export { default as QuizLayout } from "./QuizLayout";
+
