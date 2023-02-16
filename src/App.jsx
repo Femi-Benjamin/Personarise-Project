@@ -8,7 +8,9 @@ import {
   ResetPassword,
   EmployerSignup,
   InternSignup,
+  Quiz,
 } from "./pages";
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/email-verification" element={<Verify />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/quiz" element={<Quiz />} />
       </Routes>
     </Router>
   );

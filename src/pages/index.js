@@ -5,3 +5,4 @@ export { default as Home } from "./Home";
 export { default as Signup } from "./Signup";
 export { default as EmployerSignup } from "./EmployerSignup";
 export { default as InternSignup } from "./InternSignup";
+export { default as Quiz } from "./Quiz";
