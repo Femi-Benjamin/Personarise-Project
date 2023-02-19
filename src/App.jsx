@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HomeBar } from "./components";
+import TakeQuiz from "./pages/TakeQuiz";
+import Nextqs from "./pages/Nextqs";
+
 import {
   Home,
   Signup,
@@ -10,7 +13,6 @@ import {
   InternSignup,
   Quiz,
 } from "./pages";
-
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/email-verification" element={<Verify />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/takequiz" element={<TakeQuiz />} />
+        <Route path="/nextqs" element={<Nextqs />} />
       </Routes>
     </Router>
   );
