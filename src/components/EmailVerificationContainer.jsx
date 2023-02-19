@@ -9,8 +9,8 @@ const EmailVerificationContainer = () => {
 
   return (
     <>
-      <div className="md:flex items-center justify-center h-full  bg-[#E4E4E4]">
-        <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white m-4">
+      <div className="flex items-center justify-center h-full  md:bg-[#E4E4E4]">
+        <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white m-4 p-4">
           <div className="flex flex-col justify-center mt-10">
             <div className="flex justify-center">
               <img src={images.verify} alt="reset" />

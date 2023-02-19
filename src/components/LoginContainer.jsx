@@ -66,8 +66,8 @@ const SignupContainer = () => {
   return (
     <>
       <Toaster />
-      <div className="md:flex items-center justify-center h-full bg-[#E4E4E4]">
-        <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4">
+      <div className="md:flex items-center justify-center h-full md:bg-[#E4E4E4]">
+        <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4 p-4">
           <div className="flex flex-col justify-center">
             <div className="flex flex-col justify-center ">
               <h1 className="md:font-semibold lg:text-[32px] md:text-[28px] text-[24px] text-center my-8">

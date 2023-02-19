@@ -49,8 +49,10 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
 
   const mutation = useMutation(async (data) => {
     try {
-      const response = await axios
-        .post(`https://projectx-f5wv.onrender.com/api/user/register`, data);
+      const response = await axios.post(
+        `https://projectx-f5wv.onrender.com/api/user/register`,
+        data
+      );
       console.log(response);
       // resetForm();
       if (response.status === 201) {
@@ -86,8 +88,8 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   };
 
   return (
-    <div className="md:flex items-center justify-center h-full  bg-[#E4E4E4]">
-      <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4">
+    <div className="md:flex items-center justify-center h-full  md:bg-[#E4E4E4]">
+      <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4 p-4">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col justify-center ">
             <h1 className="md:font-semibold lg:text-[32px] md:text-[28px] text-[24px] text-center my-8">
@@ -117,8 +119,8 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
               {({ errors, touched, resetForm, handleSubmit }) => (
                 <Form>
                   <div>
-                    <div className="mb-4 md:flex gap-5 ">
-                      <div className=" md:w-[50%]">
+                    <div className="mb-4 flex flex-col md:flex-row gap-5 ">
+                      <div className=" md:w-[50%] mb-">
                         <Field
                           name="firstname"
                           type="text "
