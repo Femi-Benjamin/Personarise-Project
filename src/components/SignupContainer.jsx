@@ -3,11 +3,15 @@ import images from "../constants/images";
 import Button from "./shared/Button";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { country_list } from "../constants/data";
+import { useDispatch } from "react-redux";
+import { setEmail } from "../redux/users/userAction";
+import { toastError, toastSuccess } from "./Toast";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
-const SignupContainer = ({ link, title, connection, nextText }) => {
+const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   const initialValues = {
     firstname: "",
     lastname: "",
@@ -17,6 +21,8 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
   };
 
   const [passwordState, setPasswordState] = useState("password");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function validationSchema() {
     return Yup.object().shape({
@@ -31,6 +37,7 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
         .max(40, "Password must not exceed 40 characters"),
     });
   }
+
   const handleViewPassword = () => {
     if (passwordState === "text") {
       setPasswordState("password");
@@ -40,26 +47,60 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
   };
   const url = process.env.BASE_URL;
 
-  console.log(url);
+  const mutation = useMutation(async (data) => {
+    try {
+      const response = await axios
+        .post(`https://projectx-f5wv.onrender.com/api/user/register`, data);
+      console.log(response);
+      // resetForm();
+      if (response.status === 201) {
+        toastSuccess("Registration Successful");
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    axios
-      .post()
-      .then()
-      .catch((err) => console.log(err));
+        navigate("/email-verification");
+      }
+      if (response.status === 400) {
+        toastError("Oops, something went wrong on our end.");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
+  const handleSubmit = (values, { resetForm }) => {
+    dispatch(setEmail(values.email));
+    const data = {
+      firstName: values.firstname,
+      lastName: values.lastname,
+      email: values.email,
+      password: values.password,
+      country: values.country,
+      isEmployer: isEmployer,
+    };
+    mutation.mutate(data);
+  };
+
+  const handleGoogleClick = () => {
+    window.location.replace(
+      "https://projectx-f5wv.onrender.com/api/user/auth/google"
+    );
   };
 
   return (
-    <div className="md:flex items-center justify-center h-full m-4">
-      <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12">
+    <div className="md:flex items-center justify-center h-full  bg-[#E4E4E4]">
+      <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4">
         <div className="flex flex-col justify-center">
           <div className="flex flex-col justify-center ">
             <h1 className="md:font-semibold lg:text-[32px] md:text-[28px] text-[24px] text-center my-8">
               {title}
             </h1>
             <div className="mb-5">
-              <Button text="Continue with Google" image={images.google} />
+              <a
+                href="https://projectx-f5wv.onrender.com/api/user/auth/google"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button text="Continue with Google" image={images.google} />
+              </a>
             </div>
           </div>
           <div className="flex items-center gap-3 mb-7 justify-center">
@@ -187,19 +228,25 @@ const SignupContainer = ({ link, title, connection, nextText }) => {
                       <Button
                         onClick={handleSubmit}
                         type="submit"
-                        text="Create Account"
+                        text={` ${
+                          mutation.isLoading ? "Loading..." : "Create Account"
+                        }`}
+                        disabled={mutation.isLoading}
                       />
                     </div>
                     <p className="text-center my-3 md:block hidden">
                       Already have an account?
-                      <Link to="/login" className="text-[#79F871]">
-                        Log In
+                      <Link
+                        to="/login"
+                        className="text-[#071D2E] font-extrabold"
+                      >
+                        &nbsp;Log In
                       </Link>
                     </p>
 
                     <p className="text-center my-3 md:hidden">
                       {nextText}{" "}
-                      <Link to={`/signup/${link}`} className="text-[#79F871]">
+                      <Link to={`/signup/${link}`} className="text-[#071D2E] ">
                         {connection}
                       </Link>
                     </p>

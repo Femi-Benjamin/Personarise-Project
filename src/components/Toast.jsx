@@ -1,35 +1,33 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-toast.configure()
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const options = {
   autoClose: 2000,
-  className: '',
+  className: "",
   position: toast.POSITION.TOP_RIGHT,
 };
 
-export const toastSuccess = message => {
-//   console.log("Hello0 success toast")
+export const toastSuccess = (message) => {
+  //   console.log("Hello0 success toast")
   toast.success(message, options);
-}
+};
 
-export const toastError = message => {
+export const toastError = (message) => {
   toast.error(message, options);
-}
+};
 
-export const toastWarning = message => {
+export const toastWarning = (message) => {
   toast.warn(message, options);
-}
+};
 
-export const toastInformation = message => {
+export const toastInformation = (message) => {
   toast.info(message, options);
-}
+};
 
-export const toastDark = message => {
+export const toastDark = (message) => {
   toast.dark(message, options);
-}
+};
 
-export const toastDefault = message => {
+export const toastDefault = (message) => {
   toast(message, options);
-}
+};

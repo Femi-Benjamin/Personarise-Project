@@ -11,8 +11,8 @@ const SignupLayout = () => {
   console.log(selectedValue);
 
   return (
-    <div className="flex justify-center ">
-      <div className="border w-[739px] h-[589px] rounded-[8px]">
+    <div className=" md:flex items-center justify-center h-full  bg-[#E4E4E4]">
+      <div className="border w-[739px] h-[589px] rounded-[8px] bg-white">
         <div className="md:px-[50px]">
           <div>
             <h1 className="not-italic font-mulish font-semibold  text-[32px] leading-[40px] text-center mt-[55px] mb-[28px] text-[#000000]">
@@ -99,9 +99,9 @@ const SignupLayout = () => {
 
           {/* Sign up button */}
           {selectedValue === "founder" ? (
-            <link to="/signup/employer" className="flex justify-center mb-4">
+            <Link to="/signup/employer" className="flex justify-center mb-4">
               <Button disabled={false} text="Join as a Founder" />
-            </link>
+            </Link>
           ) : selectedValue == "intern" ? (
             <Link to="/signup/intern" className="flex justify-center mb-4">
               <Button disabled={false} text="Join as an Intern" />
@@ -114,9 +114,9 @@ const SignupLayout = () => {
 
           <div className="text-center font-normal text-[16px] leading-[20px] text-[#000000]">
             <p className="text-center my-4 md:block hidden">
-              Already have an account?{" "}
-              <Link to="/login" className="text-[#79F871]">
-                Log In
+              Already have an account?
+              <Link to="/login" className="text-[#071D2E] font-extrabold">
+                &nbsp;Log In
               </Link>
             </p>
           </div>
