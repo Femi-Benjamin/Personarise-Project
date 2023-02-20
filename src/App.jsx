@@ -1,8 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HomeBar } from "./components";
-import TakeQuiz from "./pages/TakeQuiz";
-import Nextqs from "./pages/Nextqs";
-
 import {
   Home,
   Signup,
@@ -13,6 +10,11 @@ import {
   InternSignup,
   Quiz,
 } from "./pages";
+import TakeQuiz from "./pages/TakeQuiz";
+import Nextqs from "./pages/Nextqs";
+import Nextqz from "./pages/Nextqz";
+import Quiz4 from "./pages/Quiz4";
+import Quiz5 from "./pages/Quiz5";
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/takequiz" element={<TakeQuiz />} />
         <Route path="/nextqs" element={<Nextqs />} />
+        <Route path="/nextqz" element={<Nextqz />} />
+        <Route path="/Quiz4" element={<Quiz4 />} />
+        <Route path="/Quiz5" element={<Quiz5 />} />
       </Routes>
     </Router>
   );
