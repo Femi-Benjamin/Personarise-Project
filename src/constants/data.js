@@ -205,3 +205,22 @@ export const country_list = [
   "Zambia",
   "Zimbabwe",
 ];
+
+export const quizQuestions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Paris", "Madrid", "Berlin", "London"],
+    answer: "Paris",
+  },
+  {
+    question: "What is the largest planet in our solar system?",
+    options: ["Venus", "Jupiter", "Mars", "Saturn"],
+    answer: "Jupiter",
+  },
+  {
+    question: "What is the smallest country in the world?",
+    options: ["Monaco", "San Marino", "Nauru", "Vatican City"],
+    answer: "Vatican City",
+  },
+  // Add more questions here
+];

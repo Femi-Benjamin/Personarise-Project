@@ -31,7 +31,6 @@ const SignupContainer = () => {
       setPasswordState("text");
     }
   };
-  const url = process.env.BASE_URL;
 
   const mutation = useMutation((data) => {
     return axios
