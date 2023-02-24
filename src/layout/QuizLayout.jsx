@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const QuizLayout = () => {
   return (
@@ -10,7 +11,6 @@ const QuizLayout = () => {
             src="/Career Map Quiz.png"
             alt=""
           />
-
           <div className="max-w-[545px]  md:m-[51px] sm:m-[35px] h-auto bg-[#FFFFFF] rounded-[8px] p-6 sm:p-[30px] font-mulish mt-7">
             {/* <div className="max-w-[254px] mx-auto "> */}
             <h1 className="not-italic font-medium md:text-[32px] text-xl leading-[40px] text-[#040F17] mb:mb-[32px] mb-2 ">
@@ -23,10 +23,12 @@ const QuizLayout = () => {
             </p>
 
             <div className="w-auto h-[55px] bg-[#071D2E] text-center">
+            <Link to="/takequiz">
               <button className="not-italic font-semibold text-[24px] leading-[30px] py-[12.5px] text-[#FFFFFF]">
                 Take the Quiz
               </button>
             </div>
+             </Link>
           </div>
           {/* </div> */}
         </div>
