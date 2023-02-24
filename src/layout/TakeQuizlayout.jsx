@@ -23,7 +23,7 @@ const TakeQuizLayout = () => {
             </p>
 
             <div className="w-auto h-[55px] bg-[#071D2E] text-center">
-              <Link to="/takequiz">
+              <Link to="/quiz">
                 <button className="not-italic font-semibold text-[24px] leading-[30px] py-[12.5px] text-[#FFFFFF]">
                   Take the Quiz
                 </button>
