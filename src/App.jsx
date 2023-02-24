@@ -15,6 +15,8 @@ import Nextqs from "./pages/Nextqs";
 import Nextqz from "./pages/Nextqz";
 import Quiz4 from "./pages/Quiz4";
 import Quiz5 from "./pages/Quiz5";
+import Quiz6 from "./pages/Quiz6";
+import MultiStepForm from "./pages/MultiStepForm";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
         <Route path="/nextqz" element={<Nextqz />} />
         <Route path="/Quiz4" element={<Quiz4 />} />
         <Route path="/Quiz5" element={<Quiz5 />} />
+        <Route path="/Quiz6" element={<Quiz6 />} />
+        <MultiStepForm/>
       </Routes>
     </Router>
   );

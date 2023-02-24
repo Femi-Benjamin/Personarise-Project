@@ -29,12 +29,12 @@ const Quiz5 = () => {
                         </div>
 
                         <div className='md:flex sm:flex-wrap justify-between mb-[40.84px] gap-[17.02px]'>
-                            <Link to='/quiz4'><button className="flex justify-center w-[263.75px] h-[46.79px] border border-[#CDD2D5] items-center sm:mb-5 ">
+                            <Link to='/quiz5'><button className="flex justify-center w-[263.75px] h-[46.79px] border border-[#CDD2D5] items-center sm:mb-5 ">
                                 <h1 className="text-black text-center">Previous Question</h1>
                                 <img src="/" alt="" />
                             </button> </Link>
 
-                            <Link to='/quiz5'> <button className="flex  justify-center w-[263.75px] h-[46.79px] bg-[#071D2E] items-center  pl-[17.02]">
+                            <Link to='/quiz6'> <button className="flex  justify-center w-[263.75px] h-[46.79px] bg-[#071D2E] items-center  pl-[17.02]">
                                 <h1 className="text-white text-center">Next Question</h1>
                                 <img src="/" alt="" />
                             </button></Link>
