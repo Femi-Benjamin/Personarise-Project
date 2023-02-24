@@ -21,9 +21,9 @@ const ResetPasswordContainer = () => {
     console.log(data);
   };
   return (
-    <div>
-      <div className="md:flex items-center justify-center h-full m-4">
-        <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12">
+    <>
+      <div className="md:flex items-center justify-center h-full #071D2E md:bg-[#E4E4E4]">
+        <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 m-4 max-w-7xl bg-white p-4">
           <div className="flex flex-col justify-center mt-10">
             <div className="flex justify-center">
               <Link to="/login">
@@ -79,7 +79,7 @@ const ResetPasswordContainer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

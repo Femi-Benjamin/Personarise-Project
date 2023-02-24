@@ -3,9 +3,9 @@ import { VerifyLayout } from "../layout";
 
 const Verify = () => {
   return (
-    <div>
+    <>
       <VerifyLayout />
-    </div>
+    </>
   );
 };
 

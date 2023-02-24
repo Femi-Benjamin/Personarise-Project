@@ -3,9 +3,9 @@ import { LoginContainer } from "../components";
 
 const LoginLayout = () => {
   return (
-    <div>
+    <>
       <LoginContainer />
-    </div>
+    </>
   );
 };
 

@@ -3,9 +3,9 @@ import { ResetPasswordContainer } from "../components";
 
 const ResetPasswordLayout = () => {
   return (
-    <div>
+    <>
       <ResetPasswordContainer />
-    </div>
+    </>
   );
 };
 

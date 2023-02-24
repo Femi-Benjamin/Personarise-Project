@@ -17,9 +17,13 @@ import Quiz4 from "./pages/Quiz4";
 import Quiz5 from "./pages/Quiz5";
 import Quiz6 from "./pages/Quiz6";
 import MultiStepForm from "./pages/MultiStepForm";
+import store from "./redux/store";
+import { Provider } from "react-redux";
+
 
 function App() {
   return (
+  <Provider store={store}>
     <Router>
       <HomeBar />
       <Routes>
@@ -40,6 +44,8 @@ function App() {
         <MultiStepForm/>
       </Routes>
     </Router>
+    </Provider>
+
   );
 }
 

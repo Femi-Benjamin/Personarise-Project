@@ -3,9 +3,9 @@ import { EmployerSignupLayout } from "../layout";
 
 const EmployerSignup = () => {
   return (
-    <div>
+    <>
       <EmployerSignupLayout />
-    </div>
+    </>
   );
 };
 
