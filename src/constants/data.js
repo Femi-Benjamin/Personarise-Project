@@ -208,19 +208,373 @@ export const country_list = [
 
 export const quizQuestions = [
   {
-    question: "What is the capital of France?",
-    options: ["Paris", "Madrid", "Berlin", "London"],
-    answer: "Paris",
+    id: 1,
+    question: "What's your favorite type of project?",
+    options: [
+      { id: 1, score: 2, text: "Making an art project." },
+      { id: 2, score: 1, text: "Writing a research paper." },
+      { id: 3, score: 3, text: "Preparing or giving a presentation." },
+      {
+        id: 4,
+        score: 4,
+        text: "Automating workflows / making something work.",
+      },
+    ],
   },
   {
-    question: "What is the largest planet in our solar system?",
-    options: ["Venus", "Jupiter", "Mars", "Saturn"],
-    answer: "Jupiter",
+    id: 2,
+    question: "How do you make important decisions?",
+    options: [
+      {
+        id: 1,
+        score: 4,
+        text: "After carefully analyzing every option and the predicted results.",
+      },
+      { id: 2, score: 2, text: "After checking with friends." },
+      {
+        id: 3,
+        score: 3,
+        text: "I make an executive decision and everyone follows along.",
+      },
+      { id: 4, score: 2, text: "Create a poll and ask social media." },
+      { id: 5, score: 1, text: "Gut instinct." },
+      { id: 6, score: 1, text: "Come up with the simplest possible solution." },
+    ],
   },
   {
-    question: "What is the smallest country in the world?",
-    options: ["Monaco", "San Marino", "Nauru", "Vatican City"],
-    answer: "Vatican City",
+    id: 3,
+    question: "What does success mean for you?",
+    options: [
+      { id: 1, score: 4, text: "Earning a high income." },
+      { id: 2, score: 3, text: "Autonomy to make high-level decisions." },
+      { id: 3, score: 1, text: "Ability to balance work and life." },
+      { id: 4, score: 1, text: "Creative control of my projects." },
+    ],
+  },
+  {
+    id: 4,
+    question: "When you picture your ideal job, what are you doing?",
+    options: [
+      {
+        id: 1,
+        score: 4,
+        text: "Working in a fast-paced role that pushes me to produce results.",
+      },
+      {
+        id: 2,
+        score: 2,
+        text: "Getting creative and coming up with new ideas.",
+      },
+      { id: 3, score: 4, text: "Thinking big-picture and solving problems." },
+      {
+        id: 4,
+        score: 1,
+        text: "Figuring out how the company operates, and finding ways to do it better.",
+      },
+      {
+        id: 5,
+        score: 3,
+        text: "Leading a team.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    question: "How do you feel about working in groups?",
+    options: [
+      { id: 1, score: 1, text: "I love working in groups!" },
+      {
+        id: 2,
+        score: 3,
+        text: "I like working with a group, as long as I can take the lead.",
+      },
+      { id: 3, score: 2, text: "I can adapt to any situation." },
+      { id: 4, score: 4, text: "I prefer to work by myself most of the time." },
+    ],
+  },
+  {
+    id: 6,
+    question: "Which of these is your strongest skill?",
+    options: [
+      { id: 1, score: 1, text: "Storytelling." },
+      { id: 2, score: 4, text: "Logical Thinking" },
+      { id: 3, score: 2, text: "Creativity" },
+      { id: 4, score: 4, text: "Troubleshooting" },
+      { id: 5, score: 3, text: "Persuasive Communication" },
+      { id: 6, score: 4, text: "Math & Statistics" },
+    ],
+  },
+  {
+    id: 7,
+    title: "Choose how much you'll love to do these among available choices.",
+    question: "Use my artistic abilities.",
+    options: [
+      { id: 1, score: 2, text: "Very Interested" },
+      { id: 2, score: 1, text: "Interested" },
+      { id: 3, score: 4, text: "Slightly Interested" },
+      { id: 4, score: 3, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 8,
+    question: "Code a website, mobile app, or software.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 2, text: "Interested" },
+      { id: 3, score: 1, text: "Slightly Interested" },
+      { id: 4, score: 3, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 9,
+    question: "Review data and present your findings.",
+    options: [
+      { id: 1, score: 3, text: "Very Interested" },
+      { id: 2, score: 2, text: "Interested" },
+      { id: 3, score: 1, text: "Slightly Interested" },
+      { id: 4, score: 4, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 10,
+    question: "Respond to a cyber attack.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 11,
+    question: "Set up computers and printers for a business.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 12,
+    question: "Learn how computer hardware and software works.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 13,
+    question: "Help people with their technology issues.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 14,
+    question: "Create graphics.",
+    options: [
+      { id: 1, score: 2, text: "Very Interested" },
+      { id: 2, score: 4, text: "Interested" },
+      { id: 3, score: 1, text: "Slightly Interested" },
+      { id: 4, score: 3, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 15,
+    question: "Learn multiple programming languages.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 16,
+    question: "Manage technology projects.",
+    options: [
+      { id: 1, score: 3, text: "Very Interested" },
+      { id: 2, score: 1, text: "Interested" },
+      { id: 3, score: 4, text: "Slightly Interested" },
+      { id: 4, score: 2, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 17,
+    question: "Keep a business' computer systems safe and secure.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 18,
+    question: "Ensure a businesses computer networks are working effectively.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 19,
+    question: "Learn how computers and servers function.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 20,
+    question: "Fix and upgrade computers.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 21,
+    question: "Design a website, mobile app, or magazine layout.",
+    options: [
+      { id: 1, score: 2, text: "Very Interested" },
+      { id: 2, score: 1, text: "Interested" },
+      { id: 3, score: 4, text: "Slightly Interested" },
+      { id: 4, score: 3, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 22,
+    question: "Troubleshoot software code.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 23,
+    question: "Participate in business strategy sessions.",
+    options: [
+      { id: 1, score: 1, text: "Venus" },
+      { id: 2, score: 3, text: "jkeh" },
+      { id: 3, score: 2, text: "kjsk" },
+      { id: 4, score: 4, text: "jksdhk" },
+    ],
+  },
+  {
+    id: 24,
+    question: "Learn how to hack computer systems to identify security risks.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 25,
+    question: "Apply software and operating system updates.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 26,
+    question: "Teach people how their computer works.",
+    options: [
+      { id: 1, score: 3, text: "Very Interested" },
+      { id: 2, score: 4, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 27,
+    question: "Learn marketing techniques.",
+    options: [
+      { id: 1, score: 1, text: "Very Interested" },
+      { id: 2, score: 2, text: "Interested" },
+      { id: 3, score: 3, text: "Slightly Interested" },
+      { id: 4, score: 4, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 28,
+    question: "Develop software or websites.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 29,
+    question: "Analyze information.",
+    options: [
+      { id: 1, score: 3, text: "Very Interested" },
+      { id: 2, score: 4, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 30,
+    question: "Identify the security vulnerabilities in software.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 31,
+    question: "Maintain a network of computers.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 32,
+    question: "Recommend software and hardware improvements to a company.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
+  },
+  {
+    id: 33,
+    question:
+      "Recommend a phone, tablet, or computer based on a person’s needs.",
+    options: [
+      { id: 1, score: 4, text: "Very Interested" },
+      { id: 2, score: 3, text: "Interested" },
+      { id: 3, score: 2, text: "Slightly Interested" },
+      { id: 4, score: 1, text: "Not Interested" },
+    ],
   },
   // Add more questions here
 ];
