@@ -7,7 +7,7 @@ const HomeBar = () => {
                 <div className='h-[80px] flex justify-between items-center'>
                     <div>
                         <h1 className='not-italic font-bold text-[35px]'>
-                            LOGO
+                            Project-X
                         </h1>
                     </div>
                 </div>
