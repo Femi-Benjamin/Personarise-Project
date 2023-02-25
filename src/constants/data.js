@@ -336,7 +336,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 10,
     question: "Respond to a cyber attack.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -346,7 +346,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 11,
     question: "Set up computers and printers for a business.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -356,7 +356,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 12,
     question: "Learn how computer hardware and software works.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -366,7 +366,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 13,
     question: "Help people with their technology issues.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -376,7 +376,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 14,
     question: "Create graphics.",
     options: [
       { id: 1, score: 2, text: "Very Interested" },
@@ -386,7 +386,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 15,
     question: "Learn multiple programming languages.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -396,7 +396,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 16,
     question: "Manage technology projects.",
     options: [
       { id: 1, score: 3, text: "Very Interested" },
@@ -406,7 +406,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 17,
     question: "Keep a business' computer systems safe and secure.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -416,7 +416,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 18,
     question: "Ensure a businesses computer networks are working effectively.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -426,7 +426,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 19,
     question: "Learn how computers and servers function.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -436,7 +436,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 20,
     question: "Fix and upgrade computers.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -446,7 +446,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 21,
     question: "Design a website, mobile app, or magazine layout.",
     options: [
       { id: 1, score: 2, text: "Very Interested" },
@@ -456,7 +456,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 22,
     question: "Troubleshoot software code.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -466,7 +466,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 23,
     question: "Participate in business strategy sessions.",
     options: [
       { id: 1, score: 1, text: "Venus" },
@@ -476,7 +476,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 24,
     question: "Learn how to hack computer systems to identify security risks.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -486,7 +486,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 25,
     question: "Apply software and operating system updates.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -496,7 +496,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 26,
     question: "Teach people how their computer works.",
     options: [
       { id: 1, score: 3, text: "Very Interested" },
@@ -506,7 +506,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 27,
     question: "Learn marketing techniques.",
     options: [
       { id: 1, score: 1, text: "Very Interested" },
@@ -516,7 +516,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 28,
     question: "Develop software or websites.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -526,7 +526,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 29,
     question: "Analyze information.",
     options: [
       { id: 1, score: 3, text: "Very Interested" },
@@ -536,7 +536,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 30,
     question: "Identify the security vulnerabilities in software.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -546,7 +546,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 31,
     question: "Maintain a network of computers.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -556,7 +556,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 32,
     question: "Recommend software and hardware improvements to a company.",
     options: [
       { id: 1, score: 4, text: "Very Interested" },
@@ -566,7 +566,7 @@ export const quizQuestions = [
     ],
   },
   {
-    id: 4,
+    id: 33,
     question:
       "Recommend a phone, tablet, or computer based on a person’s needs.",
     options: [
