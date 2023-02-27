@@ -1,14 +1,23 @@
 import React from "react";
 
-const Button = ({ text, image, disabled, type }) => {
+const Button = ({ text, image, disabled, type, outline, onClick }) => {
   return (
     <button
       disabled={disabled}
       type={type}
-      className="disabled:bg-[#AEAEAE] disabled:text-white disabled:cursor-not-allowed p-3 bg-[#071D2E] flex items-center gap-2 justify-center w-full"
+      onClick={onClick}
+      className={` disabled:text-white disabled:cursor-not-allowed p-3  flex items-center gap-2 justify-center w-full ${
+        outline
+          ? " bg-none border border-solid border-[#CDD2D5] disabled:text-[#AEAEAE] "
+          : " bg-[#071D2E] disabled:bg-[#AEAEAE]"
+      }`}
     >
       {image && <img src={image} alt="button image" />}
-      <span className="text-white lg:text-2xl md:text-xl text-base">
+      <span
+        className={`lg:text-2xl md:text-xl text-base ${
+          outline ? " text-black " : " text-white "
+        }`}
+      >
         {text}
       </span>
     </button>
