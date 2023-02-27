@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
 
 const QuizLayout = () => {
   return (
@@ -27,14 +26,13 @@ const QuizLayout = () => {
               <button className="not-italic font-semibold text-[24px] leading-[30px] py-[12.5px] text-[#FFFFFF]">
                 Take the Quiz
               </button>
-            </div>
              </Link>
+            </div>
           </div>
           {/* </div> */}
         </div>
       </div>
     </div>
-  );
-};
-
-export default QuizLayout;
+  )
+}
+export default QuizLayout
