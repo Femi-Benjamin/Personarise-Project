@@ -31,6 +31,8 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/takequiz" element={<TakeQuiz />} />
+          <Route path="/result" element={<Result />} />
+          <Route path="/career" element={<Career />} /> 
         </Routes>
       </Router>
     </Provider>

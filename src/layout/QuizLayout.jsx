@@ -128,7 +128,7 @@ function Quizlayout() {
             <div
               className={` ${
                 currentQuestionIndex === 0 ? "flex w-[60%] " : "grid "
-              }md:grid-cols-2 sm:grid-cols-1 justify-between gap-[20.51px]  mb-[40.84px] `}
+              }md:grid-cols-2 sm:grid-cols-1 justify-between gap-[20.51px] mb-[40.84px] `}
             >
               {currentQuestionIndex !== 0 && (
                 <div className="">

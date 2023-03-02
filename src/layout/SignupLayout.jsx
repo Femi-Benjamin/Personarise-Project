@@ -19,7 +19,7 @@ const SignupLayout = () => {
               Connect as a founder or intern
             </h1>
           </div>
-
+          
           <div className="flex gap-[18px] justify-center items-center mb-[47px]">
             {/* Founder */}
             <label
