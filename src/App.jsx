@@ -13,6 +13,8 @@ import {
 } from "./pages";
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import Result from "./pages/Result";
+import Career from "./pages/Career";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/takequiz" element={<TakeQuiz />} />
+          <Route path="/result" element={<Result />} />
+          <Route path="/career" element={<Career />} /> 
         </Routes>
       </Router>
     </Provider>
