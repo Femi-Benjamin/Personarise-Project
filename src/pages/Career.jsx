@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
         return (
             <div className=" md:flex items-center justify-center h-full  bg-[#E4E4E4]">
-              <div className="border w-[739px] h-[589px] rounded-[8px] bg-white">
+              <div className="border w-[739px] h-[589px] sm:h-auto rounded-[8px] bg-white">
                 <div className="md:px-[50px]">
                   <div>
                     <h1 className="not-italic font-mulish font-semibold  text-[32px] leading-[40px] text-center mt-[55px] mb-[28px] text-[#000000]">
@@ -21,10 +21,10 @@ import { Link } from "react-router-dom";
                     </h1>
                   </div>
         
-                  <div className="flex gap-[18px] justify-center items-center mb-[47px]">
+                  <div className="md:flex gap-[18px] justify-center items-center mb-[47px]">
                     {/* Mobile */}
                     <label
-                      htmlFor="employers"
+                      htmlFor="mobile"
                       className="hover:border-[#071D2E] focus-within:border-[#071D2E] border rounded-[8px] h-auto cursor-pointer"
                     >
                       <div className="bg-[#ACB4B9] w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
@@ -40,7 +40,7 @@ import { Link } from "react-router-dom";
                         Mobile
                         </h1>
                         <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
-                        Any application you see on App store or Play store is actually built by Software Engineers (Mobile).
+                        Any application you see on App store or Play store  is actually built by Software Engineers (Mobile).
                         </p>
                       </div>
         
@@ -99,7 +99,7 @@ import { Link } from "react-router-dom";
                   </div>
         
                   {/* Sign up button */}
-                  {selectedValue === "founder" ? (
+                  {/* {selectedValue === "founder" ? (
                     <Link to="/signup/employer" className="flex justify-center mb-4">
                       <Button disabled={false} text="Mobile" />
                     </Link>
@@ -107,15 +107,15 @@ import { Link } from "react-router-dom";
                     <Link to="/signup/intern" className="flex justify-center mb-4">
                       <Button disabled={false} text="Web" />
                     </Link>
-                  ) : (
+                  ) : ( */}
                     <div className="flex justify-center mb-4">
-                      <Button disabled={true} text="Continue" />
+                      <Button disabled={false} text="Continue" />
                     </div>
-                  )}
+                  {/* )} */}
         
                   <div className="text-center font-normal text-[16px] leading-[20px] text-[#000000]">
                     <p className="text-center my-4 md:block hidden">
-                    Do not like this career path? <span>Add mine</span> 
+                    Do not like this career path? <span>Choose Career</span>
                       {/* <Link to="/login" className="text-[#071D2E] font-extrabold">
                         &nbsp;Log In
                       </Link> */}
