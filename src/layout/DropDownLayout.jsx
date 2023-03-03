@@ -20,14 +20,14 @@ const MenuProps = {
 const names = [
   'Data Sciences',
   'Copy Writing',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
+  'UI/UX Design',
+  'Content Design',
+  'Content Creator',
+  'Web Design',
+  'Motion Design',
+  'Video Editing',
+  'Cryptography',
+  'Animation Design',
 ];
 
 function getStyles(name, personName, theme) {

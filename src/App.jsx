@@ -16,7 +16,7 @@ import { Provider } from "react-redux";
 import Result from "./pages/Result";
 import Career from "./pages/Career";
 import Patth from "./pages/Patth";
-import DropDown from "./pages";
+import DropDown from "./pages/DropDown";
 
 function App() {
   return (

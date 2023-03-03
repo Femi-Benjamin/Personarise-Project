@@ -1,6 +1,5 @@
 import React from 'react'
 import { DropDownLayout } from '../layout'
-import DropDown from './DropDown'
 
 
 const Patth = () => {
@@ -13,6 +12,8 @@ const Patth = () => {
                     <div>
                         <DropDownLayout />
                     </div>
+
+                    <button  className='w-[369.84px] h-[48.9px] bg-[#071D2E] rounded-[8px] text-white mt-[57.57px]'>Continue</button>
                 </div>
             </div>
         </div>
