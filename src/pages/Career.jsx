@@ -24,7 +24,7 @@ const Career = () => {
             {/* Mobile */}
             <label
               htmlFor="mobile"
-              className="hover:border-[#071D2E] focus-within:border-[#071D2E] border border-red-600 rounded-[8px] h-auto cursor-pointer"
+              className="hover:border-[#071D2E] focus-within:border-[#071D2E] border  rounded-[8px] h-auto cursor-pointer"
               // Border
             >
               <div className="bg-[#ACB4B9] w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
@@ -64,7 +64,7 @@ const Career = () => {
 
             <label
               htmlFor="web"
-              className="hover:border-[#071D2E] focus-within:border-[#071D2E] border border-red-600 border-auto rounded-[8px] h-auto cursor-pointer"
+              className="hover:border-[#071D2E] focus-within:border-[#071D2E] border border-auto rounded-[8px] h-auto cursor-pointer"
               // Border
             >
               <div className="bg-[#ACB4B9]  border-white w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
