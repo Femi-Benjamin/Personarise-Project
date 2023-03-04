@@ -22,9 +22,9 @@
     "docs": "babel-node scripts/generate-docs.js"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.11.8",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.11",
     "@tanstack/react-query": "^4.24.6",
     "axios": "^1.3.2",
     "formik": "^2.2.9",

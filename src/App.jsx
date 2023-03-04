@@ -15,6 +15,8 @@ import store from "./redux/store";
 import { Provider } from "react-redux";
 import Result from "./pages/Result";
 import Career from "./pages/Career";
+import Patth from "./pages/Patth";
+import DropDown from "./pages/DropDown";
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
           <Route path="/takequiz" element={<TakeQuiz />} />
           <Route path="/result" element={<Result />} />
           <Route path="/career" element={<Career />} /> 
+          <Route path="/Patth" element={<Patth />} /> 
+          <Route path="/DropDown" element={<DropDown />} /> 
+         
         </Routes>
       </Router>
     </Provider>

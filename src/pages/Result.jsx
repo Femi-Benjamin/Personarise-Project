@@ -2,8 +2,8 @@ import React from 'react'
 
 const Result = () => {
     return (
-        <div>
-            <h1 className='px-[10px] font-mulish not-italic font-bold md:text-[48px] text-[28px] md:leading-[60px] text-center mt-[87.73px] md:mb-[48px]'>You will succeed at a career path in.....</h1>
+        <div className='bg-[#E4E4E4] h-full'>
+            <h1 className='px-[10px] font-mulish not-italic font-bold md:text-[48px] text-[28px] md:leading-[60px] text-center pt-[87.73px] md:mb-[48px]'>You will succeed at a career path in.....</h1>
             <div className=' md:px-[400px] px-[30px] py-[30px]'>
                 <div className='w-[640x] h-[428px] border-[0.830254px] border-[#7C7E80] rounded-[8px] bg-[#FFFFFF] items-center flex flex-col'>
                     <img className='my-[50px]' src="/Frame 341.png" alt="" />
@@ -14,5 +14,4 @@ const Result = () => {
         </div>
     )
 }
-
 export default Result
