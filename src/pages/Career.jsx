@@ -20,7 +20,7 @@ const Career = () => {
             </h1>
           </div>
 
-          <div className="flex gap-[18px] justify-center items-center mb-[47px]">
+          <div className=" md:flex sm:flex-col gap-[18px] justify-center items-center mb-[47px]">
             {/* Mobile */}
             <label
               htmlFor="mobile"
