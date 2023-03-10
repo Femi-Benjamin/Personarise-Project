@@ -75,6 +75,9 @@ export const registerUser = createAsyncThunk(
 			);
 
 			if (res.status && res.status === 201) {
+        console.log(res.data)
+        localStorage.setItem('verified', res.data.user.isVerified);
+        localStorage.setItem('verify-email', res.data.user.email);
 				return res.data;
 			} else {
 				return rejectWithValue(res);

@@ -5,13 +5,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const EmailVerificationContainer = () => {
-  const email = useSelector((state) => state.user.userEmail);
+  const email = localStorage.getItem("verify-email");
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!email) {
       navigate("/signup")
     }
+    setInterval(() => {
+      localStorage.removeItem("verify-email");
+    }, 155000);
   }, [email]);
 
 
