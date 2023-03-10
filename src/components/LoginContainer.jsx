@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, setEmail } from "../redux/users/actions/userActions";
 import {useNavigate} from 'react-router-dom'
@@ -60,7 +60,6 @@ const SignupContainer = () => {
 
   return (
     <>
-      <Toaster />
       <div className="md:flex items-center justify-center h-full md:bg-[#E4E4E4]">
         <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4 p-4">
           <div className="flex flex-col justify-center">

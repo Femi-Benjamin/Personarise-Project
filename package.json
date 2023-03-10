@@ -16,7 +16,7 @@
     "test": "jest",
     "precommit": "npm run test",
     "lint": "eslint --ext .js,.jsx src",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "cleanup": "rimraf dist/*",
     "security-check": "npm audit",
     "docs": "babel-node scripts/generate-docs.js"
@@ -48,8 +48,11 @@
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "^10.4.13",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "tailwindcss": "^3.2.4",
     "vite": "^4.1.0"
   },

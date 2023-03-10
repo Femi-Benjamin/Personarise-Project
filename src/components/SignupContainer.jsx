@@ -4,12 +4,9 @@ import Button from "./shared/Button";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { country_list } from "../constants/data";
 import { setEmail } from "../redux/users/actions/userActions";
-import { toastError, toastSuccess } from "./Toast";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { toast, Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../redux/users/actions/userActions";
 

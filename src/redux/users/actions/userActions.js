@@ -94,12 +94,14 @@ export const getUser = createAsyncThunk(
 	async (_, { rejectWithValue }) => {
 		const token = localStorage.getItem('token');
 		try {
-			const res = await axios.get(`https://api.streetrates.info/api/user`, {
-				headers: {
-					accept: 'application/json',
-					Authorization: `Bearer ${token}`,
-				},
-			});
+			const res = await axios.get(`${BASE_ENDPOINT}/me`
+      // , {
+			// 	headers: {
+			// 		accept: 'application/json',
+			// 		Authorization: `Bearer ${token}`,
+			// 	},
+			// }
+      );
 
 			if (res.status && res.status === 200) {
 				return res.data;

@@ -10,3 +10,4 @@ export { default as TakeQuiz } from "./TakeQuiz";
 export { default as SelectCareer } from "./SelectCareer";
 export { default as Career } from "./Career";
 export { default as Result } from "./Result";
+export { default as Dashboard } from "./Dashboard";
