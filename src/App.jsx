@@ -10,15 +10,18 @@ import {
   InternSignup,
   Quiz,
   TakeQuiz,
+  SelectCareer,
+  Career,
+  Result
 } from "./pages";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import Result from "./pages/Result";
-import Career from "./pages/Career";
-import Patth from "./pages/Patth";
-import DropDown from "./pages/DropDown";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "./redux/users/actions/userActions";
 
 function App() {
+  
   return (
     <Provider store={store}>
       <Router>
@@ -35,9 +38,7 @@ function App() {
           <Route path="/takequiz" element={<TakeQuiz />} />
           <Route path="/result" element={<Result />} />
           <Route path="/career" element={<Career />} /> 
-          <Route path="/Patth" element={<Patth />} /> 
-          <Route path="/DropDown" element={<DropDown />} /> 
-         
+          <Route path="/choose-career" element={<SelectCareer />} /> 
         </Routes>
       </Router>
     </Provider>

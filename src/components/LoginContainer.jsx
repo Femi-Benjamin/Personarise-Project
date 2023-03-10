@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser, setEmail } from "../redux/users/actions/userActions";
+import {useNavigate} from 'react-router-dom'
 
 const SignupContainer = () => {
   const initialValues = {
@@ -31,35 +34,28 @@ const SignupContainer = () => {
       setPasswordState("text");
     }
   };
-
-  const mutation = useMutation((data) => {
-    return axios
-      .post(`https://projectx-f5wv.onrender.com/api/v1/user/login`, data)
-      .then((response) => {
-        console.log(response);
-        // resetForm();
-        if (response.status === 201) {
-          toast.success("Login Successful");
-
-          navigate("/dashboard");
-        }
-        if (response.status === 400) {
-          toast.error("User Not Found.");
-        }
-        if (response.status === 400) {
-          toast.error("Oops, something went wrong on our end.");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  });
-
+  const dispatch = useDispatch();
+  const { loginStatus, error } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loginStatus === "success") {
+      navigate("/dashboard");
+    } else {
+      if (error && loginStatus === "failed") {
+        toast.error("Wrong login credentials");
+        setLoading(false);
+      }
+    }
+  }, [loginStatus, error, navigate]);
   const handleSubmit = (values, { resetForm }) => {
     const data = {
+      email: values.email,
       password: values.password,
     };
-    mutation.mutate(data);
+    setLoading(true);
+    dispatch(loginUser(data));
+    dispatch(setEmail(data.email))
   };
 
   return (
@@ -146,9 +142,9 @@ const SignupContainer = () => {
                         <Button
                           type="submit"
                           text={` ${
-                            mutation.isLoading ? "Loading..." : "Login"
+                            loading ? "Loading..." : "Login"
                           }`}
-                          disabled={mutation.isLoading}
+                          disabled={loading}
                         />
                       </div>
                       <p className="text-center my-4 md:block hidden">

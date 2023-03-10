@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Radio from "@mui/material/Radio";
 import Button from "../components/shared/Button";
 import { Link } from "react-router-dom";
+import SelectBar from "../components/SelectBar";
+import { useDispatch, useSelector } from "react-redux";
+import { isEmployer, isIntern } from "../redux/users/actions/userActions";
 
 const SignupLayout = () => {
   const [selectedValue, setSelectedValue] = React.useState("");
+  const dispatch = useDispatch();
+
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
   };
-  console.log(selectedValue);
-
   return (
     <div className=" md:flex items-center justify-center h-full  bg-[#E4E4E4]">
-      <div className="border w-[739px] h-[589px] rounded-[8px] bg-white">
+      <div className="border w-[739px] rounded-[8px] bg-white">
         <div className="md:px-[50px]">
           <div>
             <h1 className="not-italic font-mulish font-semibold  text-[32px] leading-[40px] text-center mt-[55px] mb-[28px] text-[#000000]">
@@ -57,7 +60,6 @@ const SignupLayout = () => {
                 />
               </div>
             </label>
-
             {/* Interns */}
 
             <label
@@ -99,11 +101,11 @@ const SignupLayout = () => {
 
           {/* Sign up button */}
           {selectedValue === "founder" ? (
-            <Link to="/signup/employer" className="flex justify-center mb-4">
+            <Link to="/signup/employer" className="flex justify-center mb-4" onClick={() => dispatch(isEmployer(true))}>
               <Button disabled={false} text="Join as a Founder" />
             </Link>
           ) : selectedValue == "intern" ? (
-            <Link to="/signup/intern" className="flex justify-center mb-4">
+            <Link to="/signup/intern" className="flex justify-center mb-4" onClick={() => dispatch(isIntern(true))}>
               <Button disabled={false} text="Join as an Intern" />
             </Link>
           ) : (

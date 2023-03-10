@@ -7,5 +7,3 @@ export { default as InternSignupLayout } from "./InternSignupLayout";
 export { default as EmployerSignupLayout } from "./EmployerSignupLayout";
 export { default as QuizLayout } from "./QuizLayout";
 export { default as TakeQuizLayout } from "./TakeQuizlayout";
-export { default as DropDownLayout } from "./DropDownLayout";
-

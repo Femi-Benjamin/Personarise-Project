@@ -6,10 +6,13 @@ import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { country_list } from "../constants/data";
-import { useDispatch } from "react-redux";
-import { setEmail } from "../redux/users/userAction";
+import { setEmail } from "../redux/users/actions/userActions";
 import { toastError, toastSuccess } from "./Toast";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { toast, Toaster } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUser } from "../redux/users/actions/userActions";
+
 
 const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   const initialValues = {
@@ -23,6 +26,9 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   const [passwordState, setPasswordState] = useState("password");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { registerStatus, error } = useSelector((state) => state.user);
+  const [loading, setLoading] = useState(false);
+ 
 
   function validationSchema() {
     return Yup.object().shape({
@@ -37,7 +43,6 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
         .max(40, "Password must not exceed 40 characters"),
     });
   }
-
   const handleViewPassword = () => {
     if (passwordState === "text") {
       setPasswordState("password");
@@ -45,28 +50,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       setPasswordState("text");
     }
   };
-  const url = process.env.BASE_URL;
 
-  const mutation = useMutation(async (data) => {
-    try {
-      const response = await axios.post(
-        `https://projectx-f5wv.onrender.com/api/user/register`,
-        data
-      );
-      console.log(response);
-      // resetForm();
-      if (response.status === 201) {
-        toastSuccess("Registration Successful");
-
-        navigate("/email-verification");
-      }
-      if (response.status === 400) {
-        toastError("Oops, something went wrong on our end.");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  });
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(setEmail(values.email));
@@ -78,16 +62,29 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       country: values.country,
       isEmployer: isEmployer,
     };
-    mutation.mutate(data);
+    console.log(data);
+    setLoading(true);
+    dispatch(registerUser(data));
   };
+  useEffect(() => {
+    if (registerStatus === "success") {
+      navigate("/email-verification");
+    } else {
+      if (error && registerStatus === "failed") {
+        toast.error("Please Try Again");
+        setLoading(false);
+      }
+    }
+  }, [registerStatus, error, navigate]);
 
-  const handleGoogleClick = () => {
-    window.location.replace(
-      "https://projectx-f5wv.onrender.com/api/user/auth/google"
-    );
-  };
+  // const handleGoogleClick = () => {
+  //   window.location.replace(
+  //     "https://projectx-f5wv.onrender.com/api/user/auth/google"
+  //   );
+  // };
 
   return (
+    <>
     <div className="md:flex items-center justify-center h-full  md:bg-[#E4E4E4]">
       <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4 p-4">
         <div className="flex flex-col justify-center">
@@ -97,7 +94,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
             </h1>
             <div className="mb-5">
               <a
-                href="https://projectx-f5wv.onrender.com/api/user/auth/google"
+                // href="https://projectx-f5wv.onrender.com/api/user/auth/google"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -231,9 +228,9 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                         onClick={handleSubmit}
                         type="submit"
                         text={` ${
-                          mutation.isLoading ? "Loading..." : "Create Account"
+                          loading ? "Loading..." : "Create Account"
                         }`}
-                        disabled={mutation.isLoading}
+                        disabled={loading}
                       />
                     </div>
                     <p className="text-center my-3 md:block hidden">
@@ -260,6 +257,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

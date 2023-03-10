@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/shared/Button";
 import { quizQuestions } from "../constants/data";
-import { addScore, removeScore } from "../redux/users/userAction";
+import { addScore, removeScore } from "../redux/users/actions/userActions";
 
 function Quizlayout() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

@@ -7,5 +7,6 @@ export { default as EmployerSignup } from "./EmployerSignup";
 export { default as InternSignup } from "./InternSignup";
 export { default as Quiz } from "./Quiz";
 export { default as TakeQuiz } from "./TakeQuiz";
-export { default as DropDown } from "./DropDown";
-export { default as Patth } from "./Patth";
+export { default as SelectCareer } from "./SelectCareer";
+export { default as Career } from "./Career";
+export { default as Result } from "./Result";

@@ -6,7 +6,7 @@ const Button = ({ text, image, disabled, type, outline, onClick }) => {
       disabled={disabled}
       type={type}
       onClick={onClick}
-      className={` disabled:text-white disabled:cursor-not-allowed p-3  flex items-center gap-2 justify-center w-full ${
+      className={` disabled:text-white disabled:cursor-not-allowed p-3  flex items-center gap-2 justify-center w-full rounded-lg ${
         outline
           ? " bg-none border border-solid border-[#CDD2D5] disabled:text-[#AEAEAE] "
           : " bg-[#071D2E] disabled:bg-[#AEAEAE]"

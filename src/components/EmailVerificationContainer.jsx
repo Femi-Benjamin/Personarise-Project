@@ -1,14 +1,23 @@
 import Button from "./shared/Button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import images from "../constants/images";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const EmailVerificationContainer = () => {
   const email = useSelector((state) => state.user.userEmail);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!email) {
+      navigate("/signup")
+    }
+  }, [email]);
+
 
   return (
     <>
+    {email &&
       <div className="flex items-center justify-center h-full  md:bg-[#E4E4E4]">
         <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white m-4 p-4">
           <div className="flex flex-col justify-center mt-10">
@@ -37,6 +46,7 @@ const EmailVerificationContainer = () => {
           </div>
         </div>
       </div>
+}
     </>
   );
 };
