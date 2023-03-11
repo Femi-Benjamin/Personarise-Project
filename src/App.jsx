@@ -13,7 +13,8 @@ import {
   SelectCareer,
   Career,
   Result,
-  Dashboard
+  Dashboard,
+  LoadPage
 } from "./pages";
 import {Protected, Public} from "./auth";
 
@@ -46,6 +47,7 @@ function App() {
             <Route path="/result" element={<Result />} />
             <Route path="/career" element={<Career />} /> 
             <Route path="/choose-career" element={<SelectCareer />} /> 
+            <Route path="/loadpage" element={<LoadPage />} /> 
           </Route>
         
         </Routes>
