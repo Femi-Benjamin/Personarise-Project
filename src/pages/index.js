@@ -11,3 +11,4 @@ export { default as SelectCareer } from "./SelectCareer";
 export { default as Career } from "./Career";
 export { default as Result } from "./Result";
 export { default as Dashboard } from "./Dashboard";
+export { default as LoadPage } from "./LoadPage";
