@@ -78,6 +78,10 @@ export const registerUser = createAsyncThunk(
         console.log(res.data)
         localStorage.setItem('verified', res.data.user.isVerified)
         localStorage.setItem('verify-email', res.data.user.email)
+        localStorage.setItem(
+          'name',
+          res.data.user.firstName + ' ' + res.data.user.lastName
+        )
         return res.data
       } else {
         return rejectWithValue(res)
@@ -138,6 +142,12 @@ export const userSlice = createSlice({
     isIntern: (state, action) => {
       state.isIntern = action.payload
     },
+    firstName: (state, action) => {
+      state.isIntern = action.payload
+    },
+    lastName: (state, action) => {
+      state.isIntern = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -174,7 +184,15 @@ export const userSlice = createSlice({
   },
 })
 
-export const { logout, setEmail, addScore, removeScore, isEmployer, isIntern } =
-  userSlice.actions
+export const {
+  logout,
+  setEmail,
+  addScore,
+  removeScore,
+  isEmployer,
+  isIntern,
+  firstName,
+  lastname,
+} = userSlice.actions
 
 export default userSlice.reducer

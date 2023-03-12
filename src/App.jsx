@@ -14,6 +14,9 @@ import {
   Career,
   Result,
   Dashboard,
+  Roadmap,
+  Jobs,
+  Profile,
 } from './pages'
 import { Protected, Public } from './auth'
 
@@ -31,6 +34,9 @@ function App() {
           <Route path="/dashboard" element={<Protected />}>
             <Route index element={<Dashboard />} />
             <Route path="/dashboard/home" element={<Dashboard />} />
+            <Route path="/dashboard/roadmap" element={<Roadmap />} />
+            <Route path="/dashboard/jobs" element={<Jobs />} />
+            <Route path="/dashboard/profile" element={<Profile />} />
           </Route>
           <Route path="/" element={<Public />}>
             <Route index element={<Home />} />
