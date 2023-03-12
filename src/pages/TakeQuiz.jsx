@@ -1,12 +1,12 @@
-import React from "react";
-import { TakeQuizLayout } from "../layout";
+import React from 'react'
+import { TakeQuizLayout } from '../layout'
 
 const TakeQuiz = () => {
   return (
     <>
       <TakeQuizLayout />
     </>
-  );
-};
+  )
+}
 
-export default TakeQuiz;
+export default TakeQuiz

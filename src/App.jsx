@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HomeBar } from "./components";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HomeBar } from './components'
 import {
   Home,
   Signup,
@@ -14,27 +14,25 @@ import {
   Career,
   Result,
   Dashboard,
-  LoadPage
-} from "./pages";
-import {Protected, Public} from "./auth";
+} from './pages'
+import { Protected, Public } from './auth'
 
-import store from "./redux/store";
-import { Provider } from "react-redux";
+import store from './redux/store'
+import { Provider } from 'react-redux'
 
-import { Toaster } from "react-hot-toast";
+import { Toaster } from 'react-hot-toast'
 
 function App() {
-  
   return (
     <Provider store={store}>
       <Router>
         <Toaster />
         <Routes>
-          <Route path="/dashboard" element={<Protected />} >
+          <Route path="/dashboard" element={<Protected />}>
             <Route index element={<Dashboard />} />
             <Route path="/dashboard/home" element={<Dashboard />} />
           </Route>
-          <Route path="/" element={<Public />} >
+          <Route path="/" element={<Public />}>
             <Route index element={<Home />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/signup/intern" element={<InternSignup />} />
@@ -45,15 +43,13 @@ function App() {
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/takequiz" element={<TakeQuiz />} />
             <Route path="/result" element={<Result />} />
-            <Route path="/career" element={<Career />} /> 
-            <Route path="/choose-career" element={<SelectCareer />} /> 
-            <Route path="/loadpage" element={<LoadPage />} /> 
+            <Route path="/career" element={<Career />} />
+            <Route path="/choose-career" element={<SelectCareer />} />
           </Route>
-        
         </Routes>
       </Router>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App

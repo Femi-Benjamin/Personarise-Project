@@ -1,2 +1,2 @@
-export {default as Public} from './Public';
-export {default as Protected} from './Protected'; 
+export { default as Public } from './Public'
+export { default as Protected } from './Protected'

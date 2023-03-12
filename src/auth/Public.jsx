@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
-import { HomeBar } from "../components";
+import { Outlet } from 'react-router-dom'
+import { HomeBar } from '../components'
 
 const Public = () => {
   return (
     <>
-    <HomeBar />
-    <Outlet />
+      <HomeBar />
+      <Outlet />
     </>
   )
 }

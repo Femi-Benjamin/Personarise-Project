@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
-import Radio from "@mui/material/Radio";
-import Button from "../components/shared/Button";
-import { Link } from "react-router-dom";
-import SelectBar from "../components/SelectBar";
-import { useDispatch, useSelector } from "react-redux";
-import { isEmployer, isIntern } from "../redux/users/actions/userActions";
+import React, { useEffect } from 'react'
+import Radio from '@mui/material/Radio'
+import Button from '../shared/Button'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { isEmployer, isIntern } from '../redux/users/actions/userActions'
+import icons from '../constants/icons'
 
 const SignupLayout = () => {
-  const [selectedValue, setSelectedValue] = React.useState("");
-  const dispatch = useDispatch();
+  const [selectedValue, setSelectedValue] = React.useState('')
+  const dispatch = useDispatch()
 
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+    setSelectedValue(event.target.value)
+  }
   return (
-    <div className=" md:flex items-center justify-center h-full  bg-[#E4E4E4]">
+    <div className=" md:flex items-center justify-center h-full  bg-slate-100">
       <div className="border w-[739px] rounded-[8px] bg-white">
         <div className="md:px-[50px]">
           <div>
@@ -22,7 +22,7 @@ const SignupLayout = () => {
               Connect as a founder or intern
             </h1>
           </div>
-          
+
           <div className="flex gap-[18px] justify-center items-center mb-[47px]">
             {/* Founder */}
             <label
@@ -30,11 +30,7 @@ const SignupLayout = () => {
               className="hover:border-[#071D2E] focus-within:border-[#071D2E] border rounded-[8px] h-[248px] cursor-pointer"
             >
               <div className="bg-[#ACB4B9] w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
-                <img
-                  className="h-[50px] m-[45px]"
-                  src="/icons8-alexander-hamilton-50 1.png"
-                  alt=""
-                />
+                <img className="h-[50px] m-[45px]" src={icons.signup1} alt="" />
               </div>
 
               <div className="flex flex-col not-italic font-mulish p-3">
@@ -50,13 +46,13 @@ const SignupLayout = () => {
                 {/* Radio button */}
                 <Radio
                   id="employers"
-                  style={{ color: "#071D2E" }}
+                  style={{ color: '#071D2E' }}
                   className="relative left-[264px] bottom-[34px]"
-                  checked={selectedValue === "founder"}
+                  checked={selectedValue === 'founder'}
                   onChange={handleChange}
                   value="founder"
                   name="radio-buttons"
-                  inputProps={{ "aria-label": "A" }}
+                  inputProps={{ 'aria-label': 'A' }}
                 />
               </div>
             </label>
@@ -67,11 +63,7 @@ const SignupLayout = () => {
               className="hover:border-[#071D2E] focus-within:border-[#071D2E] border rounded-[8px] h-[248px] cursor-pointer"
             >
               <div className="bg-[#ACB4B9]  border-white w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
-                <img
-                  className="h-[50px] m-[45px]"
-                  src="/icons8-goal-oriented-focus-50 1.png"
-                  alt=""
-                />
+                <img className="h-[50px] m-[45px]" src={icons.signup2} alt="" />
               </div>
 
               <div className=" flex flex-col not-italic font-mulish p-3">
@@ -87,30 +79,38 @@ const SignupLayout = () => {
                 {/* Radio button */}
                 <Radio
                   id="interns"
-                  style={{ color: "#071D2E" }}
+                  style={{ color: '#071D2E' }}
                   className="relative left-[264px] bottom-[34px] "
-                  checked={selectedValue === "intern"}
+                  checked={selectedValue === 'intern'}
                   onChange={handleChange}
                   value="intern"
                   name="radio-buttons"
-                  inputProps={{ "aria-label": "B" }}
+                  inputProps={{ 'aria-label': 'B' }}
                 />
               </div>
             </label>
           </div>
 
           {/* Sign up button */}
-          {selectedValue === "founder" ? (
-            <Link to="/signup/employer" className="flex justify-center mb-4" onClick={() => dispatch(isEmployer(true))}>
-              <Button disabled={false} text="Join as a Founder" />
+          {selectedValue === 'founder' ? (
+            <Link
+              to="/signup/employer"
+              className="flex justify-center mb-4"
+              onClick={() => dispatch(isEmployer(true))}
+            >
+              <Button disabled={false}>Join as a Founder</Button>
             </Link>
-          ) : selectedValue == "intern" ? (
-            <Link to="/signup/intern" className="flex justify-center mb-4" onClick={() => dispatch(isIntern(true))}>
-              <Button disabled={false} text="Join as an Intern" />
+          ) : selectedValue == 'intern' ? (
+            <Link
+              to="/signup/intern"
+              className="flex justify-center mb-4"
+              onClick={() => dispatch(isIntern(true))}
+            >
+              <Button disabled={false}>Join as an Intern</Button>
             </Link>
           ) : (
             <div className="flex justify-center mb-4">
-              <Button disabled={true} text="Sign Up" />
+              <Button disabled={true}>Sign Up</Button>
             </div>
           )}
 
@@ -125,7 +125,7 @@ const SignupLayout = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignupLayout;
+export default SignupLayout

@@ -1,18 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Button from '../shared/Button'
 
 const TakeQuizLayout = () => {
   return (
-    <div className="flex justify-center items-center md:h-full bg-[#E4E4E4]">
+    <div className="flex justify-center items-center h-full bg-slate-100 overflow-y-auto">
       <div className="m-4">
-        <div className="border w-auto h-full bg-[#FFFFFF] rounded-[8px] flex md:flex-row flex-col flex-wrap  justify-between items-center p-6">
-          {/* <img
-            className="md:ml-[93px] sm:px-[32px] sm:pt-[41px]"
-            src="/Career Map Quiz.png"
-            alt=""
-          /> */}
-          <div className="max-w-[545px]  md:m-[51px] sm:m-[35px] h-auto bg-[#071D2E] rounded-[8px] p-6 sm:p-[30px] font-mulish border text-[#FFFFFF] mt-7">
-            {/* <div className="max-w-[254px] mx-auto "> */}
+        <div className="border w-auto h-full bg-[#FFFFFF] rounded-[8px] flex lg:flex-row flex-col justify-between items-center p-4">
+          <div className="max-w-[545px]  md:m-[51px] sm:m-[35px] h-auto bg-[#071D2E] rounded-[8px] p-6 sm:p-[30px] font-mulish border text-[#FFFFFF]">
             <h1 className="not-italic font-medium md:text-[32px] text-xl leading-[40px] mb:mb-[32px] mb-2">
               Have you Identified your Career Path?
             </h1>
@@ -21,19 +16,11 @@ const TakeQuizLayout = () => {
               find out what skills you already have and which ones you should
               learn in order to land that dream job.
             </p>
-
-            <div className="w-auto h-[55px] text-center">
-              <Link to="/quiz">
-                <button className="not-italic font-semibold text-[24px] leading-[30px] py-[10.5px] p-[13.5px] border-b text-[#FFFFFF]">
-                  Take the Quiz
-                </button>
-              </Link>
-            </div>
+            <Link to="/quiz">
+              <Button bordered>Take the Quiz</Button>
+            </Link>
           </div>
-
-          {/* ////// */}
           <div className="max-w-[545px]  md:m-[51px] sm:m-[35px] h-auto bg-[#FFFFFF] rounded-[8px] p-6 sm:p-[30px] font-mulish border border-[#071D2E] mt-7">
-            {/* <div className="max-w-[254px] mx-auto "> */}
             <h1 className="not-italic font-medium md:text-[32px] text-xl leading-[40px] text-[#040F17] mb:mb-[32px] mb-2 ">
               Have you Identified your Career Path?
             </h1>
@@ -43,19 +30,14 @@ const TakeQuizLayout = () => {
               learn in order to land that dream job.
             </p>
 
-            <div className="w-auto h-[55px] bg-[#071D2E] text-center">
-              <Link to="/choose-career">
-                <button className="not-italic font-semibold text-[24px] leading-[30px] py-[12.5px] text-[#FFFFFF]">
-                  Skip the Quiz
-                </button>
-              </Link>
-            </div>
+            <Link to="/choose-career">
+              <Button>Skip the Quiz</Button>
+            </Link>
           </div>
-          {/* </div> */}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TakeQuizLayout;
+export default TakeQuizLayout

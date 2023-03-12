@@ -1,10 +1,7 @@
-import google from "../assets/icons/google.svg";
-import password from "../assets/icons/password.svg";
-import reset from "../assets/icons/reset.svg";
-import verify from "../assets/icons/verify.svg";
+import frame1 from '../assets/images/Frames1.png'
+import loader from '../assets/images/loader.png'
+
 export default {
-  google,
-  password,
-  reset,
-  verify,
-};
+  frame1,
+  loader,
+}

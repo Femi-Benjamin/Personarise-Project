@@ -1,14 +1,14 @@
-import api from "../axios";
+import api from '../axios'
 
 class Rates {
   constructor(request) {
-    this.request = request;
+    this.request = request
   }
   async createUser(data) {
-    return this.request.post(`/online_adverts`, data);
+    return this.request.post(`/online_adverts`, data)
   }
 }
 
-const RateService = new Rates(api);
+const RateService = new Rates(api)
 
-export default RateService;
+export default RateService

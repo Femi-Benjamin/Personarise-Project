@@ -1,66 +1,66 @@
-import React, { useEffect, useState } from "react";
-import images from "../constants/images";
-import Button from "./shared/Button";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { Link } from "react-router-dom";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { toast } from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser, setEmail } from "../redux/users/actions/userActions";
-import {useNavigate} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import icons from '../constants/icons'
+import Button from '../shared/Button'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser, setEmail } from '../redux/users/actions/userActions'
+import { useNavigate } from 'react-router-dom'
 
 const SignupContainer = () => {
   const initialValues = {
-    email: "",
-    password: "",
-  };
+    email: '',
+    password: '',
+  }
 
-  const [passwordState, setPasswordState] = useState("password");
+  const [passwordState, setPasswordState] = useState('password')
 
   function validationSchema() {
     return Yup.object().shape({
       email: Yup.string()
-        .required("Email is required")
-        .email("Email is invalid"),
-      password: Yup.string().required("Password is required"),
-    });
+        .required('Email is required')
+        .email('Email is invalid'),
+      password: Yup.string().required('Password is required'),
+    })
   }
   const handleViewPassword = () => {
-    if (passwordState === "text") {
-      setPasswordState("password");
+    if (passwordState === 'text') {
+      setPasswordState('password')
     } else {
-      setPasswordState("text");
+      setPasswordState('text')
     }
-  };
-  const dispatch = useDispatch();
-  const { loginStatus, error } = useSelector((state) => state.user);
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  }
+  const dispatch = useDispatch()
+  const { loginStatus, error } = useSelector((state) => state.user)
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
   useEffect(() => {
-    if (loginStatus === "success") {
-      navigate("/dashboard");
+    if (loginStatus === 'success') {
+      navigate('/dashboard')
     } else {
-      if (error && loginStatus === "failed") {
-        toast.error("Wrong login credentials");
-        setLoading(false);
+      if (error && loginStatus === 'failed') {
+        toast.error('Wrong login credentials')
+        setLoading(false)
       }
     }
-  }, [loginStatus, error, navigate]);
+  }, [loginStatus, error, navigate])
   const handleSubmit = (values, { resetForm }) => {
     const data = {
       email: values.email,
       password: values.password,
-    };
-    setLoading(true);
-    dispatch(loginUser(data));
+    }
+    setLoading(true)
+    dispatch(loginUser(data))
     dispatch(setEmail(data.email))
-  };
+  }
 
   return (
     <>
-      <div className="md:flex items-center justify-center h-full md:bg-[#E4E4E4]">
+      <div className="md:flex items-center justify-center h-full md:bg-slate-100">
         <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 bg-white max-w-7xl m-4 p-4">
           <div className="flex flex-col justify-center">
             <div className="flex flex-col justify-center ">
@@ -68,7 +68,7 @@ const SignupContainer = () => {
                 Log In to Project X
               </h1>
               <div className="mb-5">
-                <Button text="Continue with Google" image={images.google} />
+                <Button image={icons.google}>Continue with Google</Button>
               </div>
             </div>
             <div className="flex items-center gap-3 mb-7 justify-center">
@@ -91,10 +91,10 @@ const SignupContainer = () => {
                           type="email"
                           placeholder="Email"
                           className={
-                            "w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none " +
+                            'w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none ' +
                             (errors.email && touched.email
-                              ? "border-[#f52d2d] "
-                              : "")
+                              ? 'border-[#f52d2d] '
+                              : '')
                           }
                         />
                         <ErrorMessage
@@ -109,14 +109,14 @@ const SignupContainer = () => {
                           type={passwordState}
                           placeholder="password"
                           className={
-                            "w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none " +
+                            'w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none ' +
                             (errors.password && touched.password
-                              ? "border-[#f52d2d] "
-                              : "")
+                              ? 'border-[#f52d2d] '
+                              : '')
                           }
                         />
                         <img
-                          src={images.password}
+                          src={icons.password}
                           alt="password"
                           className="cursor-pointer absolute top-1 right-3"
                           onClick={handleViewPassword}
@@ -138,13 +138,9 @@ const SignupContainer = () => {
                     </div>
                     <div className=" m-auto">
                       <div className="md:w-[60%] m-auto">
-                        <Button
-                          type="submit"
-                          text={` ${
-                            loading ? "Loading..." : "Login"
-                          }`}
-                          disabled={loading}
-                        />
+                        <Button type="submit" disabled={loading}>
+                          {loading ? 'Loading...' : 'Login'}
+                        </Button>
                       </div>
                       <p className="text-center my-4 md:block hidden">
                         Don’t have an account?
@@ -157,7 +153,7 @@ const SignupContainer = () => {
                       </p>
 
                       <p className="text-center my-4 md:hidden">
-                        Don’t have an account?{" "}
+                        Don’t have an account?{' '}
                         <Link
                           to="/signup"
                           className="text-[#071D2E] font-extrabold"
@@ -174,7 +170,7 @@ const SignupContainer = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SignupContainer;
+export default SignupContainer

@@ -1,12 +1,12 @@
-import React from "react";
-import { QuizLayout } from "../layout";
+import React from 'react'
+import { QuizLayout } from '../layout'
 
 function Quiz() {
   return (
     <>
       <QuizLayout />
     </>
-  );
+  )
 }
 
-export default Quiz;
+export default Quiz

@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
 const TextTyper = ({ text, delay }) => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState('')
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const length = displayedText.length;
+      const length = displayedText.length
       if (length === text.length) {
-        clearInterval(intervalId);
-        return;
+        clearInterval(intervalId)
+        return
       }
-      setDisplayedText(text.slice(0, length + 1));
-    }, delay);
-    return () => clearInterval(intervalId);
-  }, [displayedText, text, delay]);
+      setDisplayedText(text.slice(0, length + 1))
+    }, delay)
+    return () => clearInterval(intervalId)
+  }, [displayedText, text, delay])
 
-  return (
-    <>
-      {displayedText}
-    </>
-  );
-};
+  return <>{displayedText}</>
+}
 
-export default TextTyper;
+export default TextTyper

@@ -1,33 +1,33 @@
-import Button from "./shared/Button";
-import React, { useState } from "react";
-import images from "../constants/images";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import Button from '../shared/Button'
+import React, { useState } from 'react'
+import icons from '../constants/icons'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+import { Link } from 'react-router-dom'
 
 const ResetPasswordContainer = () => {
   const initialValues = {
-    email: "",
-  };
+    email: '',
+  }
   function validationSchema() {
     return Yup.object().shape({
       email: Yup.string()
-        .required("Email is required")
-        .email("Email is invalid"),
-    });
+        .required('Email is required')
+        .email('Email is invalid'),
+    })
   }
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(data);
-  };
+    e.preventDefault()
+    console.log(data)
+  }
   return (
     <>
-      <div className="md:flex items-center justify-center h-full #071D2E md:bg-[#E4E4E4]">
+      <div className="md:flex items-center justify-center h-full #071D2E md:bg-slate-100">
         <div className="md:w-[60%] md:border-solid md:border md:border-[#CDD2D5] md:py-4 md:px-12 m-4 max-w-7xl bg-white p-4">
           <div className="flex flex-col justify-center mt-10">
             <div className="flex justify-center">
               <Link to="/login">
-                <img src={images.reset} alt="reset" />
+                <img src={icons.reset} alt="reset" />
               </Link>
             </div>
             <div className="flex flex-col justify-center ">
@@ -54,10 +54,10 @@ const ResetPasswordContainer = () => {
                           type="email"
                           placeholder="Email"
                           className={
-                            "w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none " +
+                            'w-full box-border border-2 border-solid border-[#CDD2D5] rounded p-2 outline-none ' +
                             (errors.email && touched.email
-                              ? "border-[#f52d2d] "
-                              : "")
+                              ? 'border-[#f52d2d] '
+                              : '')
                           }
                         />
                         <ErrorMessage
@@ -69,7 +69,7 @@ const ResetPasswordContainer = () => {
                     </div>
                     <div className=" m-auto mb-10">
                       <div className="md:w-[60%]  m-auto">
-                        <Button text="Reset Password" />
+                        <Button>Reset Password</Button>
                       </div>
                     </div>
                   </Form>
@@ -80,7 +80,7 @@ const ResetPasswordContainer = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ResetPasswordContainer;
+export default ResetPasswordContainer
