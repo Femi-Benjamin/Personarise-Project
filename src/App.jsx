@@ -19,10 +19,8 @@ import {
   Profile,
 } from './pages'
 import { Protected, Public } from './auth'
-
 import store from './redux/store'
 import { Provider } from 'react-redux'
-
 import { Toaster } from 'react-hot-toast'
 
 function App() {
