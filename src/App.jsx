@@ -24,6 +24,7 @@ import store from './redux/store'
 import { Provider } from 'react-redux'
 
 import { Toaster } from 'react-hot-toast'
+import { Modal } from '@mui/material'
 
 function App() {
   return (
