@@ -75,20 +75,8 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   }, [registerStatus, error, navigate])
 
   const googleSignup = () => {
-    axios
-      .get(
-        `https://project-x-g8rg.onrender.com/api/user/auth/google`
-      )
-      .then((res) => {
-        console.log(res)
-        // const { data } = res.data
-        // localStorage.setItem('token', data.user.token)
-        // sessionStorage.setItem('user', JSON.stringify(data.user))
-        // navigate('/dashboard')
-      })
-      .catch((err) => {
-        console.error(err)
-      })
+    window.open("https://project-x-g8rg.onrender.com/api/user/auth/google", "_self")
+    // window.open("http://localhost:8000/api/user/auth/google", "_self")
   }
 
   const googleSignupOnFailure = (res) => {
