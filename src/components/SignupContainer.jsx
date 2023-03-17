@@ -9,7 +9,6 @@ import { setEmail } from '../redux/users/actions/userActions'
 import { toast } from 'react-hot-toast'
 import { useDispatch, useSelector } from 'react-redux'
 import { registerUser } from '../redux/users/actions/userActions'
-import { useGoogleLogin } from 'react-google-login'
 import axios from 'axios'
 
 const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
@@ -75,16 +74,17 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
     }
   }, [registerStatus, error, navigate])
 
-  const googleSignupSuccess = (res) => {
+  const googleSignup = () => {
     axios
       .get(
-        `https://projectx-f5wv.onrender.com/api/user/auth/google/${res.accessToken}`
+        `https://project-x-g8rg.onrender.com/api/user/auth/google`
       )
       .then((res) => {
-        const { data } = res.data
-        localStorage.setItem('token', data.user.token)
-        sessionStorage.setItem('user', JSON.stringify(data.user))
-        navigate('/dashboard')
+        console.log(res)
+        // const { data } = res.data
+        // localStorage.setItem('token', data.user.token)
+        // sessionStorage.setItem('user', JSON.stringify(data.user))
+        // navigate('/dashboard')
       })
       .catch((err) => {
         console.error(err)
@@ -94,18 +94,6 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   const googleSignupOnFailure = (res) => {
     console.error(`Login Failed:`, res)
   }
-
-  const { signIn } = useGoogleLogin({
-    googleSignupSuccess,
-    googleSignupOnFailure,
-    clientId: CLIENT_ID,
-  })
-  // const handleGoogleClick = () => {
-  //   window.location.replace(
-  //     "https://projectx-f5wv.onrender.com/api/user/auth/google"
-  //   );
-  // };
-
 
   function signUpWithGoogle() {
     const googleSignInUrl =
@@ -138,7 +126,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                   // target="_blank"
                   // rel="noopener noreferrer"
                 > */}
-                <Button onClick={signIn} image={icons.google}>
+                <Button onClick={googleSignup} image={icons.google}>
                   Continue with Google
                 </Button>
                 {/* </a> */}
@@ -254,7 +242,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                           </option>
                           {country_list &&
                             country_list.map((country) => (
-                              <option value={country}>{country}</option>
+                              <option value={country} key={country}>{country} </option>
                             ))}
                         </Field>
                         <ErrorMessage
