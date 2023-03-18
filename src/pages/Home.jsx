@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from '../components'
 import {
   Brands,
   Careers,
@@ -9,7 +8,6 @@ import {
   Passion,
   Testimonials,
 } from '../containers'
-import { Footer } from '../components'
 
 const HomeLayout = () => {
   return (
