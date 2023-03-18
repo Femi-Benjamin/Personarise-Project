@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { HomeBar } from './components'
 import {
   Home,
   Signup,

@@ -1,14 +1,23 @@
 import Button from '../shared/Button'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import icons from '../constants/icons'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { resetPassword, setEmail } from '../redux/users/actions/userActions'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
 
 const ResetPasswordContainer = () => {
   const initialValues = {
     email: '',
   }
+
+  const dispatch = useDispatch()
+  const { resetPasswordStatus, error } = useSelector((state) => state.user)
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
   function validationSchema() {
     return Yup.object().shape({
       email: Yup.string()
@@ -16,10 +25,26 @@ const ResetPasswordContainer = () => {
         .email('Email is invalid'),
     })
   }
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (values) => {
+    const data = {
+      email: values.email,
+    }
     console.log(data)
+    setLoading(true)
+    dispatch(resetPassword(data))
+    dispatch(setEmail(data.email))
   }
+  useEffect(() => {
+    if (resetPasswordStatus === 'success') {
+      navigate('/dashboard')
+    } else {
+      if (error && resetPasswordStatus === 'failed') {
+        toast.error('Wrong login credentials')
+        setLoading(false)
+      }
+    }
+  }, [resetPasswordStatus, error, navigate])
+
   return (
     <>
       <div className="md:flex items-center justify-center h-full #071D2E md:bg-slate-100">
@@ -60,6 +85,7 @@ const ResetPasswordContainer = () => {
                               : '')
                           }
                         />
+
                         <ErrorMessage
                           name="email"
                           component="div"
@@ -69,7 +95,9 @@ const ResetPasswordContainer = () => {
                     </div>
                     <div className=" m-auto mb-10">
                       <div className="md:w-[60%]  m-auto">
-                        <Button>Reset Password</Button>
+                        <Button type="submit" disabled={loading}>
+                          {loading ? 'Loading...' : 'Reset Password'}
+                        </Button>
                       </div>
                     </div>
                   </Form>

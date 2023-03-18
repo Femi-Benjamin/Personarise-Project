@@ -9,6 +9,7 @@ const initialState = {
   error: null,
   registerStatus: 'idle',
   loginStatus: 'idle',
+  resetPasswordStatus: 'idle',
   userEmail: '',
   userFirstName: '',
   userLastName: '',
@@ -92,6 +93,35 @@ export const registerUser = createAsyncThunk(
   }
 )
 
+export const resetPassword = createAsyncThunk(
+  'user/forgotpassword',
+  async (payload, { rejectWithValue }) => {
+    try {
+      const config = {
+        headers: {
+          accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+      const res = await axios.post(
+        BASE_ENDPOINT + '/forgotpassword',
+        {
+          email: payload.email,
+        },
+        config
+      )
+
+      if (res.status && res.status === 200) {
+        return res.data
+      } else {
+        return rejectWithValue(res)
+      }
+    } catch (err) {
+      return rejectWithValue(err.response.data)
+    }
+  }
+)
+
 export const getUser = createAsyncThunk(
   'user/get',
   async (_, { rejectWithValue }) => {
@@ -158,6 +188,11 @@ export const userSlice = createSlice({
         state.loginStatus = 'success'
         state.user = action.payload
       })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.loginStatus = 'failed'
+        state.error = action.payload
+      })
+
       .addCase(registerUser.rejected, (state, action) => {
         state.registerStatus = 'failed'
         state.error = action.payload
@@ -169,16 +204,17 @@ export const userSlice = createSlice({
         state.registerStatus = 'success'
         state.user = action.payload
       })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.loginStatus = 'failed'
+
+      .addCase(resetPassword.rejected, (state, action) => {
+        state.resetPasswordStatus = 'failed'
         state.error = action.payload
       })
-      .addCase(getUser.pending, (state, action) => {
-        state.loginStatus = 'idle'
+      .addCase(resetPassword.pending, (state, action) => {
+        state.resetPasswordStatus = 'loading'
         state.error = action.payload
       })
-      .addCase(getUser.rejected, (state, action) => {
-        state.loginStatus = 'failed'
+      .addCase(resetPassword.fulfilled, (state, action) => {
+        state.resetPasswordStatus = 'success'
         state.error = action.payload
       })
   },
