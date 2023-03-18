@@ -46,9 +46,6 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       setPasswordState('text')
     }
   }
-    const CLIENT_ID =
-    '894857316441-kkgkji9nr07t63npog0t69764speoglm.apps.googleusercontent.com'
-
   const handleSubmit = (values, { resetForm }) => {
     dispatch(setEmail(values.email))
     const data = {
@@ -79,25 +76,6 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
     // window.open("http://localhost:8000/api/user/auth/google", "_self")
   }
 
-  const googleSignupOnFailure = (res) => {
-    console.error(`Login Failed:`, res)
-  }
-
-  function signUpWithGoogle() {
-    const googleSignInUrl =
-      'https://project-x-g8rg.onrender.com/api/user/auth/google'
-
-    const newTab = window.open(googleSignInUrl, '_blank')
-
-    const checkAuthInterval = setInterval(() => {
-      if (newTab.closed) {
-        clearInterval(checkAuthInterval)
-        const token = localStorage.getItem('googleIdToken')
-        // Redirect to dashboard page
-        window.location.href = '/dashboard'
-      }
-    }, 500)
-  }
 
   return (
     <>
