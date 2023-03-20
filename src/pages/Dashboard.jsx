@@ -51,7 +51,7 @@ function ChildModal() {
 
   return (
     <React.Fragment>
-      <Button onClick={handleOpen}>Open Child Modal</Button>
+      <Button onClick={handleOpen}>View  Roadmap</Button>
       <Modal
         hideBackdrop
         open={open}
@@ -90,9 +90,10 @@ export default function NestedModal() {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
-          <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <h2 className='font-mulish font-bold text-[24px] text-center leading-[30px]' id="parent-modal-title">Description </h2>
+          <p className=' font-mulish font-normal text-[24px] text-center leading-[30px]' id="parent-modal-description">
+          Any application you see on App store or Play store is actually built by Software Engineers (Mobile). They specialize in mobile technologies such as building applications for Google’s Android, Apple’s iOS and Microsoft’s Windows Phone platforms. For this main reason, we have other specialized job titles for this type of roles also include Android developer and iOS developer. Mobile Engineers usually learn the programming languages and software development environment that are needed to develop for their chosen platform. 
+
           </p>
           <ChildModal />
         </Box>

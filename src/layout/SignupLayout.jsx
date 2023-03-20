@@ -15,81 +15,100 @@ const SignupLayout = () => {
   }
   return (
     <div className=" md:flex items-center justify-center h-full  bg-slate-100">
-      <div className="border w-[739px] rounded-[8px] bg-white">
+      <div className="border w-auto rounded-[8px] bg-white">
         <div className="md:px-[50px]">
           <div>
-            <h1 className="not-italic font-mulish font-semibold  text-[32px] leading-[40px] text-center mt-[55px] mb-[28px] text-[#000000]">
+            <h1 className="not-italic font-mulish font-semibold md:text-[32px] sm:-[20px] leading-[40px] text-center mt-[55px] mb-[28px] text-[#000000]">
               Connect as a founder or intern
             </h1>
           </div>
 
           <div className="flex gap-[18px] justify-center items-center mb-[47px]">
-            {/* Founder */}
-            <label
-              htmlFor="employers"
-              className="hover:border-[#071D2E] focus-within:border-[#071D2E] border rounded-[8px] h-[248px] cursor-pointer"
-            >
-              <div className="bg-[#ACB4B9] w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
-                <img className="h-[50px] m-[45px]" src={icons.signup1} alt="" />
-              </div>
+            {/* Founder Founder Founder */}
+            <div className='md:flex gap-5'>
+              <label
+                htmlFor="employers"
+                className="hover:border-[#071D2E] focus-within:border-[#071D2E] md:border rounded-[8px] h-[248px] cursor-pointer"
+              >
+                {/* ##### */}
+                <div className="bg-[#ACB4B9] w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
+                  <img className="h-[50px] m-[45px]" src={icons.signup1} alt="" />
+                </div>
 
-              <div className="flex flex-col not-italic font-mulish p-3">
-                <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
-                  Founder
-                </h1>
-                <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
-                  Looking to Employ
-                </p>
-              </div>
+                <div className="flex flex-col not-italic font-mulish p-3">
+                  <h1 className="font-bold md:text-[24px] sm:text-[20px] leading-[30px] text-[#000000] mb-[7px]">
+                    Founder
+                  </h1>
+                  <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
+                    Looking to Employ
+                  </p>
+                </div>
 
-              <div className="absolute">
-                {/* Radio button */}
-                <Radio
-                  id="employers"
-                  style={{ color: '#071D2E' }}
-                  className="relative left-[264px] bottom-[34px]"
-                  checked={selectedValue === 'founder'}
-                  onChange={handleChange}
-                  value="founder"
-                  name="radio-buttons"
-                  inputProps={{ 'aria-label': 'A' }}
-                />
-              </div>
-            </label>
-            {/* Interns */}
+                <div className="absolute">
+                  {/* Radio button */}
+                  <Radio
+                    id="employers"
+                    style={{ color: '#071D2E' }}
+                    className="relative left-[264px] bottom-[34px]"
+                    checked={selectedValue === 'founder'}
+                    onChange={handleChange}
+                    value="founder"
+                    name="radio-buttons"
+                    inputProps={{ 'aria-label': 'A' }}
+                  />
+                </div>
+              </label>
 
-            <label
-              htmlFor="interns"
-              className="hover:border-[#071D2E] focus-within:border-[#071D2E] border rounded-[8px] h-[248px] cursor-pointer"
-            >
-              <div className="bg-[#ACB4B9]  border-white w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
-                <img className="h-[50px] m-[45px]" src={icons.signup2} alt="" />
-              </div>
 
-              <div className=" flex flex-col not-italic font-mulish p-3">
-                <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
-                  Interns
-                </h1>
-                <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
-                  Looking to be employed
-                </p>
-              </div>
+              {/* Interns Interns Interns */}
+              <label
+                htmlFor="interns"
+                className="hover:border-[#071D2E] focus-within:border-[#071D2E] md:border sm:border-b rounded-[8px] h-[248px] cursor-pointer"
+              >
+                {/* ##### */}
+                <div className="bg-[#ACB4B9] md:w-[311px] md:h-[135px] sm:w-auto sm:h-auto rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
+                  <div><img className="h-[50px] m-[45px]" src={icons.signup2} alt="" /></div>
+                </div>
 
-              <div className="absolute">
-                {/* Radio button */}
-                <Radio
-                  id="interns"
-                  style={{ color: '#071D2E' }}
-                  className="relative left-[264px] bottom-[34px] "
-                  checked={selectedValue === 'intern'}
-                  onChange={handleChange}
-                  value="intern"
-                  name="radio-buttons"
-                  inputProps={{ 'aria-label': 'B' }}
-                />
-              </div>
-            </label>
+                <div className=" flex flex-col not-italic font-mulish p-3">
+                  <h1 className="font-bold md:text-[24px] sm:text-[20px] leading-[30px] text-[#000000] mb-[7px]">
+                    Interns
+                  </h1>
+                  <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
+                    Looking to be employed
+                  </p>
+                </div>
+
+                <div className="absolute">
+                  {/* Radio button */}
+                  <Radio
+                    id="interns"
+                    style={{ color: '#071D2E' }}
+                    className="relative left-[264px] bottom-[34px] "
+                    checked={selectedValue === 'intern'}
+                    onChange={handleChange}
+                    value="intern"
+                    name="radio-buttons"
+                    inputProps={{ 'aria-label': 'B' }}
+                  />
+                </div>
+              </label>
+            </div>
           </div>
+
+          {/* CONFIRM */}
+          {/* <div className='border border-red-600 w-[364px] h-[97px] flex'>
+            <div className='bg-blue-300'><img className="h-[40px] m-[35px]" src={icons.signup2} alt="" /></div>
+
+            <div className=" flex flex-col not-italic font-mulish p-3">
+              <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
+                Interns
+              </h1>
+              <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
+                Looking to be employed
+              </p>
+            </div>
+          </div> */}
 
           {/* Sign up button */}
           {selectedValue === 'founder' ? (
