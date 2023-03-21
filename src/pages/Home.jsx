@@ -1,12 +1,27 @@
 import React from 'react'
-import { HomeLayout } from '../layout'
+import {
+  Brands,
+  Careers,
+  Contact,
+  Features,
+  Hero,
+  Passion,
+  Testimonials,
+} from '../containers'
 
-const Home = () => {
+const HomeLayout = () => {
   return (
-    <div>
-      <HomeLayout />
-    </div>
+    <>
+      <Hero />
+      <Brands />
+      <Passion />
+      <Features />
+      <Careers />
+      <Testimonials />
+      <Contact />
+    </>
   )
 }
 
-export default Home
+export default HomeLayout
+

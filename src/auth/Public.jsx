@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom'
-import { HomeBar } from '../components'
+import { Footer, Header } from '../components'
 
 const Public = () => {
   return (
     <>
-      <HomeBar />
+      <Header />
       <Outlet />
+      <Footer />
     </>
   )
 }

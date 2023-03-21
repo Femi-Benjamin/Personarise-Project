@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { HomeBar } from './components'
 import {
   Home,
   Signup,
@@ -19,10 +18,8 @@ import {
   Profile,
 } from './pages'
 import { Protected, Public } from './auth'
-
 import store from './redux/store'
 import { Provider } from 'react-redux'
-
 import { Toaster } from 'react-hot-toast'
 import { Modal } from '@mui/material'
 

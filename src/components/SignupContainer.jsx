@@ -9,6 +9,7 @@ import { setEmail } from '../redux/users/actions/userActions'
 import { toast } from 'react-hot-toast'
 import { useDispatch, useSelector } from 'react-redux'
 import { registerUser } from '../redux/users/actions/userActions'
+import axios from 'axios'
 
 const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   const initialValues = {
@@ -45,7 +46,6 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       setPasswordState('text')
     }
   }
-
   const handleSubmit = (values, { resetForm }) => {
     dispatch(setEmail(values.email))
     const data = {
@@ -71,11 +71,11 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
     }
   }, [registerStatus, error, navigate])
 
-  // const handleGoogleClick = () => {
-  //   window.location.replace(
-  //     "https://projectx-f5wv.onrender.com/api/user/auth/google"
-  //   );
-  // };
+  const googleSignup = () => {
+    window.open("https://project-x-g8rg.onrender.com/api/user/auth/google", "_self")
+    // window.open("http://localhost:8000/api/user/auth/google", "_self")
+  }
+
 
   return (
     <>
@@ -87,13 +87,15 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                 {title}
               </h1>
               <div className="mb-5">
-                <a
-                  // href="https://projectx-f5wv.onrender.com/api/user/auth/google"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button image={icons.google}>Continue with Google</Button>
-                </a>
+                {/* <a
+                  href="https://project-x-g8rg.onrender.com/api/user/auth/google"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
+                > */}
+                <Button onClick={googleSignup} image={icons.google}>
+                  Continue with Google
+                </Button>
+                {/* </a> */}
               </div>
             </div>
             <div className="flex items-center gap-3 mb-7 justify-center">
@@ -206,7 +208,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                           </option>
                           {country_list &&
                             country_list.map((country) => (
-                              <option value={country}>{country}</option>
+                              <option value={country} key={country}>{country} </option>
                             ))}
                         </Field>
                         <ErrorMessage
