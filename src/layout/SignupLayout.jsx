@@ -23,9 +23,9 @@ const SignupLayout = () => {
             </h1>
           </div>
 
-          <div className="flex gap-[18px] justify-center items-center mb-[47px]">
+          <div className="flex gap-[18px] justify-center items-center mb-[47px] ">
             {/* Founder Founder Founder */}
-            <div className='md:flex gap-5'>
+            <div className='gap-5 hidden md:flex'>
               <label
                 htmlFor="employers"
                 className="hover:border-[#071D2E] focus-within:border-[#071D2E] md:border rounded-[8px] h-[248px] cursor-pointer"
@@ -58,7 +58,6 @@ const SignupLayout = () => {
                   />
                 </div>
               </label>
-
 
               {/* Interns Interns Interns */}
               <label
@@ -96,19 +95,91 @@ const SignupLayout = () => {
             </div>
           </div>
 
-          {/* CONFIRM */}
-          {/* <div className='border border-red-600 w-[364px] h-[97px] flex'>
-            <div className='bg-blue-300'><img className="h-[40px] m-[35px]" src={icons.signup2} alt="" /></div>
 
-            <div className=" flex flex-col not-italic font-mulish p-3">
-              <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
-                Interns
-              </h1>
-              <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
-                Looking to be employed
-              </p>
+          {/* CONFIRM SM1 FOUNDER */}
+          <div className='md:hidden'>
+            <div className='cursor-pointer'>
+              <div className='border hover:border-[#071D2E] border-[#ACB4B9] w-auto h-auto mx-3 mb-4 flex'>
+                <div className='bg-[#ACB4B9] w-[137px] items-center flex justify-center'><img className="" src={icons.signup1} alt="" /></div>
+
+
+                <div className=" flex flex-col not-italic font-mulish p-3">
+                  <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
+                    Founder
+                  </h1>
+                  <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
+                    Looking to Employ
+                  </p>
+
+                  <div className="absolut">
+                    {/* Radio button */}
+                    <Radio
+                      id="employers"
+                      style={{ color: '#071D2E' }}
+                      className="relative left-[185px]"
+                      checked={selectedValue === 'founder'}
+                      onChange={handleChange}
+                      value="founder"
+                      name="radio-buttons"
+                      inputProps={{ 'aria-label': 'A' }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div> */}
+
+            {/* CONFIRM SM2 INTERNS */}
+            <div className='cursor-pointer'>
+              <div className='border hover:border-[#071D2E] border-[#ACB4B9] w-auto h-auto mx-3 mb-4 flex'>
+                <div className='bg-[#ACB4B9] w-[137px] items-center flex justify-center'><img className="" src={icons.signup2} alt="" /></div>
+
+                <div className=" flex flex-col not-italic font-mulish p-3">
+                  <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
+                    Interns
+                  </h1>
+                  <p className="font-medium text-[16px] leading-[20px] text-[#000000]">
+                    Looking to be employed
+                  </p>
+
+                  <div className="absolut">
+                    {/* Radio button */}
+                    <Radio
+                      id="interns"
+                      style={{ color: '#071D2E' }}
+                      className="relative left-[185px]"
+                      checked={selectedValue === 'intern'}
+                      onChange={handleChange}
+                      value="intern"
+                      name="radio-buttons"
+                      inputProps={{ 'aria-label': 'B' }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CONFIRM 2*/}
+          {/* <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 mb-3">
+            <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="/sarah-dayan.a620c98f.jpg" alt="" width="384" height="512" />
+            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+              <blockquote>
+                <p class="text-lg font-medium">
+                  “Tailwind CSS is the only framework that I've seen scale
+                  on large teams. <br /> It’s easy to customize, adapts to any design,
+                  and the build size is tiny.”
+                </p>
+              </blockquote>
+              <figcaption class="font-medium">
+                <div class="text-sky-500 dark:text-sky-400">
+                  Sarah Dayan
+                </div>
+                <div class="text-slate-700 dark:text-slate-500">
+                  Staff Engineer, Algolia
+                </div>
+              </figcaption>
+            </div>
+          </figure> */}
 
           {/* Sign up button */}
           {selectedValue === 'founder' ? (
