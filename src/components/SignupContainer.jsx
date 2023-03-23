@@ -72,10 +72,12 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   }, [registerStatus, error, navigate])
 
   const googleSignup = () => {
-    window.open("https://project-x-g8rg.onrender.com/api/user/auth/google", "_self")
+    window.open(
+      'https://project-x-g8rg.onrender.com/api/user/auth/google',
+      '_self'
+    )
     // window.open("http://localhost:8000/api/user/auth/google", "_self")
   }
-
 
   return (
     <>
@@ -208,7 +210,9 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                           </option>
                           {country_list &&
                             country_list.map((country) => (
-                              <option value={country} key={country}>{country} </option>
+                              <option value={country} key={country}>
+                                {country}{' '}
+                              </option>
                             ))}
                         </Field>
                         <ErrorMessage

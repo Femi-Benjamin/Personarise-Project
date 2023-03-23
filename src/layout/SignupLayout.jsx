@@ -25,14 +25,18 @@ const SignupLayout = () => {
 
           <div className="flex gap-[18px] justify-center items-center mb-[47px] ">
             {/* Founder Founder Founder */}
-            <div className='gap-5 hidden md:flex'>
+            <div className="gap-5 hidden md:flex">
               <label
                 htmlFor="employers"
                 className="hover:border-[#071D2E] focus-within:border-[#071D2E] md:border rounded-[8px] h-[248px] cursor-pointer"
               >
                 {/* ##### */}
                 <div className="bg-[#ACB4B9] w-[311px] h-[135px] rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
-                  <img className="h-[50px] m-[45px]" src={icons.signup1} alt="" />
+                  <img
+                    className="h-[50px] m-[45px]"
+                    src={icons.signup1}
+                    alt=""
+                  />
                 </div>
 
                 <div className="flex flex-col not-italic font-mulish p-3">
@@ -66,7 +70,13 @@ const SignupLayout = () => {
               >
                 {/* ##### */}
                 <div className="bg-[#ACB4B9] md:w-[311px] md:h-[135px] sm:w-auto sm:h-auto rounded-tl-[8px] rounded-tr-[8px] flex justify-center mb-[12px]">
-                  <div><img className="h-[50px] m-[45px]" src={icons.signup2} alt="" /></div>
+                  <div>
+                    <img
+                      className="h-[50px] m-[45px]"
+                      src={icons.signup2}
+                      alt=""
+                    />
+                  </div>
                 </div>
 
                 <div className=" flex flex-col not-italic font-mulish p-3">
@@ -95,13 +105,13 @@ const SignupLayout = () => {
             </div>
           </div>
 
-
           {/* CONFIRM SM1 FOUNDER */}
-          <div className='md:hidden'>
-            <div className='cursor-pointer'>
-              <div className='border hover:border-[#071D2E] border-[#ACB4B9] w-auto h-auto mx-3 mb-4 flex'>
-                <div className='bg-[#ACB4B9] w-[137px] items-center flex justify-center'><img className="" src={icons.signup1} alt="" /></div>
-
+          <div className="md:hidden">
+            <div className="cursor-pointer">
+              <div className="border hover:border-[#071D2E] border-[#ACB4B9] w-auto h-auto mx-3 mb-4 flex">
+                <div className="bg-[#ACB4B9] w-[137px] items-center flex justify-center">
+                  <img className="" src={icons.signup1} alt="" />
+                </div>
 
                 <div className=" flex flex-col not-italic font-mulish p-3">
                   <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">
@@ -129,9 +139,11 @@ const SignupLayout = () => {
             </div>
 
             {/* CONFIRM SM2 INTERNS */}
-            <div className='cursor-pointer'>
-              <div className='border hover:border-[#071D2E] border-[#ACB4B9] w-auto h-auto mx-3 mb-4 flex'>
-                <div className='bg-[#ACB4B9] w-[137px] items-center flex justify-center'><img className="" src={icons.signup2} alt="" /></div>
+            <div className="cursor-pointer">
+              <div className="border hover:border-[#071D2E] border-[#ACB4B9] w-auto h-auto mx-3 mb-4 flex">
+                <div className="bg-[#ACB4B9] w-[137px] items-center flex justify-center">
+                  <img className="" src={icons.signup2} alt="" />
+                </div>
 
                 <div className=" flex flex-col not-italic font-mulish p-3">
                   <h1 className="font-bold text-[24px] leading-[30px] text-[#000000] mb-[7px]">

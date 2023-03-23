@@ -13,6 +13,7 @@ import jobs from '../assets/icons/dashboard-job-icon.svg'
 import roadmap from '../assets/icons/dashboard-roadmap-icon.svg'
 import message from '../assets/icons/dashboard-mobile-message-icon.svg'
 import notification2 from '../assets/icons/dashboard-mobile-notification-icon.svg'
+import closeIcon from '../assets/icons/close-icon.svg'
 export default {
   google,
   password,
@@ -29,4 +30,5 @@ export default {
   roadmap,
   message,
   notification2,
+  closeIcon,
 }
