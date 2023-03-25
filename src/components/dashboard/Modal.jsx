@@ -21,12 +21,11 @@ export default function DashboardModal() {
     setOpen(false)
   }
   useEffect(() => {
-    handleOpen()
+    // handleOpen()
   }, [])
 
   return (
     <>
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -61,12 +60,17 @@ export default function DashboardModal() {
             usually learn the programming languages and software development
             environment that are needed to develop for their chosen platform. 
           </p>
-          <div className='flex justify-center items-center my-8'>
-            <p className='text-[#304351] lg:text-2xl md:text-lg text-sm border-b border-b-[#304351]'>View  Roadmap</p>
+          <div className="flex justify-center items-center my-8">
+            <p className="text-[#304351] lg:text-2xl md:text-lg text-sm border-b border-b-[#304351]">
+              View Roadmap
+            </p>
           </div>
 
-          <div className='bg-white md:p-4 p-2 rounded-full absolute md:-top-8 md:-right-8 md:h-auto md:w-auto h-12 w-12 -top-5 -right-5 ' onClick={handleClose}>
-            <img src={icons.closeIcon} alt=""/>
+          <div
+            className="bg-white md:p-4 p-2 rounded-full absolute md:-top-8 md:-right-8 md:h-auto md:w-auto h-12 w-12 -top-5 -right-5 "
+            onClick={handleClose}
+          >
+            <img src={icons.closeIcon} alt="" />
           </div>
         </Paper>
       </Modal>

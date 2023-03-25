@@ -1,3 +1,6 @@
+import icons from './icons'
+import images from './images'
+
 export const country_list = [
   'Afghanistan',
   'Albania',
@@ -577,4 +580,83 @@ export const quizQuestions = [
     ],
   },
   // Add more questions here
+]
+
+export const links = [
+  {
+    name: 'Home',
+    route: 'home',
+    icon: icons.home,
+    index: true,
+  },
+  {
+    name: 'Roadmap',
+    route: 'roadmap',
+    icon: icons.roadmap,
+    index: true,
+  },
+  {
+    name: 'Jobs',
+    route: 'jobs',
+    icon: icons.jobs,
+    index: true,
+  },
+  {
+    name: 'Messages',
+    route: 'messages',
+    icon: icons.message,
+    index: true,
+  },
+  {
+    name: 'Activity',
+    route: 'activity',
+    icon: icons.notification2,
+    index: true,
+  },
+]
+
+export const exploreItems = [
+  {
+    text: 'Discover and learn the skills other world-class (career .name e.g ) mobile engineer has that makes them top-notch.',
+    image: images.explore1,
+    title: 'Learning path',
+  },
+  {
+    text: 'Discover roles from top tech and finance companies.',
+    image: images.explore2,
+    title: 'Jobs',
+  },
+  {
+    text: 'Link up with like-minded persons, peers, mentors and grow as a group.',
+    image: images.explore3,
+    title: 'Community',
+  },
+]
+
+export const cardItem = [
+  {
+    name: 'Opened to Opportunities',
+    text: 'You’re actively looking and/ or open to new opportunities. Your Profile is visible to  recruiters.',
+    icon: icons.openBannerIcon,
+  },
+  {
+    name: 'Closed to Opportunities',
+    text: 'You’re not looking for new opportunities right now.',
+    icon: icons.closeBannerIcon,
+  },
+]
+
+export const levels = [
+  {
+    percentage: 10,
+    name: 'Beginner',
+  },
+  {
+    percentage: 20,
+    name: 'Intermediate',
+  },
+  {
+    percentage: 30,
+    name: 'Advance',
+  },
 ]

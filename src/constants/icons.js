@@ -14,6 +14,10 @@ import roadmap from '../assets/icons/dashboard-roadmap-icon.svg'
 import message from '../assets/icons/dashboard-mobile-message-icon.svg'
 import notification2 from '../assets/icons/dashboard-mobile-notification-icon.svg'
 import closeIcon from '../assets/icons/close-icon.svg'
+import infoIcon from '../assets/icons/info-icon.svg'
+import openBannerIcon from '../assets/icons/dashboard-open-icon.svg'
+import closeBannerIcon from '../assets/icons/dashboard-close-icon.svg'
+
 export default {
   google,
   password,
@@ -31,4 +35,7 @@ export default {
   message,
   notification2,
   closeIcon,
+  infoIcon,
+  openBannerIcon,
+  closeBannerIcon,
 }

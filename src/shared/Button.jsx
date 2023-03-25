@@ -8,13 +8,14 @@ const Button = ({
   outline,
   onClick,
   children,
+  className,
 }) => {
   return (
     <button
       disabled={disabled}
       type={type}
       onClick={onClick}
-      className={` disabled:text-white disabled:cursor-not-allowed p-3  flex items-center gap-2 justify-center w-full rounded-lg ${
+      className={` disabled:text-white disabled:cursor-not-allowed p-3  flex items-center gap-2 justify-center w-full rounded-lg ${className}  ${
         bordered ? ' duration-100 ease-in border-b hover:scale-[.98] ' : ''
       } ${
         outline
