@@ -36,7 +36,7 @@ const MobileMenu = () => {
     },
   ]
   return (
-    <div className="  w-full px-3 py-4 shadow-[0px_4px_8px_rgba(0,0,0,0.16)]">
+    <div className="w-full px-3 py-4 shadow-[0px_4px_8px_rgba(0,0,0,0.16)]">
       <div className="flex justify-evenly">
         {links.map((item) => (
           <NavLink
