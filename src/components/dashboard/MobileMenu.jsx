@@ -1,40 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import icons from '../../constants/icons'
+import { links } from '../../constants/data'
 
 const MobileMenu = () => {
-  const links = [
-    {
-      name: 'Home',
-      route: 'home',
-      icon: icons.home,
-      index: true,
-    },
-    {
-      name: 'Roadmap',
-      route: 'roadmap',
-      icon: icons.roadmap,
-      index: true,
-    },
-    {
-      name: 'Jobs',
-      route: 'jobs',
-      icon: icons.jobs,
-      index: true,
-    },
-    {
-      name: 'Messages',
-      route: 'messages',
-      icon: icons.message,
-      index: true,
-    },
-    {
-      name: 'Activity',
-      route: 'activity',
-      icon: icons.notification2,
-      index: true,
-    },
-  ]
   return (
     <div className="w-full px-3 py-4 shadow-[0px_4px_8px_rgba(0,0,0,0.16)]">
       <div className="flex justify-evenly">

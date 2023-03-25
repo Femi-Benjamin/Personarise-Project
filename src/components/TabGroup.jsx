@@ -37,7 +37,7 @@ function TabGroup() {
             text={`Discover skills needed by employers from a ${active} person.`}
           />
         </Items>
-        <img src={images.careerimage} alt="career" />
+        <img src={images.careerImage} alt="career" />
 
         <Items>
           <Feature

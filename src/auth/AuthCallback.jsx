@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const AuthCallback = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search)
@@ -10,7 +10,7 @@ const AuthCallback = () => {
     // Do something with the access token
     // For example, save it to local storage and redirect to the dashboard
     localStorage.setItem('access_token', token)
-    history.push('/dashboard')
+    navigate('/dashboard')
   }, [])
 
   return <div>Authenticating...</div>
