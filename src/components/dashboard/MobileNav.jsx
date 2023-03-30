@@ -3,7 +3,7 @@ import images from '../../constants/images'
 
 const MobileNav = () => {
   return (
-    <div className=" p-8 shadow-[0px_4px_8px_rgba(0,0,0,0.16)]">
+    <div className=" p-8 shadow-[0px_4px_8px_rgba(0,0,0,0.16)] fixed top-0 w-full bg-white">
       <img src={images.logo2} />
     </div>
   )

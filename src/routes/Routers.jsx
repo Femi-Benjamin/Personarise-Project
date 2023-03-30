@@ -13,7 +13,10 @@ import {
   SelectCareer,
   Career,
   Result,
-  Dashboard, Roadmap, Jobs, Profile
+  Dashboard,
+  Roadmap,
+  Jobs,
+  Profile,
 } from '../pages'
 import { Protected, Public } from '../layout'
 

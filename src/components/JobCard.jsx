@@ -1,8 +1,9 @@
 import React from 'react'
 import images from '../constants/images'
-import ExploreDashboardCard from './ExploreDashboardCard';
+import Button from '../shared/Button'
+import ExploreDashboardCard from './ExploreDashboardCard'
 
-const JobCard = () => {
+const JobCard = ({ data }) => {
   return (
     <div className='flex flex-wrap gap-4 justify-between md:px-14 px-[18px]'>
       <ExploreDashboardCard

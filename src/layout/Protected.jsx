@@ -32,12 +32,15 @@ const Protected = () => {
       {/* {authToken &&  */}
 
       <div className="md:grid lg:grid-cols-5 md:grid-cols-3 md:h-full">
-        <Sidebar />
-        <div className="md:hidden">
-          <MobileNav />
+        <div className="fixed h-full">
+          <Sidebar />
         </div>
-        <div id="content" className="lg:col-span-4 md:col-span-2">
-          {/* <HeaderLayout /> */}
+        <div className="w-" />
+        <div className="md:hidden ">
+          <MobileNav />
+          <div  className='h-'/>
+        </div>
+        <div id="content" className="lg:col-span-4 md:col-span-2 mt-28">
           <Outlet />
         </div>
         <div className="fixed bottom-0 md:hidden w-full">
