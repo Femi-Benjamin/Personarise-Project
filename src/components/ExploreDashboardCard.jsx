@@ -4,7 +4,7 @@ import images from '../constants/images'
 const ExploreDashboardCard = ({ image, text, title }) => {
   return (
     <div className="border border-[#CDD2D5] rounded-lg px-5 py-3 md:max-w-max flex flex-col md:w-auto w-full">
-      <div className=" my-3 flex justify-center">
+      <div className="my-3 flex justify-center">
         <img src={image} />
       </div>
       <div>

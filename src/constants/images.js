@@ -28,6 +28,8 @@ import ens from '../assets/images/ens.png'
 import explore1 from '../assets/images/dashboard-explore1.png'
 import explore2 from '../assets/images/dashboard-explore2.png'
 import explore3 from '../assets/images/dashboard-explore3.png'
+import Rectangle24 from '../assets/images/rectangle24.png'
+import variant from '../assets/images/variant.png'
 
 export default {
   frame1,
@@ -60,4 +62,6 @@ export default {
   explore1,
   explore2,
   explore3,
+  Rectangle24,
+  variant,
 }

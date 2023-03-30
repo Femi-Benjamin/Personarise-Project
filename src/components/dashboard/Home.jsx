@@ -26,7 +26,7 @@ const Home = () => {
               Your career path status
             </p>
             <div>
-              <span className="md:p-3 p-2 bg-[#0DA8FF] text-white uppercase text-base rounded-lg ">
+              <span className="md:p-3 p-2 bg-[#0DA8FF] text-white uppercase text-base rounded-lg">
                 mobile software engineer
               </span>
             </div>

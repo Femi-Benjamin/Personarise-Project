@@ -6,12 +6,14 @@ import Routers from './routes/Routers'
 
 function App() {
   return (
+   
     <Provider store={store}>
       <Router>
         <Toaster />
         <Routers />
       </Router>
     </Provider>
+  
   )
 }
 
