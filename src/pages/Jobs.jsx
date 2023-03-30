@@ -59,7 +59,7 @@ const Jobs = () => {
       </div>
           {/* //////////////////////////////// */}
       <div className='w-auto md:h-[950px] h-auto bg-[#F7F7F8] md:ml-[16px] sm:ml-[32px]'>
-        <div className='pt-[48px] pl-[14px]'>
+        <div className='pt-[48px] md:pl-[14px]'>
           <h1 className='font-mulish font-semibold text-[20px] leading-[25px] text-[#05131F] mb-[28px]'>YOUR TOP JOB MATCHES</h1>
           <div className=''>
             <JobCard/>

@@ -4,7 +4,7 @@ import ExploreDashboardCard from './ExploreDashboardCard';
 
 const JobCard = () => {
   return (
-    <div className='flex justify-between px-14'>
+    <div className='flex flex-wrap justify-between md:px-14 px-[18px]'>
       <ExploreDashboardCard
         image={images.Rectangle24}
         title="Web Designer-UI/UX Design"
