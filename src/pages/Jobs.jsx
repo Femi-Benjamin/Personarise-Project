@@ -1,6 +1,7 @@
 import React from 'react'
 import images from '../constants/images'
 import JobCard from '../components/JobCard'
+import { jobs } from '../constants/data'
 
 const Jobs = () => {
   return (
@@ -11,7 +12,7 @@ const Jobs = () => {
           <div class="relative mr-4">
             <input
               type="text"
-              class="py-2 px-4 md:pl-[90px] pl-2 placeholder:text-[#979797] placeholder:text-[20px] placeholder:leading-[25px] focus:outline-none focus:shadow-outline md:w-[705px] sm:w-auto md:h-[64px] border border-[#979797] bg-white rounded-[8px] outline-none mb-[19px]"
+              class="py-2 px-4 md:pl-[90px] pl-2 placeholder:text-[#979797] placeholder:text-[20px] placeholder:leading-[25px] focus:outline-none focus:shadow-outline sm:w-auto md:h-[64px] border border-[#979797] bg-white rounded-[8px] outline-none mb-[19px]"
               placeholder="Search Jobs"
             />{' '}
             {/* PLACEHOLDER */}
@@ -48,21 +49,37 @@ const Jobs = () => {
           </button>
         </form>
         {/* ////////////////////// */}
-        <div className='ml-[22px] flex flex-wrap gap-[16px]'>
-          <button className='w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px] mb-4'>Location</button>
-          <button className='w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]'>Company</button>
-          <button className='w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]'>Salary</button>
-          <button className='w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]'>Job Title</button>
-          <button className='w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]'>Culture</button>
-          <button className='w-auto h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px] px-3 mb-4'>Experience Level</button>
+        <div className="ml-[22px] flex flex-wrap gap-[16px]">
+          <button className="w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px] mb-4">
+            Location
+          </button>
+          <button className="w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]">
+            Company
+          </button>
+          <button className="w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]">
+            Salary
+          </button>
+          <button className="w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]">
+            Job Title
+          </button>
+          <button className="w-[124px] h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px]">
+            Culture
+          </button>
+          <button className="w-auto h-[45px] rounded-[8px] border bg-white font-mulish font-bold text-[20px] leading-[25px] px-3 mb-4">
+            Experience Level
+          </button>
         </div>
       </div>
-          {/* //////////////////////////////// */}
-      <div className='w-auto md:h-[950px] h-auto bg-[#F7F7F8] md:ml-[16px] sm:ml-[32px]'>
-        <div className='pt-[48px] md:pl-[14px]'>
-          <h1 className='font-mulish font-semibold text-[20px] leading-[25px] text-[#05131F] mb-[28px]'>YOUR TOP JOB MATCHES</h1>
-          <div className=''>
-            <JobCard/>
+      {/* //////////////////////////////// */}
+      <div className="bg-[#F7F7F8] md:ml-[16px] sm:ml-[32px] rounded-2xl">
+        <div className="pt-[48px] p-6">
+          <h1 className="font-mulish font-semibold text-[20px] leading-[25px] text-[#05131F] mb-[28px]">
+            YOUR TOP JOB MATCHES
+          </h1>
+          <div className=" grid grid-cols-3 justify-items-centerd gap-10 ">
+            {jobs.map((data) => (
+              <JobCard data={data} />
+            ))}
           </div>
         </div>
       </div>
