@@ -9,10 +9,12 @@ const Button = ({
   onClick,
   children,
   className,
+  dataActive,
 }) => {
   return (
     <button
       disabled={disabled}
+      data-active={dataActive}
       type={type}
       onClick={onClick}
       className={` disabled:text-white disabled:cursor-not-allowed p-3  flex items-center gap-2 justify-center w-full rounded-lg ${className}  ${

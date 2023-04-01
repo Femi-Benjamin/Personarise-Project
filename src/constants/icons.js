@@ -17,6 +17,7 @@ import closeIcon from '../assets/icons/close-icon.svg'
 import infoIcon from '../assets/icons/info-icon.svg'
 import openBannerIcon from '../assets/icons/dashboard-open-icon.svg'
 import closeBannerIcon from '../assets/icons/dashboard-close-icon.svg'
+import searchIcon from '../assets/icons/search-icon.svg'
 
 export default {
   google,
@@ -38,4 +39,5 @@ export default {
   infoIcon,
   openBannerIcon,
   closeBannerIcon,
+  searchIcon,
 }
