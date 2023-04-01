@@ -7,7 +7,7 @@ import { links } from '../../constants/data'
 const Sidebar = () => {
   return (
     <div
-      className=" shadow-[4px_0px_8px_rgba(0,0,0,0.16)] p-9 hidden md:block h-full w-[240px]"
+      className=" shadow-[4px_0px_8px_rgba(0,0,0,0.16)] p-9 hidden md:block h-full w-full"
       id="sidebar"
     >
       <div className=" flex justify-between items-center border-b pb-5 mb-7">
