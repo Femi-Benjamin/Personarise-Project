@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import images from '../constants/images'
 import JobCard from '../components/JobCard'
 import { jobs } from '../constants/data'
@@ -9,27 +9,31 @@ import { SearchBox } from '../components'
 const Jobs = () => {
   const [active, setActive] = useState('')
   const filter = [
-    'Location',
-    'Company',
-    'Salary',
-    'Job Title',
-    'Culture',
-    'Experience Level',
+    { name: 'Location', value: 'location' },
+    { name: 'Company', value: 'company' },
+    { name: 'Salary', value: 'salary' },
+    { name: 'Job Title', value: 'title' },
+    { name: 'Culture', value: 'culture' },
+    { name: 'Experience Level', value: 'experience' },
   ]
   const [value, setValue] = useState('')
 
-  const filteredJobs = jobs.filter((item) => {
-    if (value === '') {
-      return item
-    } else if (
-      item.title.toLowerCase().includes(value.toLowerCase()) ||
-      item.company.toLowerCase().includes(value.toLowerCase()) ||
-      item.location.toLowerCase().includes(value.toLowerCase())
-    ) {
-      return item
+  const filteredJobs = jobs.filter(({ title, company, location }) => {
+    const lowerCaseValue = value.toLowerCase()
+
+    if (!value) {
+      return true
     }
+    return active === 'location'
+      ? location.toLowerCase().includes(lowerCaseValue)
+      : active === 'company'
+      ? company.toLowerCase().includes(lowerCaseValue)
+      : active === 'title'
+      ? title.toLowerCase().includes(lowerCaseValue)
+      : false
   })
 
+  // console.log(filter[value])
   return (
     <div className="">
       <SearchBox

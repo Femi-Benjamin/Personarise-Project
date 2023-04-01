@@ -30,12 +30,12 @@ const SearchBox = ({ filterItems, value, setValue, active, setActive }) => {
           <>
             <div className=" md:w-60">
               <Button
-                dataActive={active === item ? true : false}
-                outline={active === item ? false : true}
+                dataActive={active === item.value ? true : false}
+                outline={active === item.value ? false : true}
                 className="max-w-[200px] bg-white "
-                onClick={() => setActive(item)}
+                onClick={() => setActive(item.value)}
               >
-                {item}
+                {item.name}
               </Button>
             </div>
           </>
