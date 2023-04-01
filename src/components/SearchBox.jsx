@@ -13,7 +13,9 @@ const SearchBox = ({
 }) => {
   const [suggestions, setSuggestions] = useState([])
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0)
-  const options = active && Array.from(new Set(jobs.map((job) => job[active])));
+  const options = active
+    ? Array.from(new Set(jobs.map((job) => job[active])))
+    : Array.from(new Set(jobs.map((job) => job.title && job.company )))
   console.log(options)
 
   function handleInputChange(e) {
@@ -23,43 +25,44 @@ const SearchBox = ({
   }
 
   function handleKeyDown(event) {
-     switch (event.key) {
-    case 'ArrowUp':
-      event.preventDefault();
-      setSelectedSuggestionIndex(
-        (selectedSuggestionIndex - 1 + suggestions.length) %
-        suggestions.length
-      );
-      break;
-    case 'ArrowDown':
-      event.preventDefault();
-      setSelectedSuggestionIndex(
-        selectedSuggestionIndex === -1 ? 0 : (selectedSuggestionIndex + 1) % suggestions.length
-      );
-      break;
-    case 'Enter':
-      event.preventDefault();
-      if (selectedSuggestionIndex >= 0) {
-        setValue(suggestions[selectedSuggestionIndex]);
-        setSuggestions([]);
-      }
-      break;
-    default:
-      break;
-  }
+    switch (event.key) {
+      case 'ArrowUp':
+        event.preventDefault()
+        setSelectedSuggestionIndex(
+          (selectedSuggestionIndex - 1 + suggestions.length) %
+            suggestions.length
+        )
+        break
+      case 'ArrowDown':
+        event.preventDefault()
+        setSelectedSuggestionIndex(
+          selectedSuggestionIndex === -1
+            ? 0
+            : (selectedSuggestionIndex + 1) % suggestions.length
+        )
+        break
+      case 'Enter':
+        event.preventDefault()
+        if (selectedSuggestionIndex >= 0) {
+          setValue(suggestions[selectedSuggestionIndex])
+          setSuggestions([])
+        }
+        break
+      default:
+        break
+    }
   }
 
   function handleSuggestionClick(item) {
     setValue(item)
     setSuggestions([])
   }
-  
 
   return (
     <div className="bg-[#F7F7F8] pt-[48px] p-6 rounded-2xl mb-7">
       <div className="flex gap-4">
         <div
-          className={`${
+          className={` w-full relative ${
             suggestions.length > 0 &&
             value !== '' &&
             ' shadow-[0px_4px_8px_rgba(0,0,0,0.16)]'
@@ -83,7 +86,7 @@ const SearchBox = ({
             }}
           />
           {suggestions.length > 0 && value !== '' && (
-            <ul className=" rounded-b-lg  bg-white border-[0.5px] border-[#CDD2D5] border-t-0">
+            <ul className=" rounded-b-lg  bg-white border-[0.5px] border-[#CDD2D5] border-t-0 absolute w-full shadow-[0px_4px_8px_rgba(0,0,0,0.16)]">
               {suggestions.map((option, index) => (
                 <li
                   key={option}
@@ -100,18 +103,6 @@ const SearchBox = ({
             </ul>
           )}
         </div>
-        <input
-          type="text"
-          className="bg-white p-4 text-2xl rounded-lg border-[0.5px] border-[#CDD2D5] outline-none w-full pl-24"
-          placeholder="Search Jobs"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          style={{
-            backgroundImage: `url(${icons.searchIcon})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '30px 10px',
-          }}
-        />
         <Button
           className={`max-w-[200px] md:block hidden bg-white`}
           onClick={() => setActive(!active)}
