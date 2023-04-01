@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import images from '../constants/images'
 import JobCard from '../components/JobCard'
 import { jobs } from '../constants/data'
-import Button from '../shared/Button'
-import icons from '../constants/icons'
 import { SearchBox } from '../components'
 
 const Jobs = () => {
@@ -29,8 +26,6 @@ const Jobs = () => {
       item[active].toLowerCase().includes(lowerCaseValue)
     )
   })
-
-  // console.log(filter[value])
   return (
     <div className="">
       <SearchBox

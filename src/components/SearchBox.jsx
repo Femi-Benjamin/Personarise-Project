@@ -3,8 +3,6 @@ import icons from '../constants/icons'
 import Button from '../shared/Button'
 import { filterInput } from '../hooks/filter'
 
-const options = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig']
-
 const SearchBox = ({
   filterItems,
   value,
@@ -13,56 +11,69 @@ const SearchBox = ({
   setActive,
   jobs,
 }) => {
-  const [query, setQuery] = useState('')
   const [suggestions, setSuggestions] = useState([])
-  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1)
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0)
+  const options = active && Array.from(new Set(jobs.map((job) => job[active])));
+  console.log(options)
 
   function handleInputChange(e) {
-    setQuery(e)
+    setValue(e)
     setSuggestions(filterInput(e, options))
-    setSelectedSuggestionIndex(-1)
+    setSelectedSuggestionIndex(0)
   }
 
   function handleKeyDown(event) {
-    switch (event.key) {
-      case 'ArrowUp':
-        event.preventDefault()
-        setSelectedSuggestionIndex(
-          (selectedSuggestionIndex - 1 + suggestions.length) %
-            suggestions.length
-        )
-        break
-      case 'ArrowDown':
-        event.preventDefault()
-
-        setSelectedSuggestionIndex(
-          (selectedSuggestionIndex + 1) % suggestions.length
-        )
-        setQuery(suggestions[selectedSuggestionIndex])
-        break
-      case 'Enter':
-        event.preventDefault()
-        if (selectedSuggestionIndex >= 0) {
-          setQuery(suggestions[selectedSuggestionIndex])
-          setSuggestions([])
-        }
-        break
-      default:
-        break
-    }
+     switch (event.key) {
+    case 'ArrowUp':
+      event.preventDefault();
+      setSelectedSuggestionIndex(
+        (selectedSuggestionIndex - 1 + suggestions.length) %
+        suggestions.length
+      );
+      break;
+    case 'ArrowDown':
+      event.preventDefault();
+      setSelectedSuggestionIndex(
+        selectedSuggestionIndex === -1 ? 0 : (selectedSuggestionIndex + 1) % suggestions.length
+      );
+      break;
+    case 'Enter':
+      event.preventDefault();
+      if (selectedSuggestionIndex >= 0) {
+        setValue(suggestions[selectedSuggestionIndex]);
+        setSuggestions([]);
+      }
+      break;
+    default:
+      break;
+  }
   }
 
-  const jobTitles = active && jobs.map((job) => job[active])
+  function handleSuggestionClick(item) {
+    setValue(item)
+    setSuggestions([])
+  }
+  
 
   return (
     <div className="bg-[#F7F7F8] pt-[48px] p-6 rounded-2xl mb-7">
       <div className="flex gap-4">
-        <div>
+        <div
+          className={`${
+            suggestions.length > 0 &&
+            value !== '' &&
+            ' shadow-[0px_4px_8px_rgba(0,0,0,0.16)]'
+          }`}
+        >
           <input
             type="text"
-            className="bg-white p-4 text-2xl rounded-lg border-[0.5px] border-[#CDD2D5] outline-none w-full pl-24"
+            className={`bg-white p-4 lg:text-2xl md:text-xl text-lg rounded-lg border-[0.5px] border-[#CDD2D5] outline-none w-full pl-24 ${
+              suggestions.length > 0 &&
+              value !== '' &&
+              ' border-b-0 rounded-b-none'
+            }`}
             placeholder="Search..."
-            value={query}
+            value={value}
             onChange={(e) => handleInputChange(e.target.value)}
             onKeyDown={handleKeyDown}
             style={{
@@ -71,13 +82,15 @@ const SearchBox = ({
               backgroundPosition: '30px 10px',
             }}
           />
-          {suggestions.length > 0 && query !== '' && (
-            <ul>
+          {suggestions.length > 0 && value !== '' && (
+            <ul className=" rounded-b-lg  bg-white border-[0.5px] border-[#CDD2D5] border-t-0">
               {suggestions.map((option, index) => (
                 <li
                   key={option}
                   className={
-                    index === selectedSuggestionIndex ? 'bg-red-900' : ''
+                    index === selectedSuggestionIndex
+                      ? 'bg-gray-100 p-2 rounded-b-lg lg:text-2xl md:text-xl text-lg'
+                      : ' p-2 lg:text-2xl md:text-xl text-lg rounded-b-lg '
                   }
                   onClick={() => handleSuggestionClick(option)}
                 >
