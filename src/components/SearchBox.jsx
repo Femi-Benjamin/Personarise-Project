@@ -13,7 +13,6 @@ const SearchBox = ({
   setActive,
   jobs,
 }) => {
-
   const [query, setQuery] = useState('')
   const [suggestions, setSuggestions] = useState([])
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1)
@@ -53,7 +52,7 @@ const SearchBox = ({
     }
   }
 
-  const jobTitles = active && jobs.map(job => job[active]);
+  const jobTitles = active && jobs.map((job) => job[active])
 
   return (
     <div className="bg-[#F7F7F8] pt-[48px] p-6 rounded-2xl mb-7">
@@ -67,10 +66,10 @@ const SearchBox = ({
             onChange={(e) => handleInputChange(e.target.value)}
             onKeyDown={handleKeyDown}
             style={{
-            backgroundImage: `url(${icons.searchIcon})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: '30px 10px',
-          }}
+              backgroundImage: `url(${icons.searchIcon})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '30px 10px',
+            }}
           />
           {suggestions.length > 0 && query !== '' && (
             <ul>

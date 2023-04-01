@@ -25,7 +25,8 @@ const Jobs = () => {
     }
     const itemKeys = Object.keys(item)
     return (
-      itemKeys.includes(active) && item[active].toLowerCase().includes(lowerCaseValue)
+      itemKeys.includes(active) &&
+      item[active].toLowerCase().includes(lowerCaseValue)
     )
   })
 
