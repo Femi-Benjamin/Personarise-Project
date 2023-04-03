@@ -10,18 +10,20 @@ const SearchBox = ({
   active,
   setActive,
   jobs,
+  setCurrentPage,
 }) => {
   const [suggestions, setSuggestions] = useState([])
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0)
   const options = active
     ? Array.from(new Set(jobs.map((job) => job[active])))
-    : Array.from(new Set(jobs.map((job) => job.title && job.company )))
+    : Array.from(new Set(jobs.map((job) => job.title && job.company)))
   console.log(options)
 
   function handleInputChange(e) {
     setValue(e)
     setSuggestions(filterInput(e, options))
     setSelectedSuggestionIndex(0)
+    setCurrentPage(1)
   }
 
   function handleKeyDown(event) {
