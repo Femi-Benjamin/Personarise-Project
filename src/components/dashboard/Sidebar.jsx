@@ -12,7 +12,7 @@ const Sidebar = () => {
     >
       <div className=" flex justify-between items-center border-b pb-5 mb-7">
         <Link to="/dashboard">
-          <img src={images.logo} alt="logo" />
+          <img src={images.HireRise} alt="logo" />
         </Link>
         <span className="flex gap-5">
           <img className="cursor-pointer" src={icons.settings} />{' '}
