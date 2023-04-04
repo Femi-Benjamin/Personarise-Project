@@ -16,3 +16,15 @@ body {
 #root {
   height: 100%;
 }
+
+.bg-level-1 {
+  background-color: #BCFBB8;
+}
+
+.bg-level-2 {
+  background-color: #F8D9AB;
+}
+
+.bg-level-3 {
+  background-color: #E4ABF8;
+}

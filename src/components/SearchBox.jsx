@@ -15,9 +15,19 @@ const SearchBox = ({
   const [suggestions, setSuggestions] = useState([])
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0)
   const options = active
-    ? Array.from(new Set(jobs.map((job) => job[active])))
-    : Array.from(new Set(jobs.map((job) => job.title && job.company)))
-  console.log(options)
+    ? Array.from(new Set(jobs.map((job) => job[active]).filter(Boolean)))
+    : Array.from(
+        new Set(
+          jobs
+            .map((job) =>
+              job.title || job.company
+                ? job.title + ' - ' + job.company
+                : job.title || job.company
+            )
+            .filter(Boolean)
+        )
+      )
+  console.log(jobs.map((job) => job.company).filter(Boolean))
 
   function handleInputChange(e) {
     setValue(e)

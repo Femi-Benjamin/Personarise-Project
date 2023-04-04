@@ -30,7 +30,7 @@ const Jobs = () => {
           item.location.toLowerCase().includes(value.toLowerCase())
   })
 
-  const jobsPerPage = 3
+  const jobsPerPage = 9
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage)
 
