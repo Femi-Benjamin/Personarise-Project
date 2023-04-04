@@ -1,4 +1,4 @@
-const DashboardHeader = () => (
+const Header = () => (
   <div className="my-10">
     <h1 className="md:font-medium lg:text-5xl md:text-4xl text-3xl leading-10 mb-7">
       Welcome, Mary!
@@ -18,4 +18,4 @@ const DashboardHeader = () => (
   </div>
 )
 
-export default DashboardHeader
+export default Header

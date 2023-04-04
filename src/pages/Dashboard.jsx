@@ -10,7 +10,7 @@ import { exploreItems } from '../constants/data'
 
 const Dashboard = () => {
   const tabItems = [
-    { text: 'View  Career description', component: <CareerDescriptionCard /> },
+    { text: 'View  Career description' },
     { text: 'Change career path' },
   ]
   const [active, setActive] = useState(tabItems[0].text)
@@ -51,7 +51,7 @@ const Dashboard = () => {
             <img src={icons.infoIcon} />
           </span>
         </div>
-        <div>{active === tabItems[0].text && tabItems[0].component}</div>
+        <CareerDescriptionCard />
       </div>
       <div className="my-10">
         <div>

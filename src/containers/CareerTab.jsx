@@ -4,7 +4,7 @@ import icons from '../constants/icons'
 
 const CareerTab = () => {
   const tabItems = [
-    { text: 'View  Career description', component: <CareerDescriptionCard /> },
+    { text: 'View  Career description'},
     { text: 'Change career path' },
   ]
   const [active, setActive] = useState(tabItems[0].text)
@@ -26,7 +26,6 @@ const CareerTab = () => {
           <img src={icons.infoIcon} />
         </span>
       </div>
-      <div>{active === tabItems[0].text && tabItems[0].component}</div>
     </div>
   )
 }

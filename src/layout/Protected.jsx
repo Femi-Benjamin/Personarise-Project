@@ -36,13 +36,13 @@ const Protected = () => {
           <Sidebar />
         </div>
         <div className="" />
-        <div className="md:hidden ">
+        <div className="md:hidden z-10 relative ">
           <MobileNav />
-          <div className="h-" />
+          <div className="" />
         </div>
         <div
           id="content"
-          className="lg:col-span-4 md:col-span-2 md:m-6 m-3 md:pb-3 pb-32"
+          className="lg:col-span-4 md:col-span-2 md:m-6 m-3 md:pb-3 pb-32 mt-32 "
         >
           <Outlet />
         </div>
