@@ -19,6 +19,7 @@ import {
   Profile,
 } from '../pages'
 import { Protected, Public } from '../layout'
+import { Beginner } from '../components'
 
 const Routers = () => {
   return (
@@ -44,6 +45,7 @@ const Routers = () => {
         <Route path="/career" element={<Career />} />
         <Route path="/choose-career" element={<SelectCareer />} />
       </Route>
+        <Route path="/beginner" element={<Beginner />} /> 
     </Routes>
   )
 }

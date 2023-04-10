@@ -31,6 +31,7 @@ import explore3 from '../assets/images/dashboard-explore3.png'
 import job from '../assets/images/jobs.png'
 import variant from '../assets/images/variant.png'
 import HireRise from '../assets/images/HireRise.png'
+import Personarise from '../assets/images/Personarise.png'
 
 export default {
   frame1,
@@ -66,4 +67,5 @@ export default {
   job,
   variant,
   HireRise,
+  Personarise,
 }
