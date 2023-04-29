@@ -26,7 +26,7 @@ const SkillBox = ({ skill, active, setActive }) => {
         ))}
       </span>
       <h3 className="font-bold text-3xl my-2">{skill?.text || ''}</h3>
-      <p className="md:text-2xl text-base max-w-[204px]">{skill?.description || ''}</p>
+      <p className="md:text-2xl text-base max-w-[284px]">{skill?.description || ''}</p>
     </div>
   )
 }

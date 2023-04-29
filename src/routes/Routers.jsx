@@ -21,6 +21,7 @@ import {
 import { Protected, Public } from '../layout'
 import { Beginner } from '../components'
 import {NewHome} from '../pages'
+import Map from '../components/Map'
 
 const Routers = () => {
   return (
@@ -31,6 +32,7 @@ const Routers = () => {
         <Route path="/dashboard/roadmap" element={<Roadmap />} />
         <Route path="/dashboard/jobs" element={<Jobs />} />
         <Route path="/dashboard/profile" element={<Profile />} />
+        <Route path="/dashboard/roadmap/map" element={<Map />} />
       </Route>
       <Route path="/" element={<Public />}>
         {/* <Route index element={<Home />} /> */}

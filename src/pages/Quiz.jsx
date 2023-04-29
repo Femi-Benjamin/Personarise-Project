@@ -66,6 +66,8 @@ function Quiz() {
 
   const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1
 
+  console.log("question", quizQuestions.length)
+
   return (
     <>
       <div className="bg bg-no-repeat bg-slate-100 h-full md:flex justify-center items-center ">
@@ -142,9 +144,15 @@ function Quiz() {
                   >
                     Previous Question
                   </Button>
-                  <img src="/" alt="" />
                 </div>
               )}
+              <span>
+                <p className='font-semibold text-2xl '>
+                  <span className='text-[#ABB4D9] '>{currentQuestionIndex}</span> /
+                  {quizQuestions.length}
+                </p>
+                
+              </span>
               <div className="w-full">
                 <Button
                   onClick={() => {
