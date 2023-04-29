@@ -41,8 +41,8 @@ import courseralogo from '../assets/images/courseralogo.png'
 import Group1 from '../assets/images/Group1.png'
 import Rectangle25 from '../assets/images/Rectangle25.png'
 import Rectangle26 from '../assets/images/Rectangle26.png'
-import picture1 from '../assets/images/Picture1.png'
-import picture2 from '../assets/images/Picture2.png'
+import picture1 from '../assets/images/picture1.png'
+import picture2 from '../assets/images/picture2.png'
 
 export default {
   frame1,
