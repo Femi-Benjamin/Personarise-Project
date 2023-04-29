@@ -31,6 +31,18 @@ import explore3 from '../assets/images/dashboard-explore3.png'
 import job from '../assets/images/jobs.png'
 import variant from '../assets/images/variant.png'
 import HireRise from '../assets/images/HireRise.png'
+import Personarise from '../assets/images/Personarise.png'
+import PersonariseLogo from '../assets/images/PersonariseLogo.png'
+import invisionLogo from '../assets/images/invisionLogo.png'
+import Vector1 from '../assets/images/Vector1.png'
+import githubLogo from '../assets/images/githubLogo.png'
+import Compass1 from '../assets/images/Compass1.png'
+import courseralogo from '../assets/images/courseralogo.png'
+import Group1 from '../assets/images/Group1.png'
+import Rectangle25 from '../assets/images/Rectangle25.png'
+import Rectangle26 from '../assets/images/Rectangle26.png'
+import picture1 from '../assets/images/picture1.png'
+import picture2 from '../assets/images/picture2.png'
 
 export default {
   frame1,
@@ -66,4 +78,16 @@ export default {
   job,
   variant,
   HireRise,
+  Personarise,
+  PersonariseLogo,
+  invisionLogo,
+  Vector1,
+  githubLogo,
+  Compass1,
+  courseralogo,
+  Group1,
+  Rectangle25,
+  Rectangle26,
+  picture1,
+  picture2,
 }

@@ -19,6 +19,8 @@ import {
   Profile,
 } from '../pages'
 import { Protected, Public } from '../layout'
+import { Beginner } from '../components'
+import {NewHome} from '../pages'
 import Map from '../components/Map'
 
 const Routers = () => {
@@ -33,7 +35,8 @@ const Routers = () => {
         <Route path="/dashboard/roadmap/map" element={<Map />} />
       </Route>
       <Route path="/" element={<Public />}>
-        <Route index element={<Home />} />
+        {/* <Route index element={<Home />} /> */}
+        <Route index element={<NewHome />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signup/intern" element={<InternSignup />} />
         <Route path="/signup/employer" element={<EmployerSignup />} />
@@ -46,6 +49,7 @@ const Routers = () => {
         <Route path="/career" element={<Career />} />
         <Route path="/choose-career" element={<SelectCareer />} />
       </Route>
+        <Route path="/beginner" element={<Beginner />} /> 
     </Routes>
   )
 }

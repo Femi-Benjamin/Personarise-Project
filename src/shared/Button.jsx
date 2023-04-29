@@ -28,7 +28,7 @@ const Button = ({
       {image && <img src={image} alt="button image" />}
       <span
         className={`lg:text-2xl md:text-xl text-base ${
-          outline ? ' text-black ' : ' text-white '
+          outline ? ' text-black ' : 'text-white'
         }`}
       >
         {children}
