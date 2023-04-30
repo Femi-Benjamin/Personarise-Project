@@ -20,6 +20,7 @@ import {
 } from '../pages'
 import { Protected, Public } from '../layout'
 import { Beginner } from '../components'
+import {NewHome} from '../pages'
 
 const Routers = () => {
   return (
@@ -32,7 +33,8 @@ const Routers = () => {
         <Route path="/dashboard/profile" element={<Profile />} />
       </Route>
       <Route path="/" element={<Public />}>
-        <Route index element={<Home />} />
+        {/* <Route index element={<Home />} /> */}
+        <Route index element={<NewHome />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signup/intern" element={<InternSignup />} />
         <Route path="/signup/employer" element={<EmployerSignup />} />

@@ -18,6 +18,11 @@ import infoIcon from '../assets/icons/info-icon.svg'
 import openBannerIcon from '../assets/icons/dashboard-open-icon.svg'
 import closeBannerIcon from '../assets/icons/dashboard-close-icon.svg'
 import searchIcon from '../assets/icons/search-icon.svg'
+import icons8 from '../assets/icons/icons8.svg'
+import iconpin from '../assets/icons/iconpin.svg'
+import iconpmgt from '../assets/icons/iconpmgt.svg'
+import iconpwt from '../assets/icons/iconpwt.svg'
+import iconsroadmap from '../assets/icons/iconsroadmap.svg'
 
 export default {
   google,
@@ -40,4 +45,9 @@ export default {
   openBannerIcon,
   closeBannerIcon,
   searchIcon,
+  icons8,
+  iconpin,
+  iconpmgt,
+  iconpwt,
+  iconsroadmap,
 }

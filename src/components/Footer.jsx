@@ -25,7 +25,8 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
-              <GrLinkedinOption /> <span>LinkedIn</span>
+              <GrLinkedinOption /> 
+              <span>LinkedIn</span>
             </li>
             <li>
               <AiOutlineTwitter />
