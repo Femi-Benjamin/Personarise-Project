@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const ForFounder = () => {
   return (
     <div className='h-auto bg-white'>
-      <div className='md:px-[72px] px-[34px] md:pt-[22px] pt-[12px] pb-[100px]'>
+      <div className='md:px-[72px] px-[34px] md:pt-[22px] pt-[12px] pb-[50px]'>
         <div className='flex flex-wrap flex-wrap-reverse justify-between font-mulish border-b border-[#DDE1F0] md:pb-[128px] pb-[48px]'>
           <div>
             <h1 className='font-medium md:text-[32px] text-[20px] md:leading-[40px] leading-[25px] md:pt-0 pt-[20px] md:pb-[48px] pb-[5px]'>For Founders</h1>
@@ -16,7 +16,6 @@ const ForFounder = () => {
           </div>
           </div>
           <img src={images.Rectangle26} alt="" />
-
         </div>
       </div>
     </div>

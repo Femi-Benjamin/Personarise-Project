@@ -18,7 +18,6 @@ const ForInterns = () => {
             </Link>
           </div>
           </div>
-
         </div>
       </div>
     </div>

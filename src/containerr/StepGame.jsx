@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const StepGame = () => {
   return (
     <div className='h-auto bg-white'>
-      <div className='md:px-[72px] px-[34px] md:pt-[72px] pt-[62px] pb-[100px]'>
+      <div className='md:px-[72px] px-[34px] md:pt-[72px] pt-[62px] pb-[100px] max-width-[100%]'>
         <div className='flex flex-wrap justify-between font-mulish'>  {/* MAIN FLEX */}
           <img src={images.Group1} alt="" />
           <div>

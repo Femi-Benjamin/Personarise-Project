@@ -43,6 +43,13 @@ import Rectangle25 from '../assets/images/Rectangle25.png'
 import Rectangle26 from '../assets/images/Rectangle26.png'
 import picture1 from '../assets/images/Picture1.png'
 import picture2 from '../assets/images/Picture2.png'
+import Gi1 from '../assets/images/Gi1.png'
+import Gii2 from '../assets/images/Gii2.png'
+import Giii3 from '../assets/images/Giii3.png'
+import Giv4 from '../assets/images/Giv4.png'
+import Gv5 from '../assets/images/Gv5.png'
+import Gvi6 from '../assets/images/Gvi6.png'
+import puzzle from '../assets/images/puzzle.png'
 
 export default {
   frame1,
@@ -90,4 +97,11 @@ export default {
   Rectangle26,
   picture1,
   picture2,
+  Gi1,
+  Gii2,
+  Giii3,
+  Giv4,
+  Gv5,
+  Gvi6,
+  puzzle,
 }

@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom'
-import { Footer, Header } from '../components'
+//import { Footer, Header } from '../components'
 
 const Public = () => {
   return (
     <>
-      <Header />
+      { /* <Header /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
