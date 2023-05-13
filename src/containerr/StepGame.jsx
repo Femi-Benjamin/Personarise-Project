@@ -8,15 +8,15 @@ const StepGame = () => {
   return (
     <div className='h-auto bg-white'>
       <div className='md:px-[72px] px-[34px] md:pt-[72px] pt-[62px] pb-[100px] max-width-[100%]'>
-        <div className='flex flex-wrap justify-between font-mulish'>  {/* MAIN FLEX */}
+        <div className='flex flex-wrap justify-center lg:gap-[350px] gap-[16px] font-mulish'>  {/* MAIN FLEX */}
           <img src={images.Group1} alt="" />
           <div>
-            <h1 className='font-bold md:text-[48px] text-[24px] md:leading-[60px] leading-[30px] lg:mt-0 md:mt-5 mt-[16px] md:pb-[24px] pb-[16px]'>Step up your game, It’s free.</h1>
+            <h1 className='font-bold md:text-[48px] text-[24px] md:leading-[60px] leading-[30px] lg:mt-0 md:mt-5 mt-[16px] md:pb-[24px] pb-[16px]'>Step up your game.</h1>
 
             <div className='flex gap-[24px]'>   {/* MINI FLEX ONE */}
               <img src={icons.icons8} alt="" />
               <div>
-                <h1 className='font-semibold md:text-[32px] text-[20px] md:leading-[40px] leading-[25px] lg:pb-[10px] md:pb-[16px] pb-[8px]'>No cost to join.</h1>
+                <h1 className='font-semibold md:text-[32px] text-[20px] md:leading-[40px] leading-[25px] lg:pb-[10px] md:pb-[16px] pb-[8px]'>Ease of use</h1>
                 <p className='font-normal md:text-[24px] text-[12px] md:leading-[30px] leading-[15px] md:mb-[24px] mb-[16px]'>Register, learn and apply for internship roles.</p>
               </div>
             </div>

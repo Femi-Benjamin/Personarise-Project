@@ -6,7 +6,7 @@ const Courses = () => {
   return (
     <div>
       <Wrap>
-        <div className="items justify-between items-center">
+        <div className="items flex justify-center lg:gap-[113.07px] gap-[26.04px] items-center">
           <img src={images.invisionLogo} alt="brand logo" />
           <img src={images.Vector1} alt="brand logo" />
           <img src={images.githubLogo} alt="brand logo" />

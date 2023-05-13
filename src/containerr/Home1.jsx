@@ -39,7 +39,7 @@ const Home1 = () => {
 
           {/* LARGE SCREEN USING FLEX*/}
           <div className='md:block hidden'>
-            <div className='flex md:flex-cols-4 justify-evenly items-center cursor-pointer'>
+            <div className='flex md:flex-cols-4 justify-center gap-[24px] items-center cursor-pointer'>
               <img src={images.Gvi6} alt="" />
 
               <div>
