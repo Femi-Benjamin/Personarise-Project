@@ -8,7 +8,7 @@ const Succes = () => {
       <div className='md:px-[100px] px-[34px] md:pt-[22px] pt-[12px] pb-[50px] font-mulish'>
         <div className='border-b border-[#DDE1F0] md:pb-[128px] pb-[48px]'>
           <div>
-            <h1 className='font-bold md:text-[48px] text-[32px] md:leading-[60px] leading-[40px] md:flex text-center items-center md:pb-[32px] pb-[24px]'>Success Stories</h1>
+            <h1 className='font-bold md:text-[48px] text-[32px] md:leading-[60px] leading-[40px] lg:flex md:text-center text-center items-center md:pb-[32px] pb-[24px]'>Success Stories</h1>
             <p className='font-semibold md:text-[24px] text-[16.6875px] md:leading-[30px] leading-[20px] md:pb-[50px] pb-[32px] md:text-left text-center'>Hear from some of our satisfied interns and employer who have found success with our platform.</p>
           </div>
           <div className='grid md:grid-cols-3 gap-[19px]'>
