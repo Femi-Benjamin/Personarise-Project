@@ -8,9 +8,9 @@ const ChoseUs = () => {
       <div className='md:px-[72px] px-[34px] md:pt-[22px] pt-[12px] pb-[50px]'>
         <div className='border-b border-[#DDE1F0] md:pb-[128px] pb-[48px]'>
           <div>
-            <h1 className='font-mulish font-bold md:text-[48px] text-[32px] md:leading-[60px] leading-[40px] md:flex text-center items-center md:pb-[32px] pb-[24px] lg:pl-[70px]'>Why choose Us</h1>
+            <h1 className='font-mulish font-bold md:text-[48px] text-[32px] md:leading-[60px] leading-[40px] lg:flex md:text-center text-center items-center md:pb-[32px] pb-[24px]'>Why choose Us</h1>
           </div>
-          <div className='flex flex-wrap justify-center lg:gap-[350px] gap-[16px]'>
+          <div className='flex flex-wrap lg:justify-between md:justify-center'>
             <Cardd />
             <Cardss />
           </div>
