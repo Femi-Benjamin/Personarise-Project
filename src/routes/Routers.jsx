@@ -50,6 +50,8 @@ const Routers = () => {
         <Route path="/choose-career" element={<SelectCareer />} />
       </Route>
         <Route path="/beginner" element={<Beginner />} /> 
+        {/* <Route path="/intermediate" element={<Intermediate />} /> 
+        <Route path="/advanced" element={<Advanced />} />  */}
     </Routes>
   )
 }

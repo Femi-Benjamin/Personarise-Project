@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { CareerTab, Header } from '../containers'
 import { SkillBox } from '../components'
+// import { Link } from 'react-router-dom'
 
 const Roadmap = () => {
   const skills = [
@@ -9,18 +10,24 @@ const Roadmap = () => {
       level: 1,
       description:
         'You will cover the basics about the internet, learn about HTML,CSS and JavaScript.',
+      page: '/beginner'
     },
+    // <Link to='/beginner'>
+    // </Link>
+
     {
       text: 'Intermediate',
       level: 2,
       description:
         'Learn about Version Control System. What they are and why you should use them',
+      page: '/intermediate'
     },
     {
       text: 'Advanced',
       level: 3,
       description:
         'Learn the difference between Unit, Integration and Functional tests and how to write them with the right tools.',
+      page: '/advanced'
     },
   ]
 

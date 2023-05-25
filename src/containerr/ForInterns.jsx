@@ -6,7 +6,7 @@ const ForInterns = () => {
   return (
     <div className='h-auto bg-white'>
       <div className='md:px-[72px] px-[34px] md:pt-[42px] pt-[32px] pb-[100px]'>
-        <div className='flex flex-wrap justify-between font-mulish'>
+        <div className='flex flex-wrap lg:justify-between md:justify-center font-mulish'>
           <img src={images.Rectangle25} alt="" />
           <div>
             <h1 className='font-medium md:text-[32px] text-[20px] md:leading-[40px] leading-[25px] lg:pt-0 md:pt-4 pt-[20px] lg:pb-[35px] md:pb-[5px] pb-[5px]'>For Interns</h1>

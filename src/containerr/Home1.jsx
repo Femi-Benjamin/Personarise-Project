@@ -93,7 +93,6 @@ const Home1 = () => {
               <img src={images.Gi1} alt="" />
             </div>
           </div>
-
         </div>
       </div>
     </div>

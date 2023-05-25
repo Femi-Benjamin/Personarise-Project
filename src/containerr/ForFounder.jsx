@@ -6,7 +6,7 @@ const ForFounder = () => {
   return (
     <div className='h-auto bg-white'>
       <div className='md:px-[72px] px-[34px] md:pt-[22px] pt-[12px] pb-[50px]'>
-        <div className='flex flex-wrap flex-wrap-reverse justify-between font-mulish border-b border-[#DDE1F0] md:pb-[128px] pb-[48px]'>
+        <div className='flex flex-wrap-reverse lg:justify-between md:justify-center font-mulish border-b border-[#DDE1F0] md:pb-[128px] pb-[48px]'>
           <div>
             <h1 className='font-medium md:text-[32px] text-[20px] md:leading-[40px] leading-[25px] lg:pt-0 md:pt-4 pt-[20px] lg:pb-[35px] md:pb-[5px] pb-[5px]'>For Founders</h1>
             <h1 className='font-bold md:text-[48px] text-[24px] md:leading-[60px] leading-[30px] lg:mt-0 md:mt-5 mt-[16px] md:pb-[24px] pb-[8px]'>Interns, Sorting, Intakes</h1>
