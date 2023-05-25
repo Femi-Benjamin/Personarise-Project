@@ -8,10 +8,10 @@ const StepGame = () => {
   return (
     <div className='h-auto bg-white'>
       <div className='md:px-[72px] px-[34px] md:pt-[72px] pt-[62px] pb-[100px] max-width-[100%]'>
-        <div className='flex flex-wrap justify-between font-mulish'>  {/* MAIN FLEX */}
+        <div className='flex flex-wrap lg:justify-between md:justify-center font-mulish'>  {/* MAIN FLEX */}
           <img src={images.Group1} alt="" />
           <div>
-            <h1 className='font-bold md:text-[48px] text-[24px] md:leading-[60px] leading-[30px] lg:mt-0 md:mt-5 mt-[16px] md:pb-[24px] pb-[16px]'>Step up your game.</h1>
+            <h1 className='font-bold md:text-[48px] text-[24px] md:leading-[60px] leading-[30px] lg:mt-0 md:mt-5 mt-[16px] md:pb-[24px] pb-[16px] lg:text-left text-center'>Step up your game.</h1>
 
             <div className='flex gap-[24px]'>   {/* MINI FLEX ONE */}
               <img src={icons.icons8} alt="" />

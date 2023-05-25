@@ -31,7 +31,7 @@ const Level_up = () => {
 
           <div className='md:hidden block'> {/* CONTAINER DIV SMALL SCREEN*/}
             <div>
-              <h1 className='text-center font-bold text-[20px] leading-[25px] pb-[30px]'>Level up your career with HireRise.</h1>
+              <h1 className='text-center font-bold text-[20px] leading-[25px] pb-[30px]'>Level up your career with Personarise.</h1>
             </div>
             <div className='flex justify-between max-width-[100%]'>
               <div>  {/* FIRST DIV */}

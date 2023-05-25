@@ -50,6 +50,10 @@ import Giv4 from '../assets/images/Giv4.png'
 import Gv5 from '../assets/images/Gv5.png'
 import Gvi6 from '../assets/images/Gvi6.png'
 import puzzle from '../assets/images/puzzle.png'
+import line1 from '../assets/images/line1.png'
+import Vector5 from '../assets/images/Vector5.png'
+import Vector9 from '../assets/images/Vector9.png'
+import Vector10 from '../assets/images/Vector10.png'
 
 export default {
   frame1,
@@ -104,4 +108,8 @@ export default {
   Gv5,
   Gvi6,
   puzzle,
+  line1,
+  Vector5,
+  Vector9,
+  Vector10,
 }
