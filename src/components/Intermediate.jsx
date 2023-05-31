@@ -1,27 +1,24 @@
 import React, { useState } from 'react'
 import icons from '../constants/icons'
 import Sidebar from './dashboard/Sidebar'
-import Html from '../components/Html'
-import Css from '../components/Css'
-import Javascript from '../components/Javascript'
-import Vsc from '../components/Vsc'
-import Internet from '../components/Internet'
-import Git from '../components/Git'
+import Web from '../components/Web'
 
-const Beginner = () => {
+const Intermediate = () => {
   const tabItems = [
     { text: 'View  Career description' },
     { text: 'Change career path' },
   ]
   const [active, setActive] = useState(tabItems[0].text)
 
-  {/* /////////// */ }
+  {
+    /* /////////// */
+  }
   const handleClick = () => {
-    console.log('Button clicked!');
-  };
+    console.log('Button clicked!')
+  }
 
   return (
-    <div className='flex relative'>
+    <div className="flex relative">
       <div className="hidden md:block h-screen">
         <Sidebar />
       </div>
@@ -47,8 +44,9 @@ const Beginner = () => {
           {tabItems.map((item, index) => (
             <div
               key={index}
-              className={`text-[#304351] text-sm md:mr-6 mr-4 py-2 cursor-pointer ${active === item.text ? 'border-b border-[#111010]' : ''
-                }`}
+              className={`text-[#304351] text-sm md:mr-6 mr-4 py-2 cursor-pointer ${
+                active === item.text ? 'border-b border-[#111010]' : ''
+              }`}
               onClick={() => setActive(item.text)}
             >
               {item.text}
@@ -58,15 +56,10 @@ const Beginner = () => {
             <img src={icons.infoIcon} />
           </span>
         </div>
-        <Internet />
-        <Html />
-        <Css />
-        <Javascript />
-        <Vsc />
-        <Git />
+        <Web />
       </div>
     </div>
   )
 }
 
-export default Beginner
+export default Intermediate
