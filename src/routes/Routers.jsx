@@ -20,6 +20,8 @@ import {
 } from '../pages'
 import { Protected, Public } from '../layout'
 import { Beginner } from '../components'
+import Intermediate from '../components/Intermediate.jsx'
+import Advanced from '../components/Advanced.jsx'
 import {NewHome} from '../pages'
 import Map from '../components/Map'
 
@@ -50,8 +52,8 @@ const Routers = () => {
         <Route path="/choose-career" element={<SelectCareer />} />
       </Route>
         <Route path="/beginner" element={<Beginner />} /> 
-        {/* <Route path="/intermediate" element={<Intermediate />} /> 
-        <Route path="/advanced" element={<Advanced />} />  */}
+        <Route path="/intermediate" element={<Intermediate />} /> 
+        <Route path="/advanced" element={<Advanced />} />
     </Routes>
   )
 }

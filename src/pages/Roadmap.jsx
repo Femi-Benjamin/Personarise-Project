@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { CareerTab, Header } from '../containers'
 import { SkillBox } from '../components'
-// import { Link } from 'react-router-dom'
 
 const Roadmap = () => {
   const skills = [
@@ -12,8 +11,6 @@ const Roadmap = () => {
         'You will cover the basics about the internet, learn about HTML,CSS and JavaScript.',
       page: '/beginner'
     },
-    // <Link to='/beginner'>
-    // </Link>
 
     {
       text: 'Intermediate',

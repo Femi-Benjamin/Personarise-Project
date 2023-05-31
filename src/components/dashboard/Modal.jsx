@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
-import Button from '@mui/material/Button'
 import { Paper } from '@mui/material'
 import icons from '../../constants/icons'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 
 const style = {
   position: 'absolute',
