@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import WebReading from './WebReading'
+import WebWatching from './WebWatching'
 
 const Web = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,6 +12,20 @@ const Web = () => {
   const closeModal = () => {
     setIsOpen(false)
   }
+   ////////////
+   const [isReadingActive, setIsReadingActive] = useState(true)
+   const [isWatchingActive, setIsWatchingActive] = useState(false)
+ 
+   const activateReading = () => {
+     setIsReadingActive(true)
+     setIsWatchingActive(false)
+   }
+ 
+   const activateWatching = () => {
+     setIsReadingActive(false)
+     setIsWatchingActive(true)
+   }
+
   return (
     <div>
       {/* WEB 1*/}
@@ -64,100 +80,29 @@ const Web = () => {
                 could affect the business.
               </h1>
 
+                 {/* Buttons */}
               <div className="pb-[42px] font-mulish">
-                <button className="w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white">
+                <button
+                  className={`w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white ${
+                    isReadingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateReading}
+                >
                   Reading
                 </button>
-                <button className="w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px]">
+                <button
+                  className={`w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px] ${
+                    isWatchingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateWatching}
+                >
                   Watching
                 </button>
               </div>
 
-              <h1 className="pb-[54px] font-mulish font-normal text-[24px] leading-[30px]">
-                Visit the following resources to learn more:
-              </h1>
-
-              <ul className="list-disc pb-[146px] pl-[38px] text-[20px]">
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Why HTTPS Matters
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Wikipedia - OWASP
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    How Does the Internet Work? MDN Docs
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    OWASP Web Application Security Testing Checklist
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    OWASP Top 10 Security Risks
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    OWASP Cheatsheets
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Content Security Policy (CSP)
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    OWASP ZAP Step-by-Step Tutorial
-                  </a>
-                </li>
-              </ul>
+              {isReadingActive && <WebReading />}
+              {isWatchingActive && <WebWatching />}
+              {/* Buttons */}
 
               <h1 className="pb-5 text-[18px] leading-[20px] font-medium">
                 Take a quiz to see how you much you have learnt about the

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import InternetWatching from './InternetWatching'
 import InternetReading from './InternetReading'
+import InternetWatching from './InternetWatching'
 
 const Internet = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -25,6 +25,7 @@ const Internet = () => {
     setIsReadingActive(false)
     setIsWatchingActive(true)
   }
+  ///////////
 
   return (
     <div>
