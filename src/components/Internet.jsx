@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import InternetWatching from './InternetWatching'
+import InternetReading from './InternetReading'
 
 const Internet = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,9 +12,23 @@ const Internet = () => {
   const closeModal = () => {
     setIsOpen(false)
   }
+  ////////////
+  const [isReadingActive, setIsReadingActive] = useState(true)
+  const [isWatchingActive, setIsWatchingActive] = useState(false)
+
+  const activateReading = () => {
+    setIsReadingActive(true)
+    setIsWatchingActive(false)
+  }
+
+  const activateWatching = () => {
+    setIsReadingActive(false)
+    setIsWatchingActive(true)
+  }
+
   return (
     <div>
-      {/* INTERNET 1*/}
+      {/* INTERNET */}
       <div className="mt-[44px]">
         <div
           onClick={openModal}
@@ -27,7 +43,6 @@ const Internet = () => {
       </div>
 
       {/* modal */}
-
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 font-mulish">
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -63,80 +78,29 @@ const Internet = () => {
                 other which communicate through a standardized set of protocols.
               </h1>
 
+              {/* Buttons */}
               <div className="pb-[42px] font-mulish">
-                <button className="w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white">
+                <button
+                  className={`w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white ${
+                    isReadingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateReading}
+                >
                   Reading
                 </button>
-                <button className="w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px]">
+                <button
+                  className={`w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px] ${
+                    isWatchingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateWatching}
+                >
                   Watching
                 </button>
               </div>
 
-              <h1 className="pb-[54px] font-mulish font-normal text-[24px] leading-[30px]">
-                Visit the following resources to learn more:
-              </h1>
-
-              <ul className="list-disc pb-[146px] pl-[38px] text-[20px]">
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href="https://www.vox.com/2014/6/16/18076282/the-internet"
-                    target="_blank"
-                  >
-                    The Internet Explained
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href="http://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm"
-                    target="_blank"
-                  >
-                    How Does the Internet Work?
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work"
-                    target="_blank"
-                  >
-                    How Does the Internet Work? MDN Docs
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href="https://roadmap.sh/guides/what-is-internet"
-                    target="_blank"
-                  >
-                    Introduction to Internet
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href="https://www.youtube.com/watch?v=TNQsmPf24go"
-                    target="_blank"
-                  >
-                    How does the Internet work?
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href="https://www.youtube.com/watch?v=7_LPdttKXPc"
-                    target="_blank"
-                  >
-                    How the Internet Works in 5 Minutes
-                  </a>
-                </li>
-              </ul>
+              {isReadingActive && <InternetReading />}
+              {isWatchingActive && <InternetWatching />}
+              {/* Buttons */}
 
               <h1 className="pb-5 text-[18px] leading-[20px] font-medium">
                 Take a quiz to see how you much you have learnt about the

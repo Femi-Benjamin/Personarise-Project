@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import GitReading from './GitReading'
+import GitWatching from './GitWatching'
 
 const Git = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,9 +12,23 @@ const Git = () => {
   const closeModal = () => {
     setIsOpen(false)
   }
+  /////////////
+  const [isReadingActive, setIsReadingActive] = useState(true)
+  const [isWatchingActive, setIsWatchingActive] = useState(false)
+
+  const activateReading = () => {
+    setIsReadingActive(true)
+    setIsWatchingActive(false)
+  }
+
+  const activateWatching = () => {
+    setIsReadingActive(false)
+    setIsWatchingActive(true)
+  }
 
   return (
     <div>
+      {/* GIT */}
       <div onClick={openModal} className="mt-[44px]">
         <div className="w-[588px] h-[75px] bg-[#E4FEE3] rounded-[16px] font-mulish font-semibold text-[24px] leading-[30px] cursor-pointer">
           <div className="flex px-[40px] justify-between items-center p-5 justify-center">
@@ -54,102 +70,48 @@ const Git = () => {
             {/*  */}
             <div>
               <h1 className="font-mulish font-normal text-[24px] leading-[30px] text-[#304351] pb-[50px]">
-                Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+                Git is a distributed version control system that tracks changes
+                in any set of computer files, usually used for coordinating work
+                among programmers collaboratively developing source code during
+                software development. Its goals include speed, data integrity,
+                and support for distributed, non-linear workflows.
               </h1>
-
+              {/* Buttons */}
               <div className="pb-[42px] font-mulish">
-                <button className="w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white">
+                <button
+                  className={`w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white ${
+                    isReadingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateReading}
+                >
                   Reading
                 </button>
-                <button className="w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px]">
+                <button
+                  className={`w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px] ${
+                    isWatchingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateWatching}
+                >
                   Watching
                 </button>
               </div>
-
-              <h1 className="pb-[54px] font-mulish font-normal text-[24px] leading-[30px]">
-                Visit the following resources to learn more:
-              </h1>
-
-              <ul className="list-disc pb-[146px] pl-[38px] text-[20px]">
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Git and Github full course
-                  </a>
-                </li>
-
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Version Control System Introduction
-                  </a>
-                </li>
-
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Git & GitHub Crash Course For Beginners
-                  </a>
-                </li>
-
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Learn Git in 20 Minutes
-                  </a>
-                </li>
-
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    How does the  GIT work?
-                  </a>
-                </li>
-
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Tutorial: Git for Absolutely Everyone
-                  </a>
-                </li>
-
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Interactive Git Branching Guide
-                  </a>
-                </li>
-              </ul>
-
+              {isReadingActive && <GitReading />} {/* Be Mindful */}
+              {isWatchingActive && <GitWatching />} {/* Be Mindful */}
+              {/* Buttons */}
               <h1 className="pb-5 text-[18px] leading-[20px] font-medium">
                 Upload the link to your work below
               </h1>
+              <div className=" flex items-center mb-7 gap-6">
+                <input
+                  className="border w-[437px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px]"
+                  type="link"
+                  placeholder="Upload Link"
+                />
 
-              <div className=' flex items-center mb-7 gap-6'>
-                <input className='border w-[437px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px]' type="link" placeholder='Upload Link' />
-            
-                <input className="bg-[#5668B2] w-[211px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white cursor-pointer" type="submit" />
+                <input
+                  className="bg-[#5668B2] w-[211px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white cursor-pointer"
+                  type="submit"
+                />
               </div>
             </div>
           </div>
