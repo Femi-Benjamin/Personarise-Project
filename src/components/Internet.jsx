@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import InternetWatching from './InternetWatching'
+import React, { useState, useEffect } from 'react'
 import InternetReading from './InternetReading'
+import InternetWatching from './InternetWatching'
 
 const Internet = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,6 +12,8 @@ const Internet = () => {
   const closeModal = () => {
     setIsOpen(false)
   }
+
+
   ////////////
   const [isReadingActive, setIsReadingActive] = useState(true)
   const [isWatchingActive, setIsWatchingActive] = useState(false)
@@ -25,6 +27,7 @@ const Internet = () => {
     setIsReadingActive(false)
     setIsWatchingActive(true)
   }
+  ///////////
 
   return (
     <div>
@@ -44,9 +47,12 @@ const Internet = () => {
 
       {/* modal */}
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 font-mulish">
+        <div
+          id="modal-container"
+          className="fixed inset-0 flex items-center justify-center z-50 font-mulish"
+        >
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute right-0 top-0 h-full w-[812px] px-[38px] bg-white shadow-lg overflow-y-auto ">
+          <div className="absolute right-0 top-0 h-full w-[812px] px-[38px] bg-white shadow-lg overflow-y-auto">
             {/* Modal content goes here */}
             <h2 className="text-2xl pb-4 mt-[150px] text-[48px] leading-[60px] font-bold uppercase">
               Internet
@@ -103,8 +109,7 @@ const Internet = () => {
               {/* Buttons */}
 
               <h1 className="pb-5 text-[18px] leading-[20px] font-medium">
-                Take a quiz to see how you much you have learnt about the
-                internet
+                Take a quiz to see how much you have learned about the internet
               </h1>
 
               <button className="bg-[#5668B2] w-[311px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white">

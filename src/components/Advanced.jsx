@@ -56,7 +56,7 @@ const Advanced = () => {
             <img src={icons.infoIcon} />
           </span>
         </div>
-     <Authen/>
+        <Authen />
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 
-const GitWatching = () => {
+const AdvancedWatching = () => {
   return (
     <div className="pb-[42px] font-mulish">
     <h1 className='pb-5'>Watch these videos to learn more:</h1>
@@ -55,4 +55,4 @@ const GitWatching = () => {
   )
 }
 
-export default GitWatching
+export default AdvancedWatching
