@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import InternetWatching from './InternetWatching'
 import InternetReading from './InternetReading'
+import { Link } from 'react-router-dom'
 
 const Internet = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -107,9 +108,11 @@ const Internet = () => {
                 internet
               </h1>
 
+              <Link to='/beginner/quiz'>
               <button className="bg-[#5668B2] w-[311px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white">
                 Test Skill
               </button>
+              </Link>    
             </div>
           </div>
         </div>
