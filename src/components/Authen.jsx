@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import AdvancedReading from './AdvancedReading'
+import AdvancedWatching from './AdvancedWatching'
 
 const Authen = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,6 +12,20 @@ const Authen = () => {
   const closeModal = () => {
     setIsOpen(false)
   }
+  ////////////
+  const [isReadingActive, setIsReadingActive] = useState(true)
+  const [isWatchingActive, setIsWatchingActive] = useState(false)
+
+  const activateReading = () => {
+    setIsReadingActive(true)
+    setIsWatchingActive(false)
+  }
+
+  const activateWatching = () => {
+    setIsReadingActive(false)
+    setIsWatchingActive(true)
+  }
+  ///////////
 
   return (
     <div>
@@ -64,7 +80,7 @@ const Authen = () => {
                 verify the identity of a user or system in order to grant access
                 to a protected resource. There are several different
                 authentication strategies that can be used, including:
-                <ul className='list-disc pl-[38px]'>
+                <ul className="list-disc pl-[38px]">
                   <li>Basic Authentication</li>
                   <li>Session Based Authentication</li>
                   <li> Token Based Authentication</li>
@@ -72,98 +88,36 @@ const Authen = () => {
                   <li>OAuth</li>
                   <li>SSO</li>
                 </ul>
-                You don’t
-                necessarily need to learn all of these, how to implement and the
-                ins and outs from the get go. But it’s important to know what
-                they are and how they work. This will help you make better
-                decisions when choosing an authentication strategy for your
-                application.
+                You don’t necessarily need to learn all of these, how to
+                implement and the ins and outs from the get go. But it’s
+                important to know what they are and how they work. This will
+                help you make better decisions when choosing an authentication
+                strategy for your application.
               </h1>
 
+              {/* Buttons */}
               <div className="pb-[42px] font-mulish">
-                <button className="w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white">
+                <button
+                  className={`w-[150px] h-[50px] bg-[#5668B2] rounded-tl-[8px] rounded-bl-[8px] font-semibold text-[24px] leading-[30px] text-white ${
+                    isReadingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateReading}
+                >
                   Reading
                 </button>
-                <button className="w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px]">
+                <button
+                  className={`w-[150px] h-[50px] border rounded-tr-[8px] rounded-br-[8px] font-semibold text-[24px] leading-[30px] ${
+                    isWatchingActive ? '' : 'opacity-50'
+                  }`}
+                  onClick={activateWatching}
+                >
                   Watching
                 </button>
               </div>
 
-              <h1 className="pb-[54px] font-mulish font-normal text-[24px] leading-[30px]">
-                Visit the following resources to learn more:
-              </h1>
-
-              <ul className="list-disc pb-[146px] pl-[38px] text-[20px]">
-                <li className="cursor-pointer">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    Basic Authentication
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                   Session Based Authentication
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                Token Based Authentication
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    JWT Authentication
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                   OAuth
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    OWASP Cheatsheets
-                  </a>
-                </li>
-
-                <li className="cursor-pointer ">
-                  <a
-                    className="hover:bg-blue-100 hover:underline"
-                    href=""
-                    target="_blank"
-                  >
-                    SSO - Single Sign On
-                  </a>
-                </li>
-              </ul>
+              {isReadingActive && <AdvancedReading />}
+              {isWatchingActive && <AdvancedWatching />}
+              {/* Buttons */}
             </div>
           </div>
         </div>
