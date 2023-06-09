@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import InternetReading from './InternetReading'
+import { Link } from 'react-router-dom'
 import InternetWatching from './InternetWatching'
 
 const Internet = () => {
@@ -112,9 +113,11 @@ const Internet = () => {
                 Take a quiz to see how much you have learned about the internet
               </h1>
 
+              <Link to='/beginner/quiz'>
               <button className="bg-[#5668B2] w-[311px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white">
                 Test Skill
               </button>
+              </Link>    
             </div>
           </div>
         </div>
