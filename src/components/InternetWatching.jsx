@@ -15,8 +15,8 @@ const InternetWatching = () => {
               src="https://www.youtube.com/embed/rc46cO3spSE"
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding; showinfo=0; web-share"
+              allowFullScreen="allowFullScreen"
             ></iframe>
           </div>
           <div>
@@ -26,8 +26,8 @@ const InternetWatching = () => {
               src="https://www.youtube.com/embed/rc46cO3spSE"
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding; showinfo=0; web-share"
+              allowFullScreen="allowFullScreen"
             ></iframe>
           </div>
           <div>
@@ -37,16 +37,20 @@ const InternetWatching = () => {
               src="https://www.youtube.com/embed/bJA84W9wztA"
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding; showinfo=0; web-share"
+              allowFullScreen="allowFullScreen"
             ></iframe>
           </div>
           <div>
-            <ReactPlayer
-              height="290px"
+          <iframe
+               height="290px"
               width="454px"
-              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-            />
+              src="https://www.youtube.com/embed/bJA84W9wztA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding; showinfo=0; web-share"
+              allowFullScreen="allowFullScreen"
+            ></iframe>
           </div>
           <div>
             <ReactPlayer
