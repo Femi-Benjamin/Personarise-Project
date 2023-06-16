@@ -25,6 +25,7 @@ import Advanced from '../components/Advanced.jsx'
 import {NewHome} from '../pages'
 import Map from '../components/Map'
 import DashboardQuiz from '../pages/DashboardQuiz'
+import QuizResults from '../pages/QuizResults'
 
 const Routers = () => {
   return (
@@ -54,6 +55,7 @@ const Routers = () => {
       </Route>
         <Route path="/beginner" element={<Beginner />} /> 
         <Route path="/beginner/quiz" element={<DashboardQuiz />} />
+        <Route path="/quiz-results" element={<QuizResults />} />
         <Route path="/intermediate" element={<Intermediate />} /> 
         <Route path="/advanced" element={<Advanced />} />
     </Routes>
