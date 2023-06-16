@@ -4,13 +4,12 @@ import Button from '../shared/Button'
 // import { quizQuestions } from '../constants/data'
 import { addScore, removeScore } from '../redux/users/actions/userActions'
 
-function QuizFlow({quizQuestions}) {
+function QuizFlow({ quizQuestions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null)
   const score = useSelector((state) => state.user.score)
   let keepScore = 0
   const dispatch = useDispatch()
-
 
   const handleOptionSelect = (optionIndex) => {
     setSelectedOptionIndex(optionIndex)
@@ -38,7 +37,9 @@ function QuizFlow({quizQuestions}) {
 
   const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1
 
-  console.log("question", quizQuestions.length)
+  console.log('question', quizQuestions.length)
+
+  
 
   return (
     <>
@@ -53,14 +54,19 @@ function QuizFlow({quizQuestions}) {
             <p className="pb-[32.71px] max-w-[500px] text-center font-bold md:text-xl text-sm leading-[26px] text-black">
               {quizQuestions[currentQuestionIndex].question}
             </p>
+
+            {/* //////////// */}
             <div className="grid md:grid-cols-2 sm:grid-cols-1 justify-between gap-[20.51px] md:mb-[50px] mb-5">
               {quizQuestions[currentQuestionIndex].options.map(
                 (option, index) => {
                   keepScore = option.score
                   return (
+                    
+                    
                     <label
                       key={index}
                       htmlFor={`option ${option.id}`}
+                      // WORK
                       className={`border-[0.850816px] border-[#CDD2D5] hover:border-[#51A54B] md:w-[263.75px] w-[200px] md:h-[83.38px] h-[50px] font-bold md:text-[16px] text-xs leading-[20px] flex justify-center items-center p-2 text-center cursor-pointer selection:${
                         selectedOptionIndex === option.id
                           ? ' bg-[#071D2E] text-white'
@@ -69,6 +75,7 @@ function QuizFlow({quizQuestions}) {
                       onClick={() => handleOptionSelect(option.id)}
                     >
                       {option.text}
+                      
                       <input
                         type="radio"
                         id={`option ${option.id}`}
@@ -81,6 +88,8 @@ function QuizFlow({quizQuestions}) {
                 }
               )}
             </div>
+            {/* //////////// */}
+
             <div
               className={` ${
                 currentQuestionIndex === 0 ? 'flex w-[60%] ' : 'grid '
@@ -101,11 +110,12 @@ function QuizFlow({quizQuestions}) {
                 </div>
               )}
               <span>
-                <p className='font-semibold text-xl '>
-                  <span className='text-[#ABB4D9] '>{currentQuestionIndex}</span> /
-                  {quizQuestions.length}
+                <p className="font-semibold text-xl ">
+                  <span className="text-[#ABB4D9] ">
+                    {currentQuestionIndex}
+                  </span>{' '}
+                  /{quizQuestions.length}
                 </p>
-                
               </span>
               <div className="w-full">
                 <Button

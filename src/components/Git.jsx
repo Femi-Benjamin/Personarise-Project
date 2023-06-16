@@ -30,7 +30,7 @@ const Git = () => {
     <div>
       {/* GIT */}
       <div onClick={openModal} className="mt-[44px]">
-        <div className="w-[588px] h-[75px] bg-[#E4FEE3] rounded-[16px] font-mulish font-semibold text-[24px] leading-[30px] cursor-pointer">
+        <div className="md:w-[588px] w-auto h-[75px] bg-[#E4FEE3] rounded-[16px] font-mulish font-semibold text-[24px] leading-[30px] cursor-pointer">
           <div className="flex px-[40px] justify-between items-center p-5 justify-center">
             <h1>6</h1>
             <h1>GIT</h1>
@@ -42,7 +42,7 @@ const Git = () => {
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 font-mulish">
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute right-0 top-0 h-full w-[812px] px-[38px] bg-white shadow-lg overflow-y-auto ">
+          <div className="absolute right-0 md:top-0 top-5 h-full md:rounded-tl-[0px] rounded-tl-[50px] md:rounded-tr-[0px] rounded-tr-[40px] md:w-[812px]  w-auto px-[38px] bg-white shadow-lg overflow-y-auto">
             {/* Modal content goes here */}
             <h2 className="text-2xl pb-4 mt-[150px] text-[48px] leading-[60px] font-bold">
               GIT
@@ -109,7 +109,7 @@ const Git = () => {
                 />
 
                 <input
-                  className="bg-[#5668B2] w-[211px] h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white cursor-pointer"
+                  className="bg-[#5668B2] md:w-[211px] w-auto h-[55px] rounded-[8px] text-center font-semibold text-[24px] leading-[30px] text-white cursor-pointer"
                   type="submit"
                 />
               </div>
