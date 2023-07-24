@@ -72,14 +72,14 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
   }, [registerStatus, error, navigate])
 
   const googleSignup = () => {
-    // window.open(
-    //   'https://project-x-g8rg.onrender.com/api/user/auth/google',
-    //   '_self'
-    // )
     window.open(
-      'https://projectx-f5wv.onrender.com/api/user/auth/google',
+      'https://project-x-g8rg.onrender.com/api/user/auth/google',
       '_self'
     )
+    // window.open(
+    //   'https://projectx-f5wv.onrender.com/api/user/auth/google',
+    //   '_self'
+    // )
     // window.open("http://localhost:8000/api/user/auth/google", "_self")
   }
 

@@ -2,9 +2,9 @@ import { ADD_SCORE, REMOVE_SCORE, SET_EMAIL } from '../userTypes'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-// const BASE_ENDPOINT = `https://project-x-g8rg.onrender.com/api/user`
+const BASE_ENDPOINT = `https://project-x-g8rg.onrender.com/api/user`
 // const BASE_ENDPOINT = `http://localhost:8000/api/user`
-const BASE_ENDPOINT = `https://projectx-f5wv.onrender.com/api/user`
+// const BASE_ENDPOINT = `https://projectx-f5wv.onrender.com/api/user`
 
 const initialState = {
   user: null,
