@@ -34,7 +34,7 @@ const Roadmap = () => {
       <Header />
       <CareerTab />
       <div>
-        <div className='my-16'>
+        <div className="my-16">
           <h1 className="text-2xl">
             What level is your skillset currently in?
           </h1>

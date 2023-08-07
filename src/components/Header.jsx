@@ -30,7 +30,7 @@ const Header = () => {
             <h1>Personarise</h1>
           </div>
         </Link>
-        <div className="app__nav-container">
+        {/* <div className="app__nav-container">
           <ul>
             <li>
               <a>Who we are</a>
@@ -42,9 +42,9 @@ const Header = () => {
               <a>Contact</a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
-      <div className="app__btn-container">
+      {/* <div className="app__btn-container">
         <button className="app__btn-demo-btn">
           <img src={images.playIcon} alt="play icon" />
           Watch a demo
@@ -54,7 +54,7 @@ const Header = () => {
             <div>Sign up</div>
           </button>
         </Link>
-      </div>
+      </div> */}
       <div className="app__sm-container">
         {toggleMenu ? (
           <RiCloseLine

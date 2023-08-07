@@ -4,7 +4,7 @@ import icons from '../constants/icons'
 
 const CareerTab = () => {
   const tabItems = [
-    { text: 'View  Career description'},
+    { text: 'View  Career description' },
     { text: 'Change career path' },
   ]
   const [active, setActive] = useState(tabItems[0].text)

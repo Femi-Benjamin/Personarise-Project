@@ -13,6 +13,7 @@ const SkillBox = ({ skill, active, setActive }) => {
   const bgColor = bgColors[skill?.text] || 'bg-stone-900'
 
   return (
+<<<<<<< Updated upstream
     <Link to={skill?.page}> 
       <div
         className={`h-auto px-9 py-10 border rounded-3xl border-solid border-stone-900 flex flex-col md:my-7 ${
@@ -37,6 +38,30 @@ const SkillBox = ({ skill, active, setActive }) => {
         </p>
       </div>
     </Link>
+=======
+    <div
+      className={`px-9 py-10 border rounded-3xl border-solid border-stone-900 flex flex-col md:my-7 ${
+        active.toLowerCase() === (skill?.text.toLowerCase() || '')
+          ? bgColor
+          : ''
+      }`}
+      onClick={() => setActive(skill?.text || '')}
+    >
+      <span className="flex ">
+        {/* level bars, 1 - 3 */}
+        {Array.from({ length: skill?.level || 0 }).map((_, index) => (
+          <div
+            key={index}
+            className={`h-6 w-6 rounded-full bg-level-${index + 1} mr-2`}
+          />
+        ))}
+      </span>
+      <h3 className="font-bold text-3xl my-2">{skill?.text || ''}</h3>
+      <p className="md:text-2xl text-base max-w-[284px]">
+        {skill?.description || ''}
+      </p>
+    </div>
+>>>>>>> Stashed changes
   )
 }
 

@@ -25,7 +25,11 @@ const Footer = () => {
           </ul>
           <ul>
             <li>
+<<<<<<< Updated upstream
               <GrLinkedinOption /> 
+=======
+              <GrLinkedinOption />
+>>>>>>> Stashed changes
               <span>LinkedIn</span>
             </li>
             <li>

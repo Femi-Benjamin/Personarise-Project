@@ -59,6 +59,8 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
     console.log(data)
     setLoading(true)
     dispatch(registerUser(data))
+
+    console.log(registerStatus)
   }
   useEffect(() => {
     if (registerStatus === 'success') {

@@ -72,34 +72,19 @@ function Quiz() {
     <>
       <div className="bg bg-no-repeat bg-slate-100 h-full md:flex justify-center items-center ">
         <h1>{score}</h1>
-        <div className=" md:h-auto h-full  bg-[#FFFFFF] md:m-3">
-          <div className="md:px-[92px] md:py-[47px] p-6 flex flex-col justify-center items-center not-italic font-mulish m-3">
+        <div className=" md:h-auto lg:w-[730px] m-8  bg-[#FFFFFF] md:m-3">
+          <div className="md:px-[42px] md:py-[27px] p-6 flex flex-col justify-center items-center not-italic font-mulish m-3">
             {/* PROGRESS BAR */}
-            <div className="w-[80%] bg-[#E4FEE3] rounded-full h-5  ">
-              <div
-                className="bg-[#51A54B] h-5 rounded-full"
-                style={{
-                  width: `${
-                    ((currentQuestionIndex + 1) / quizQuestions.length) * 100
-                  }%`,
-                }}
-              />
-              {/* </div> */}
-            </div>
-            {/* COUNTDOWN TIMER */}
-            <h1
-              className={`pb-[27.26px] font-bold text-[27.2261px] leading-[34px] text-[#838E97] mt-5 ${timerColor}`}
-            >
-              {displayTime}
-            </h1>
+           
+           
             {/* QUESTION */}
             <h2 className=" text-2xl max-w-[400px] text-center mb-3">
               {quizQuestions[currentQuestionIndex].title}
             </h2>
-            <p className="pb-[32.71px] max-w-[500px] text-center font-bold md:text-xl text-sm leading-[26px] text-black">
+            <p className="pb-[32.71px] w-full font-semibold  md:text-2xl text-sm leading-[26px] text-black">
               {quizQuestions[currentQuestionIndex].question}
             </p>
-            <div className="grid md:grid-cols-2 sm:grid-cols-1 justify-between gap-[20.51px] md:mb-[50px] mb-5">
+            <div className="flex flex-col gap-10 md:ml-16 w-full">
               {quizQuestions[currentQuestionIndex].options.map(
                 (option, index) => {
                   keepScore = option.score
@@ -107,30 +92,25 @@ function Quiz() {
                     <label
                       key={index}
                       htmlFor={`option ${option.id}`}
-                      className={`border-[0.850816px] border-[#CDD2D5] hover:border-[#51A54B] md:w-[263.75px] w-[200px] md:h-[83.38px] h-[50px] font-bold md:text-[16px] text-xs leading-[20px] flex justify-center items-center p-2 text-center cursor-pointer selection:${
-                        selectedOptionIndex === option.id
-                          ? ' bg-[#071D2E] text-white'
-                          : ''
-                      }`}
+                      className={` md:text-xl text-sm flex gap-4 items-center cursor-pointer`}
                       onClick={() => handleOptionSelect(option.id)}
                     >
-                      {option.text}
                       <input
                         type="radio"
                         id={`option ${option.id}`}
                         checked={selectedOptionIndex === option.id}
                         onChange={handleChange}
-                        className="hidden"
+                        className=" w-8 h-8"
                       />
+                      {option.text}
+                      
                     </label>
                   )
                 }
               )}
             </div>
             <div
-              className={` ${
-                currentQuestionIndex === 0 ? 'flex w-[60%] ' : 'grid '
-              }md:grid-cols-2 sm:grid-cols-1 justify-between gap-[20.51px] mb-[40.84px] `}
+              className={`${currentQuestionIndex == 0 && " md:flex-row flex-col gap-4"} flex justify-between w-full my-7 items-center `}
             >
               {currentQuestionIndex !== 0 && (
                 <div className="">
@@ -146,14 +126,12 @@ function Quiz() {
                   </Button>
                 </div>
               )}
-              <span>
-                <p className='font-semibold text-2xl '>
+
+                <p className='font-semibold md:text-2xl text-sm flex'>
                   <span className='text-[#ABB4D9] '>{currentQuestionIndex}</span> /
                   {quizQuestions.length}
                 </p>
-                
-              </span>
-              <div className="w-full">
+              <div className={`md:w-[154px] ${currentQuestionIndex == 0 && " w-full"}`}>
                 <Button
                   onClick={() => {
                     isLastQuestion ? handleFormSubmit() : handleNextQuestion()
@@ -161,7 +139,7 @@ function Quiz() {
                   }}
                   disabled={!selectedOptionIndex}
                 >
-                  {isLastQuestion ? 'Submit' : 'Next Question'}
+                  {isLastQuestion ? 'Submit' : 'Next '}
                 </Button>
               </div>
             </div>
