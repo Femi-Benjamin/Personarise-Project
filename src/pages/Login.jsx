@@ -56,6 +56,19 @@ const Login = () => {
     dispatch(setEmail(data.email))
   }
 
+   const googleSignup = () => {
+    window.open(
+      'https://project-x-g8rg.onrender.com/api/user/auth/google',
+      '_self'
+    )
+    // window.open(
+    //   'https://projectx-f5wv.onrender.com/api/user/auth/google',
+    //   '_self'
+    // )
+    
+    // window.open("http://localhost:8000/api/user/auth/google", "_self")
+  }
+
   return (
     <>
       <div className="md:flex items-center justify-center h-full md:bg-slate-100">
@@ -66,7 +79,7 @@ const Login = () => {
                 Log In to Project X
               </h1>
               <div className="mb-5">
-                <Button image={icons.google}>Continue with Google</Button>
+                <Button onClick={googleSignup} image={icons.google}>Continue with Google</Button>
               </div>
             </div>
             <div className="flex items-center gap-3 mb-7 justify-center">

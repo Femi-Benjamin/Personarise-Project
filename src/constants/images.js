@@ -43,7 +43,6 @@ import Rectangle25 from '../assets/images/Rectangle25.png'
 import Rectangle26 from '../assets/images/Rectangle26.png'
 import picture1 from '../assets/images/picture1.png'
 import picture2 from '../assets/images/picture2.png'
-<<<<<<< Updated upstream
 import Gi1 from '../assets/images/Gi1.png'
 import Gii2 from '../assets/images/Gii2.png'
 import Giii3 from '../assets/images/Giii3.png'
@@ -55,8 +54,6 @@ import line1 from '../assets/images/line1.png'
 import Vector5 from '../assets/images/Vector5.png'
 import Vector9 from '../assets/images/Vector9.png'
 import Vector10 from '../assets/images/Vector10.png'
-=======
->>>>>>> Stashed changes
 
 export default {
   frame1,
@@ -104,7 +101,6 @@ export default {
   Rectangle26,
   picture1,
   picture2,
-<<<<<<< Updated upstream
   Gi1,
   Gii2,
   Giii3,
@@ -116,6 +112,4 @@ export default {
   Vector5,
   Vector9,
   Vector10,
-=======
->>>>>>> Stashed changes
 }

@@ -100,7 +100,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                   // target="_blank"
                   // rel="noopener noreferrer"
                 > */}
-                <Button onClick={googleSignup} image={icons.google}>
+                <Button onClick={() => googleSignup()} image={icons.google}>
                   Continue with Google
                 </Button>
                 {/* </a> */}

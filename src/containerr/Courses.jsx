@@ -22,7 +22,6 @@ export default Courses
 
 const Wrap = styled.div`
   padding: 2.5rem;
-  {/* margin: 5em 0; */}
   background-color: #DDE1F0;
   .items {
     max-width: auto;

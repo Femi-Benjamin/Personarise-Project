@@ -20,13 +20,7 @@ import {
 } from '../pages'
 import { Protected, Public } from '../layout'
 import { Beginner } from '../components'
-<<<<<<< Updated upstream
-import Intermediate from '../components/Intermediate.jsx'
-import Advanced from '../components/Advanced.jsx'
-import {NewHome} from '../pages'
-=======
 import { NewHome } from '../pages'
->>>>>>> Stashed changes
 import Map from '../components/Map'
 import DashboardQuiz from '../pages/DashboardQuiz'
 import QuizResults from '../pages/QuizResults'
@@ -57,15 +51,7 @@ const Routers = () => {
         <Route path="/career" element={<Career />} />
         <Route path="/choose-career" element={<SelectCareer />} />
       </Route>
-<<<<<<< Updated upstream
-        <Route path="/beginner" element={<Beginner />} /> 
-        <Route path="/beginner/quiz" element={<DashboardQuiz />} />
-        <Route path="/quiz-results" element={<QuizResults />} />
-        <Route path="/intermediate" element={<Intermediate />} /> 
-        <Route path="/advanced" element={<Advanced />} />
-=======
       <Route path="/beginner" element={<Beginner />} />
->>>>>>> Stashed changes
     </Routes>
   )
 }
