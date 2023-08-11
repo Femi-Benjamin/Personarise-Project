@@ -16,10 +16,10 @@ const Protected = () => {
       // navigate('/')
       dispatch(getUser())
     }
-    // else {
-    //   navigate("/login");
-    //   toast.error("Login required!");
-    // }
+    else {
+      navigate("/login");
+      toast.error("Login required!");
+    }
   }, [navigate, dispatch])
 
   // if (loginStatus === "failed") {
