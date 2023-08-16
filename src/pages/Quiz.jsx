@@ -78,12 +78,12 @@ function Quiz() {
 
   const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1
 
-  console.log("question", quizQuestions.length)
+  // console.log("question", quizQuestions.length)
 
   return (
     <>
       <div className="bg bg-no-repeat bg-slate-100 h-full md:flex justify-center items-center ">
-        <h1>{score}</h1>
+        {/* <h1>{score}</h1> */}
         <div className=" md:h-auto lg:w-[730px] m-8  bg-[#FFFFFF] md:m-3">
           <div className="md:px-[42px] md:py-[27px] p-6 flex flex-col justify-center items-center not-italic font-mulish m-3">
             {/* PROGRESS BAR */}
