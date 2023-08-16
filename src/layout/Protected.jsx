@@ -12,9 +12,9 @@ const Protected = () => {
   const { loginStatus } = useSelector((state) => state.user)
   const authToken = localStorage.getItem('token')
   useEffect(() => {
-    if (authToken) {
+    if (authToken && user) {
       // navigate('/')
-      dispatch(getUser())
+      // dispatch(getUser())
     }
     else {
       navigate("/login");

@@ -56,11 +56,11 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       country: values.country,
       isEmployer: isEmployer,
     }
-    console.log(data)
+    // console.log(data)
     setLoading(true)
     dispatch(registerUser(data))
 
-    console.log(registerStatus)
+    // console.log(registerStatus)
   }
   useEffect(() => {
     if (registerStatus === 'success') {
