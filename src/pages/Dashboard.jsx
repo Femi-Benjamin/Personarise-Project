@@ -7,6 +7,7 @@ import {
 import icons from '../constants/icons'
 import DashboardModal from '../components/dashboard/Modal'
 import { exploreItems } from '../constants/data'
+import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
   const tabItems = [
@@ -14,12 +15,14 @@ const Dashboard = () => {
     { text: 'Change career path' },
   ]
   const [active, setActive] = useState(tabItems[0].text)
+  const {user} = useSelector((state) => state.user)
+  console.log(user)
   return (
     <div className="">
       <DashboardModal />
       <div className="my-10">
         <h1 className="md:font-medium lg:text-5xl md:text-4xl text-3xl leading-10 mb-7">
-          Welcome, Mary!
+          Welcome, {user.firstName || "Mary"}!
         </h1>
         <div className="my-2">
           <div className="flex md:flex-row flex-col flex-wrap md:items-center md:gap-4">
@@ -28,7 +31,7 @@ const Dashboard = () => {
             </p>
             <div>
               <span className="md:p-3 p-2 bg-[#0DA8FF] text-white uppercase text-base rounded-lg ">
-                mobile software engineer
+                {user.careerPath}
               </span>
             </div>
           </div>

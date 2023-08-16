@@ -176,7 +176,7 @@ export const quizResults = createAsyncThunk(
       )
 
       if (res.status && res.status === 200) {
-        localStorage.setItem('careers', res.data.careers)
+        localStorage.setItem('careers', JSON.stringify(res.data.careers))
         return res.data.careers
       } else {
         // localStorage.removeItem('careers')
@@ -191,21 +191,24 @@ export const quizResults = createAsyncThunk(
 
 export const setCareer = createAsyncThunk(
   'user/career',
-  async (_, { rejectWithValue }) => {
+  async (payload, { rejectWithValue }) => {
     const token = localStorage.getItem('token')
     try {
-      const res = await axios.get(
+      const res = await axios.patch(
         `${BASE_ENDPOINT}/career`
-        , {
+        ,{
+          career: payload
+        }, {
         	headers: {
         		accept: 'application/json',
         		Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
         	},
         }
       )
 
       if (res.status && res.status === 200) {
-        return res.data
+        return res.data.user
       } else {
         return rejectWithValue(res)
       }
@@ -297,8 +300,8 @@ export const userSlice = createSlice({
       .addCase(setCareer.pending, (state) => {
         state.error = 'loading'
       })
-      .addCase(setCareer.fulfilled, (state) => {
-        // state.user = action.payload
+      .addCase(setCareer.fulfilled, (state, action) => {
+        state.user = action.payload
         state.error = null
       })
 

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Button from '../shared/Button'
 import { quizQuestions } from '../constants/data'
-import { addScore, removeScore } from '../redux/users/actions/userActions'
+import { addScore, quizResults, removeScore } from '../redux/users/actions/userActions'
+import { useNavigate } from 'react-router'
 
 function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -13,6 +14,8 @@ function Quiz() {
   const score = useSelector((state) => state.user.score)
   let keepScore = 0
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { error, user } = useSelector((state) => state.user)
 
   useEffect(() => {
     let intervalId
@@ -38,6 +41,11 @@ function Quiz() {
     if (timeLeft <= 30) {
       setTimerColor('text-red-500')
     }
+    const careers = JSON.parse(localStorage.getItem('careers')) 
+    if (careers){
+      navigate('/result')
+    }
+
   }, [timeLeft])
 
   const handleOptionSelect = (optionIndex) => {
@@ -45,8 +53,12 @@ function Quiz() {
   }
 
   const handleFormSubmit = () => {
+    console.log(score)
+    // const score = score
+    dispatch(quizResults(score))
+
     // Handle form submission
-    console.log('Submit ode mumu')
+    // console.log('Submit ode mumu')
   }
 
   const handleNextQuestion = () => {
