@@ -56,9 +56,11 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       country: values.country,
       isEmployer: isEmployer,
     }
-    console.log(data)
+    // console.log(data)
     setLoading(true)
     dispatch(registerUser(data))
+
+    // console.log(registerStatus)
   }
   useEffect(() => {
     if (registerStatus === 'success') {
@@ -76,6 +78,10 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
       'https://project-x-g8rg.onrender.com/api/user/auth/google',
       '_self'
     )
+    // window.open(
+    //   'https://projectx-f5wv.onrender.com/api/user/auth/google',
+    //   '_self'
+    // )
     // window.open("http://localhost:8000/api/user/auth/google", "_self")
   }
 
@@ -94,7 +100,7 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                   // target="_blank"
                   // rel="noopener noreferrer"
                 > */}
-                <Button onClick={googleSignup} image={icons.google}>
+                <Button onClick={() => googleSignup()} image={icons.google}>
                   Continue with Google
                 </Button>
                 {/* </a> */}

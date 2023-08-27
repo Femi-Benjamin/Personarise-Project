@@ -9,6 +9,7 @@ const MobileMenu = () => {
       <div className="flex justify-evenly">
         {links.map((item) => (
           <NavLink
+          key={item.route}
             to={`/dashboard/${item.route}`}
             className={({ isActive }) => {
               return (

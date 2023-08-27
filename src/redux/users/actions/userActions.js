@@ -2,7 +2,12 @@ import { ADD_SCORE, REMOVE_SCORE, SET_EMAIL } from '../userTypes'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
+
+
 const BASE_ENDPOINT = `https://project-x-g8rg.onrender.com/api/user`
+// const BASE_ENDPOINT = `http://localhost:8000/api/user`
+// const BASE_ENDPOINT = `https://projectx-f5wv.onrender.com/api/user`
+
 
 const initialState = {
   user: null,
@@ -17,6 +22,7 @@ const initialState = {
   isEmployer: false,
   isIntern: false,
 }
+
 
 export const loginUser = createAsyncThunk(
   'user/login',
@@ -76,9 +82,9 @@ export const registerUser = createAsyncThunk(
       )
 
       if (res.status && res.status === 201) {
-        console.log(res.data)
+        // console.log(res.data)
         localStorage.setItem('verified', res.data.user.isVerified)
-        localStorage.setItem('verify-email', res.data.user.email)
+        localStorage.setItem('verify-email', res.data.user)
         localStorage.setItem(
           'name',
           res.data.user.firstName + ' ' + res.data.user.lastName
@@ -129,18 +135,81 @@ export const getUser = createAsyncThunk(
     try {
       const res = await axios.get(
         `${BASE_ENDPOINT}/me`
-        // , {
-        // 	headers: {
-        // 		accept: 'application/json',
-        // 		Authorization: `Bearer ${token}`,
-        // 	},
-        // }
+        , {
+        	headers: {
+        		accept: 'application/json',
+        		Authorization: `Bearer ${token}`,
+        	},
+        }
       )
 
       if (res.status && res.status === 200) {
-        return res.data
+        return res.data.user
       } else {
         localStorage.removeItem('token')
+        return rejectWithValue(res)
+      }
+    } catch (err) {
+      // console.log(err.message, 'erorr');
+      return rejectWithValue(err.response.data)
+    }
+  }
+)
+
+export const quizResults = createAsyncThunk(
+  'user/quizresults',
+  async (payload, { rejectWithValue }) => {
+    const token = localStorage.getItem('token')
+    try {
+      const res = await axios.post(
+        `${BASE_ENDPOINT}/quizresults`
+        ,{
+          results: payload
+        },
+         {
+        	headers: {
+        		accept: 'application/json',
+        		Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        	},
+        }
+      )
+
+      if (res.status && res.status === 200) {
+        localStorage.setItem('careers', JSON.stringify(res.data.careers))
+        return res.data.careers
+      } else {
+        // localStorage.removeItem('careers')
+        return rejectWithValue(res)
+      }
+    } catch (err) {
+      // console.log(err.message, 'erorr');
+      return rejectWithValue(err.response.data)
+    }
+  }
+)
+
+export const setCareer = createAsyncThunk(
+  'user/career',
+  async (payload, { rejectWithValue }) => {
+    const token = localStorage.getItem('token')
+    try {
+      const res = await axios.patch(
+        `${BASE_ENDPOINT}/career`
+        ,{
+          career: payload
+        }, {
+        	headers: {
+        		accept: 'application/json',
+        		Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        	},
+        }
+      )
+
+      if (res.status && res.status === 200) {
+        return res.data.user
+      } else {
         return rejectWithValue(res)
       }
     } catch (err) {
@@ -186,13 +255,12 @@ export const userSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loginStatus = 'success'
-        state.user = action.payload
+        state.user = action.payload.user
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loginStatus = 'failed'
         state.error = action.payload
       })
-
       .addCase(registerUser.rejected, (state, action) => {
         state.registerStatus = 'failed'
         state.error = action.payload
@@ -204,6 +272,40 @@ export const userSlice = createSlice({
         state.registerStatus = 'success'
         state.user = action.payload
       })
+
+      .addCase(getUser.rejected, (state, action) => {
+        state.error = action.payload
+      })
+      .addCase(getUser.pending, (state) => {
+        state.error = 'loading'
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.user = action.payload
+        state.error = null
+      })
+
+      .addCase(quizResults.rejected, (state, action) => {
+        state.error = action.payload
+      })
+      .addCase(quizResults.pending, (state) => {
+        state.error = 'loading'
+      })
+      .addCase(quizResults.fulfilled, (state) => {
+        // state.user = action.payload
+        state.error = null
+      })
+      .addCase(setCareer.rejected, (state, action) => {
+        state.error = action.payload
+      })
+      .addCase(setCareer.pending, (state) => {
+        state.error = 'loading'
+      })
+      .addCase(setCareer.fulfilled, (state, action) => {
+        state.user = action.payload
+        state.error = null
+      })
+
+      
 
       .addCase(resetPassword.rejected, (state, action) => {
         state.resetPasswordStatus = 'failed'

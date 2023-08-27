@@ -12,14 +12,15 @@ const Protected = () => {
   const { loginStatus } = useSelector((state) => state.user)
   const authToken = localStorage.getItem('token')
   useEffect(() => {
-    if (authToken) {
+    // if (authToken && user) {
+      if (authToken) {
       // navigate('/')
-      dispatch(getUser())
+      // dispatch(getUser())
     }
-    // else {
-    //   navigate("/login");
-    //   toast.error("Login required!");
-    // }
+    else {
+      navigate("/login");
+      toast.error("Login required!");
+    }
   }, [navigate, dispatch])
 
   // if (loginStatus === "failed") {

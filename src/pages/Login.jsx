@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-hot-toast'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginUser, setEmail } from '../redux/users/actions/userActions'
+import { loginUser, setEmail, getUser } from '../redux/users/actions/userActions'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
@@ -33,19 +33,48 @@ const Login = () => {
     }
   }
   const dispatch = useDispatch()
-  const { loginStatus, error } = useSelector((state) => state.user)
+  const { loginStatus, error, user } = useSelector((state) => state.user)
   const [loading, setLoading] = useState(false)
+  // const [google, setGoogle] = useState(false)
   const navigate = useNavigate()
+  const nav = () => {
+    if(!user.careerPath){
+      navigate('/takequiz')
+    }else{
+    navigate('/dashboard')
+    }
+  }
   useEffect(() => {
     if (loginStatus === 'success') {
-      navigate('/dashboard')
+      // console.log(user)
+      // navigate('/dashboard')
+      nav()
     } else {
       if (error && loginStatus === 'failed') {
         toast.error('Wrong login credentials')
         setLoading(false)
       }
     }
-  }, [loginStatus, error, navigate])
+    // const queryParams = new URLSearchParams(window.location.search);
+    // const token = queryParams.get('token');
+
+    // if (token) {
+    //   // Store the token in your frontend state or local storage
+    //   localStorage.setItem('token', token);
+    //   dispatch(getUser())
+    //   console.log(user)
+    //   navigate('/dashboard')
+    // }
+    if(token && user){
+      // console.log(user)
+      // if(user.career === ''){
+      //   navigate('/quiz')
+      // }else{
+      // navigate('/dashboard')
+      // }
+      nav()
+    }
+  }, [loginStatus, error,user, navigate])
   const handleSubmit = (values, { resetForm }) => {
     const data = {
       email: values.email,
@@ -55,6 +84,28 @@ const Login = () => {
     dispatch(loginUser(data))
     dispatch(setEmail(data.email))
   }
+
+   const googleSignup = async () => {
+    window.open(
+      'https://project-x-g8rg.onrender.com/api/user/auth/google',
+      '_self'
+    )
+    // window.open(
+    //   'https://projectx-f5wv.onrender.com/api/user/auth/google',
+    //   '_self'
+    // )
+    
+    // window.open("http://localhost:8000/api/user/auth/google", "_self")
+   }
+   const queryParams = new URLSearchParams(window.location.search);
+    const token = queryParams.get('token');
+
+    if (token) {
+      // Store the token in your frontend state or local storage
+      localStorage.setItem('token', token);
+      dispatch(getUser())
+      
+    }
 
   return (
     <>
@@ -66,7 +117,7 @@ const Login = () => {
                 Log In to Project X
               </h1>
               <div className="mb-5">
-                <Button image={icons.google}>Continue with Google</Button>
+                <Button onClick={googleSignup} image={icons.google}>Continue with Google</Button>
               </div>
             </div>
             <div className="flex items-center gap-3 mb-7 justify-center">
