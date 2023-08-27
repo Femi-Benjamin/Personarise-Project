@@ -5,7 +5,7 @@ import Html from '../components/Html'
 import Css from '../components/Css'
 import Javascript from '../components/Javascript'
 import Vsc from '../components/Vsc'
-import Internet from '../components/Internet'
+import Internet from '../components/Internet' 
 import Git from '../components/Git'
 
 const Beginner = () => {

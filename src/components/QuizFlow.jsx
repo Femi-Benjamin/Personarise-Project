@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Button from '../shared/Button'
 // import { quizQuestions } from '../constants/data'
 import { addScore, removeScore } from '../redux/users/actions/userActions'
+import { useNavigate } from 'react-router'
 
 function QuizFlow({ quizQuestions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -11,13 +12,20 @@ function QuizFlow({ quizQuestions }) {
   let keepScore = 0
   const dispatch = useDispatch()
 
+  const navigate = useNavigate()
+
   const handleOptionSelect = (optionIndex) => {
     setSelectedOptionIndex(optionIndex)
   }
 
   const handleFormSubmit = () => {
     // Handle form submission
-    console.log('Submit ode mumu')
+    // console.log('Submit ode mumu')
+    navigate("/quiz-results", {
+      state: {
+        score
+      }
+    })
   }
 
   const handleNextQuestion = () => {
