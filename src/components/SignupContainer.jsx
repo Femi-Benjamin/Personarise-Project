@@ -176,6 +176,8 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                           className="mt-1 mb-2 text-xs text-[#f52d2d]"
                         />
                       </div>
+
+                      {/* //////// */}
                       <div className="mb-5 relative">
                         <Field
                           name="password"
@@ -200,6 +202,8 @@ const SignupContainer = ({ link, title, connection, nextText, isEmployer }) => {
                           className="mt-1 mb-2 text-xs text-[#f52d2d]"
                         />
                       </div>
+
+
                       <div className="mb-10">
                         <Field
                           name="country"
